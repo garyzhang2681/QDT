@@ -1,0 +1,482 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SystemAdminModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="SystemAdminModelStoreContainer">
+          <EntitySet Name="sys_attachment" EntityType="SystemAdminModel.Store.sys_attachment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sys_attachment_ref" EntityType="SystemAdminModel.Store.sys_attachment_ref" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sys_dept" EntityType="SystemAdminModel.Store.sys_dept" store:Type="Tables" store:Schema="dbo" store:Name="sys_dept">
+            <DefiningQuery>SELECT 
+      [sys_dept].[deptid] AS [deptid], 
+      [sys_dept].[name] AS [name], 
+      [sys_dept].[shortname] AS [shortname], 
+      [sys_dept].[remark] AS [remark], 
+      [sys_dept].[managerid] AS [managerid]
+      FROM [dbo].[sys_dept] AS [sys_dept]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="sys_group_menu" EntityType="SystemAdminModel.Store.sys_group_menu" store:Type="Tables" store:Schema="dbo" store:Name="sys_group_menu">
+            <DefiningQuery>SELECT 
+      [sys_group_menu].[group_id] AS [group_id], 
+      [sys_group_menu].[menu_id] AS [menu_id]
+      FROM [dbo].[sys_group_menu] AS [sys_group_menu]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="sys_menu" EntityType="SystemAdminModel.Store.sys_menu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sys_program" EntityType="SystemAdminModel.Store.sys_program" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sys_strings" EntityType="SystemAdminModel.Store.sys_strings" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sys_user" EntityType="SystemAdminModel.Store.sys_user" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sys_user_group" EntityType="SystemAdminModel.Store.sys_user_group" store:Type="Tables" store:Schema="dbo" store:Name="sys_user_group">
+            <DefiningQuery>SELECT 
+      [sys_user_group].[user_id] AS [user_id], 
+      [sys_user_group].[group_id] AS [group_id]
+      FROM [dbo].[sys_user_group] AS [sys_user_group]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="sys_user_menu" EntityType="SystemAdminModel.Store.sys_user_menu" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="sys_attachment">
+          <Key>
+            <PropertyRef Name="attachment_id" />
+          </Key>
+          <Property Name="attachment_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="file_path" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="create_by" Type="int" Nullable="false" />
+          <Property Name="create_date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sys_attachment_ref">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ref_type" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="ref_num" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="attachment_id" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SZINTRADEV.dbo.sys_dept' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="sys_dept">
+          <Key>
+            <PropertyRef Name="deptid" />
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="deptid" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="shortname" Type="nvarchar" MaxLength="20" />
+          <Property Name="remark" Type="nvarchar" MaxLength="50" />
+          <Property Name="managerid" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SZINTRADEV.dbo.sys_group_menu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="sys_group_menu">
+          <Key>
+            <PropertyRef Name="group_id" />
+            <PropertyRef Name="menu_id" />
+          </Key>
+          <Property Name="group_id" Type="int" Nullable="false" />
+          <Property Name="menu_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sys_menu">
+          <Key>
+            <PropertyRef Name="menu_id" />
+          </Key>
+          <Property Name="menu_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="program_id" Type="int" Nullable="false" />
+          <Property Name="node_id" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="text_cn" Type="nvarchar" MaxLength="50" />
+          <Property Name="text_en" Type="nvarchar" MaxLength="50" />
+          <Property Name="parent_id" Type="int" />
+          <Property Name="expanded" Type="bit" Nullable="false" />
+          <Property Name="leaf" Type="bit" Nullable="false" />
+          <Property Name="icon_class" Type="nvarchar" MaxLength="50" />
+          <Property Name="href" Type="nvarchar" MaxLength="50" />
+          <Property Name="href_target" Type="nvarchar" MaxLength="50" />
+          <Property Name="component_alias" Type="nvarchar" MaxLength="50" />
+          <Property Name="seq" Type="int" />
+        </EntityType>
+        <EntityType Name="sys_program">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="program_name" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sys_strings">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="program_id" Type="int" />
+          <Property Name="object_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="en_string" Type="nvarchar" MaxLength="1000" />
+          <Property Name="cn_string" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="sys_user">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="sso" Type="nvarchar" Nullable="false" MaxLength="9" />
+          <Property Name="name_cn" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="name_en" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="login_pwd" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="account_status" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SZINTRADEV.dbo.sys_user_group' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="sys_user_group">
+          <Key>
+            <PropertyRef Name="user_id" />
+            <PropertyRef Name="group_id" />
+          </Key>
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="group_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sys_user_menu">
+          <Key>
+            <PropertyRef Name="user_id" />
+            <PropertyRef Name="menu_id" />
+          </Key>
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="menu_id" Type="int" Nullable="false" />
+        </EntityType>
+        <Function Name="sysGetNativeUsersSp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sysGetUserMenuSp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="user_id" Type="int" Mode="In" />
+          <Parameter Name="program_id" Type="int" Mode="In" />
+          <Parameter Name="parent_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sysGetUsersInfoSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sysUserLoginSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="loginSSO" Type="nvarchar" Mode="In" />
+          <Parameter Name="loginPWD" Type="nvarchar" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="SystemAdminEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="sys_dept" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_dept" />
+          <EntitySet Name="sys_strings" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_strings" />
+          <FunctionImport Name="sysUserLoginSP" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.LoginUser)">
+            <Parameter Name="loginSSO" Mode="In" Type="String" />
+            <Parameter Name="loginPWD" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="sys_menu" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_menu" />
+          <EntitySet Name="sys_user" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_user" />
+          <EntitySet Name="sys_attachment" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_attachment" />
+          <EntitySet Name="sys_attachment_ref" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_attachment_ref" />
+          <FunctionImport Name="sysGetUsersInfoSP" EntitySet="sys_user" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_user)">
+          <Parameter Name="id" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="sys_program" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_program" />
+          <FunctionImport Name="sysGetUserMenuSp" EntitySet="sys_menu" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_menu)">
+            <Parameter Name="user_id" Mode="In" Type="Int32" />
+            <Parameter Name="program_id" Mode="In" Type="Int32" />
+            <Parameter Name="parent_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sysGetNativeUsersSp" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sysGetNativeUsersSp_Result)" />
+          <EntitySet Name="sys_group_menu" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_group_menu" />
+          <EntitySet Name="sys_user_group" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_user_group" />
+          <EntitySet Name="sys_user_menu" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_user_menu" />
+          </EntityContainer>
+        <EntityType Name="sys_dept">
+          <Key>
+            <PropertyRef Name="deptid" />
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="deptid" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="shortname" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="remark" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="managerid" Type="Int32" />
+        </EntityType>
+        <EntityType Name="sys_strings">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="program_id" Type="Int32" />
+          <Property Name="object_name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="en_string" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="cn_string" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <ComplexType Name="LoginUser">
+          <Property Type="Int32" Name="C_login_flag" Nullable="true" />
+          <Property Type="Int32" Name="C_employeeid" Nullable="true" />
+          <Property Type="String" Name="C_local_id" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="C_sso" Nullable="true" MaxLength="9" />
+          <Property Type="String" Name="C_cname" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="C_ename" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="C_department_id" Nullable="true" />
+          <Property Type="String" Name="C_loginpwd" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="C_account_stat" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="sys_menu">
+          <Key>
+            <PropertyRef Name="menu_id" />
+          </Key>
+          <Property Type="Int32" Name="menu_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="program_id" Nullable="false" />
+          <Property Type="String" Name="node_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="text_cn" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="text_en" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="parent_id" />
+          <Property Type="Boolean" Name="expanded" Nullable="false" />
+          <Property Type="Boolean" Name="leaf" Nullable="false" />
+          <Property Type="String" Name="icon_class" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="href" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="href_target" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="seq" />
+          <Property Type="String" Name="component_alias" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="sys_user">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Type="Int32" Name="user_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="sso" Nullable="false" MaxLength="9" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="name_cn" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="name_en" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="login_pwd" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="account_status" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sys_attachment">
+          <Key>
+            <PropertyRef Name="attachment_id" />
+          </Key>
+          <Property Type="Int32" Name="attachment_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="file_path" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="create_by" Nullable="false" />
+          <Property Type="DateTime" Name="create_date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sys_attachment_ref">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ref_type" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ref_num" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="attachment_id" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sys_program">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="program_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <ComplexType Name="sysGetNativeUsersSp_Result">
+          <Property Type="Int32" Name="employee_id" Nullable="false" />
+          <Property Type="String" Name="local_id" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="name_cn" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="name_en" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="sso" Nullable="true" MaxLength="9" />
+          <Property Type="String" Name="email" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="user_id" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="sys_group_menu">
+          <Key>
+            <PropertyRef Name="group_id" />
+            <PropertyRef Name="menu_id" />
+          </Key>
+          <Property Type="Int32" Name="group_id" Nullable="false" />
+          <Property Type="Int32" Name="menu_id" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sys_user_group">
+          <Key>
+            <PropertyRef Name="user_id" />
+            <PropertyRef Name="group_id" />
+          </Key>
+          <Property Type="Int32" Name="user_id" Nullable="false" />
+          <Property Type="Int32" Name="group_id" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sys_user_menu">
+          <Key>
+            <PropertyRef Name="user_id" />
+            <PropertyRef Name="menu_id" />
+          </Key>
+          <Property Type="Int32" Name="user_id" Nullable="false" />
+          <Property Type="Int32" Name="menu_id" Nullable="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SystemAdminModelStoreContainer" CdmEntityContainer="SystemAdminEntities">
+          <EntitySetMapping Name="sys_dept">
+            <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_dept">
+              <MappingFragment StoreEntitySet="sys_dept">
+                <ScalarProperty Name="deptid" ColumnName="deptid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="shortname" ColumnName="shortname" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="managerid" ColumnName="managerid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_strings">
+            <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_strings">
+              <MappingFragment StoreEntitySet="sys_strings">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="program_id" ColumnName="program_id" />
+                <ScalarProperty Name="object_name" ColumnName="object_name" />
+                <ScalarProperty Name="en_string" ColumnName="en_string" />
+                <ScalarProperty Name="cn_string" ColumnName="cn_string" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sysUserLoginSP" FunctionName="SystemAdminModel.Store.sysUserLoginSP" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.LoginUser">
+                <ScalarProperty Name="C_login_flag" ColumnName="_login_flag" />
+                <ScalarProperty Name="C_employeeid" ColumnName="_employeeid" />
+                <ScalarProperty Name="C_local_id" ColumnName="_local_id" />
+                <ScalarProperty Name="C_sso" ColumnName="_sso" />
+                <ScalarProperty Name="C_cname" ColumnName="_cname" />
+                <ScalarProperty Name="C_ename" ColumnName="_ename" />
+                <ScalarProperty Name="C_department_id" ColumnName="_department_id" />
+                <ScalarProperty Name="C_loginpwd" ColumnName="_loginpwd" />
+                <ScalarProperty Name="C_account_stat" ColumnName="_account_stat" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="sys_menu">
+            <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_menu">
+              <MappingFragment StoreEntitySet="sys_menu">
+                <ScalarProperty Name="component_alias" ColumnName="component_alias" />
+                <ScalarProperty Name="seq" ColumnName="seq" />
+                <ScalarProperty Name="href_target" ColumnName="href_target" />
+                <ScalarProperty Name="href" ColumnName="href" />
+                <ScalarProperty Name="icon_class" ColumnName="icon_class" />
+                <ScalarProperty Name="leaf" ColumnName="leaf" />
+                <ScalarProperty Name="expanded" ColumnName="expanded" />
+                <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+                <ScalarProperty Name="text_en" ColumnName="text_en" />
+                <ScalarProperty Name="text_cn" ColumnName="text_cn" />
+                <ScalarProperty Name="node_id" ColumnName="node_id" />
+                <ScalarProperty Name="program_id" ColumnName="program_id" />
+                <ScalarProperty Name="menu_id" ColumnName="menu_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_user">
+            <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_user">
+              <MappingFragment StoreEntitySet="sys_user">
+                <ScalarProperty Name="account_status" ColumnName="account_status" />
+                <ScalarProperty Name="login_pwd" ColumnName="login_pwd" />
+                <ScalarProperty Name="name_en" ColumnName="name_en" />
+                <ScalarProperty Name="name_cn" ColumnName="name_cn" />
+                <ScalarProperty Name="sso" ColumnName="sso" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_attachment">
+            <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_attachment">
+              <MappingFragment StoreEntitySet="sys_attachment">
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="create_by" ColumnName="create_by" />
+                <ScalarProperty Name="file_path" ColumnName="file_path" />
+                <ScalarProperty Name="attachment_id" ColumnName="attachment_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_attachment_ref">
+            <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_attachment_ref">
+              <MappingFragment StoreEntitySet="sys_attachment_ref">
+                <ScalarProperty Name="attachment_id" ColumnName="attachment_id" />
+                <ScalarProperty Name="ref_num" ColumnName="ref_num" />
+                <ScalarProperty Name="ref_type" ColumnName="ref_type" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sysGetUsersInfoSP" FunctionName="SystemAdminModel.Store.sysGetUsersInfoSP" />
+          <EntitySetMapping Name="sys_program">
+            <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_program">
+              <MappingFragment StoreEntitySet="sys_program">
+                <ScalarProperty Name="program_name" ColumnName="program_name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sysGetUserMenuSp" FunctionName="SystemAdminModel.Store.sysGetUserMenuSp" />
+          <FunctionImportMapping FunctionImportName="sysGetNativeUsersSp" FunctionName="SystemAdminModel.Store.sysGetNativeUsersSp">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sysGetNativeUsersSp_Result">
+                <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+                <ScalarProperty Name="local_id" ColumnName="local_id" />
+                <ScalarProperty Name="name_cn" ColumnName="name_cn" />
+                <ScalarProperty Name="name_en" ColumnName="name_en" />
+                <ScalarProperty Name="sso" ColumnName="sso" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="sys_group_menu">
+            <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_group_menu">
+              <MappingFragment StoreEntitySet="sys_group_menu">
+                <ScalarProperty Name="menu_id" ColumnName="menu_id" />
+                <ScalarProperty Name="group_id" ColumnName="group_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_user_group">
+            <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_user_group">
+              <MappingFragment StoreEntitySet="sys_user_group">
+                <ScalarProperty Name="group_id" ColumnName="group_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_user_menu">
+            <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_user_menu">
+              <MappingFragment StoreEntitySet="sys_user_menu">
+                <ScalarProperty Name="menu_id" ColumnName="menu_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="SystemAdminModel" ZoomLevel="92">
+        <EntityTypeShape EntityType="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_dept" Width="1.5" PointX="0.75" PointY="0.75" Height="1.9802864583333331" IsExpanded="true" />
+        <EntityTypeShape EntityType="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_strings" Width="1.5" PointX="0.75" PointY="3.75" Height="1.9802864583333322" IsExpanded="true" />
+        <EntityTypeShape EntityType="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_menu" Width="1.5" PointX="5.375" PointY="0.75" Height="3.3263964843749996" />
+        <EntityTypeShape EntityType="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_user" Width="1.5" PointX="3" PointY="3.5" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_attachment" Width="1.5" PointX="5.75" PointY="5.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_attachment_ref" Width="1.5" PointX="0.75" PointY="6.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_program" Width="1.5" PointX="7.5" PointY="0.875" Height="1.4033821614583317" />
+        <EntityTypeShape EntityType="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_group_menu" Width="1.5" PointX="8.375" PointY="3.75" Height="1.4033821614583317" />
+        <EntityTypeShape EntityType="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_user_group" Width="1.5" PointX="3.375" PointY="8.75" Height="1.4033821614583317" />
+        <EntityTypeShape EntityType="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_user_menu" Width="1.5" PointX="5.375" PointY="8.75" Height="1.4033821614583317" />
+        </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

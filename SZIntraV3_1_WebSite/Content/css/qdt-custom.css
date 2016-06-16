@@ -1,0 +1,94 @@
+﻿.x-grid-cell-inner, .x-grid-hd-inner
+{
+    white-space: normal; /* changed from nowrap */
+}
+
+.x-grid-rowbody
+{
+    font: normal 12px tahoma,arial,verdana,sans-serif;
+    padding: 0;
+    color: #F00;
+}
+
+.x-btn-default-toolbar-medium .x-btn-inner
+{
+    font-size: 18px;
+    font-family: tahoma,arial,verdana,sans-serif,黑体;
+}
+
+
+.x-grid-cell.x-grid-td.x-grid-cell-checkcolumn
+{
+    vertical-align: middle;
+}
+
+.x-grid-cell.x-grid-td.x-action-col-cell
+{
+    vertical-align: middle;
+}
+
+/*在行hover的时候加粗文本*/
+/*
+.x-grid-row.x-grid-data-row.x-grid-row-over .x-grid-cell.x-grid-td .x-grid-cell-inner
+{
+    font-weight: bold;
+}
+.x-grid-row.x-grid-data-row.x-grid-row-over .x-grid-cell.x-grid-td.x-grid-cell-treecolumn .x-grid-cell-inner
+{
+    font-weight: normal;
+}
+*/
+
+
+/*.x-panel.x-grid-editor.x-grid-row-editor td.x-form-item-body.x-form-cb-wrap
+{
+try to align checkbox in middle of row editor
+}*/
+
+.x-panel.x-grid-editor.x-grid-row-editor .x-grid-row-editor-buttons .x-btn.x-row-editor-update-button .x-btn-icon-el
+{
+    background-image: url('../../Content/icon/16/save_16.png');
+}
+
+.x-panel.x-grid-editor.x-grid-row-editor .x-grid-row-editor-buttons .x-btn.x-row-editor-cancel-button .x-btn-icon-el
+{
+    background-image: url('../../Content/icon/16/cancel_16.png');
+}
+
+
+.x-panel.x-grid-editor.x-grid-row-editor .x-form-field.x-form-checkbox
+{
+    margin-top: 3px;
+}
+
+
+.white-paper
+{
+    background-color: White;
+}
+
+.readonly input
+{
+    background: #ccc;
+}
+
+.x-column-header.x-column-header-checkbox .x-column-header-trigger
+{
+    display: none;
+}
+
+
+.x-grid-cell.x-grid-td.cell-image-single
+{
+    background-position: 15px 1px;
+}
+.x-action-col-icon
+{
+    margin: 0 4px;
+}
+
+
+.highlight-add566
+{
+    background-color: #add566;
+}

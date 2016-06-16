@@ -1,0 +1,226 @@
+﻿@model SZIntraV3_1_WebSite.Models.QdtDiscrepancyReport
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        body
+        {
+            font-family: 'GE Inspira';
+            font-size: 16px;
+            background-color: #EEE;
+            width: 800px;
+        }
+        
+        .content
+        {
+            width: 800px;
+        }
+        
+        div
+        {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: auto;
+        }
+        
+        table
+        {
+            width: 100%;
+            background-color: #FFF;
+            white-space: normal;
+            border-collapse: collapse;
+        }
+        
+        td
+        {
+            border-width: 1px;
+            border-color: Gray;
+            border-style: solid;
+            padding: 5px 15px 5px 5px;
+            display: block;
+        }
+        
+        a
+        {
+            padding: 0 5px 0 5px;
+        }
+        
+        .content
+        {
+            margin: 0 auto;
+            width: 700px;
+        }
+        
+        .preview
+        {
+            font-size: 1.2em;
+        }
+        
+        .set-header
+        {
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bolder;
+        }
+        
+        .label
+        {
+            font-weight: bold;
+            width: 150px;
+        }
+        
+        .warning
+        {
+            color: #BE504F;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="">
+            <p>
+                <strong>Discrepancy Report: @Model.dr.dr_num</strong> has been closed. Please review
+                the information below regarding this report.</p>
+        </div>
+        <div>
+            <table>
+                <tbody>
+                    <tr>
+                        <td colspan="2" class="set-header">
+                            DR Information
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">
+                            DR Number
+                        </td>
+                        <td>@Model.dr.dr_num
+                        </td>
+                    </tr>
+                      <tr>
+                        <td class="label">
+                            Job
+                        </td>
+                        <td>@Model.dr.job
+                        </td>
+                    </tr>
+                      <tr>
+                        <td class="label">
+                            Item
+                        </td>
+                        <td>@Model.dr.discrepancy_item
+                        </td>
+                    </tr>
+                     <tr>
+                        <td class="label">
+                            Operation
+                        </td>
+                        <td>@Model.dr.oper_num
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">
+                            Type
+                        </td>
+                        <td>@Model.drType.qdtComString.en_string
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">
+                            Source
+                        </td>
+                        <td>@Model.dr.source
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">
+                            ME Owner
+                        </td>
+                        <td>@Model.meOwner.employee.name_en
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">
+                            QE Owner
+                        </td>
+                        <td>@Model.qeOwner.employee.name_en
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">
+                            Job
+                        </td>
+                        <td>@Model.dr.job
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">
+                            Suffix
+                        </td>
+                        <td>@Model.dr.suffix
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">
+                            Created Date
+                        </td>
+                        <td>@Model.dr.create_date.ToString("yyyy-MM-dd HH:mm")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">
+                            Created By
+                        </td>
+                        <td>@Model.createBy.user.name_en
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">
+                            Closed Date
+                        </td>
+                        <td>@Model.dr.close_date.Value.ToString("yyyy-MM-dd HH:mm")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">
+                            Closed By
+                        </td>
+                        <td>@Model.closeBy.user.name_en
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">
+                            Description
+                        </td>
+                        <td>@Model.dr.description
+                        </td>
+                    </tr>
+                    @if (Model.discrepancies.Count > 0)
+                    {
+                        <tr>
+                            <td colspan="2" class="set-header warning">
+                                Discrepancies
+                            </td>
+                        </tr>
+                        foreach (var discrepancy in Model.discrepancies)
+                        { 
+                        <tr>
+                            <td class="label">@string.Format("Discrepancy {0}", Model.discrepancies.IndexOf(discrepancy) + 1)
+                            </td>
+                            <td>@discrepancy.discrepancy.description
+                            </td>
+                        </tr>
+                        }
+                    }
+@*<tr><td></td><td></td></tr>*@
+                </tbody>
+            </table>
+        </div>
+       <div>
+            Please go to<a href='http://3.41.199.73:9000'> Quality Digitalization Tools </a>for
+            details.
+        </div>
+    </div>
+</body>
+</html>

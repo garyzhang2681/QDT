@@ -1,0 +1,47 @@
+1288M41 OP10
+
+745
+
+
+Training & Qualification
+
+Content:
+1. skill code -> operator, inspector scan
+2. lessons learnt control work
+
+Training:
+content -> trainings
+training records
+approvals
+lead time (9 months)
+
+
+技能培训相当于就是实操培训，需要有三个阶段，数量各自有要求。是否存入数据库作为流程批准时候的硬性要求
+
+新品零件选择workflow，定义approver
+技能流程approver选择培训师或者工艺工程师
+
+
+
+
+
+WI-要求，胡小俞
+
+Certification:
+stc, llc, stamp
+
+expiration
+trainer
+
+技能代码是否需要实操培训，即是不是需要通过workflow授权
+
+关键技能代码
+
+主管批准步骤是否需要？可以取消掉
+
+
+印章申请：
+申请者需要上传文件。
+提供说明需要上传哪些文件。inspector和machining员工需要上传检验记录表，体系培训成绩
+
+批准人检查。至少通过一个技能实操培训，系统暂不需要限定员工入职超过3个月
