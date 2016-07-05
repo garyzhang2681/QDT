@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SystemAdminModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="SystemAdminModelStoreContainer">
+    <EntitySet Name="sys_attachment" EntityType="SystemAdminModel.Store.sys_attachment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sys_attachment_ref" EntityType="SystemAdminModel.Store.sys_attachment_ref" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sys_dept" EntityType="SystemAdminModel.Store.sys_dept" store:Type="Tables" store:Schema="dbo" store:Name="sys_dept">
+      <DefiningQuery>SELECT 
+      [sys_dept].[deptid] AS [deptid], 
+      [sys_dept].[name] AS [name], 
+      [sys_dept].[shortname] AS [shortname], 
+      [sys_dept].[remark] AS [remark], 
+      [sys_dept].[managerid] AS [managerid]
+      FROM [dbo].[sys_dept] AS [sys_dept]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sys_group_menu" EntityType="SystemAdminModel.Store.sys_group_menu" store:Type="Tables" store:Schema="dbo" store:Name="sys_group_menu">
+      <DefiningQuery>SELECT 
+      [sys_group_menu].[group_id] AS [group_id], 
+      [sys_group_menu].[menu_id] AS [menu_id]
+      FROM [dbo].[sys_group_menu] AS [sys_group_menu]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sys_menu" EntityType="SystemAdminModel.Store.sys_menu" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sys_program" EntityType="SystemAdminModel.Store.sys_program" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sys_strings" EntityType="SystemAdminModel.Store.sys_strings" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sys_user" EntityType="SystemAdminModel.Store.sys_user" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sys_user_group" EntityType="SystemAdminModel.Store.sys_user_group" store:Type="Tables" store:Schema="dbo" store:Name="sys_user_group">
+      <DefiningQuery>SELECT 
+      [sys_user_group].[user_id] AS [user_id], 
+      [sys_user_group].[group_id] AS [group_id]
+      FROM [dbo].[sys_user_group] AS [sys_user_group]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sys_user_menu" EntityType="SystemAdminModel.Store.sys_user_menu" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="sys_attachment">
+    <Key>
+      <PropertyRef Name="attachment_id" />
+    </Key>
+    <Property Name="attachment_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="file_path" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="create_by" Type="int" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sys_attachment_ref">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ref_type" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="ref_num" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="attachment_id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'SZINTRADEV.dbo.sys_dept' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="sys_dept">
+    <Key>
+      <PropertyRef Name="deptid" />
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="deptid" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="shortname" Type="nvarchar" MaxLength="20" />
+    <Property Name="remark" Type="nvarchar" MaxLength="50" />
+    <Property Name="managerid" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'SZINTRADEV.dbo.sys_group_menu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="sys_group_menu">
+    <Key>
+      <PropertyRef Name="group_id" />
+      <PropertyRef Name="menu_id" />
+    </Key>
+    <Property Name="group_id" Type="int" Nullable="false" />
+    <Property Name="menu_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sys_menu">
+    <Key>
+      <PropertyRef Name="menu_id" />
+    </Key>
+    <Property Name="menu_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="program_id" Type="int" Nullable="false" />
+    <Property Name="node_id" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="text_cn" Type="nvarchar" MaxLength="50" />
+    <Property Name="text_en" Type="nvarchar" MaxLength="50" />
+    <Property Name="parent_id" Type="int" />
+    <Property Name="expanded" Type="bit" Nullable="false" />
+    <Property Name="leaf" Type="bit" Nullable="false" />
+    <Property Name="icon_class" Type="nvarchar" MaxLength="50" />
+    <Property Name="href" Type="nvarchar" MaxLength="50" />
+    <Property Name="href_target" Type="nvarchar" MaxLength="50" />
+    <Property Name="component_alias" Type="nvarchar" MaxLength="50" />
+    <Property Name="seq" Type="int" />
+  </EntityType>
+  <EntityType Name="sys_program">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="program_name" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sys_strings">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="program_id" Type="int" />
+    <Property Name="object_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="en_string" Type="nvarchar" MaxLength="1000" />
+    <Property Name="cn_string" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="sys_user">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="sso" Type="nvarchar" Nullable="false" MaxLength="9" />
+    <Property Name="name_cn" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="name_en" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="login_pwd" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="account_status" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'SZINTRADEV.dbo.sys_user_group' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="sys_user_group">
+    <Key>
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="group_id" />
+    </Key>
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="group_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sys_user_menu">
+    <Key>
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="menu_id" />
+    </Key>
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="menu_id" Type="int" Nullable="false" />
+  </EntityType>
+  <Function Name="sysGetNativeUsersSp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sysGetUserMenuSp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="user_id" Type="int" Mode="In" />
+    <Parameter Name="program_id" Type="int" Mode="In" />
+    <Parameter Name="parent_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sysGetUsersInfoSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sysUserLoginSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="loginSSO" Type="nvarchar" Mode="In" />
+    <Parameter Name="loginPWD" Type="nvarchar" Mode="In" />
+  </Function>
+</Schema>

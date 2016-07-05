@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SystemAdminModelStoreContainer" CdmEntityContainer="SystemAdminEntities">
+    <EntitySetMapping Name="sys_dept">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_dept">
+        <MappingFragment StoreEntitySet="sys_dept">
+          <ScalarProperty Name="deptid" ColumnName="deptid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="shortname" ColumnName="shortname" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="managerid" ColumnName="managerid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_strings">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_strings">
+        <MappingFragment StoreEntitySet="sys_strings">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="program_id" ColumnName="program_id" />
+          <ScalarProperty Name="object_name" ColumnName="object_name" />
+          <ScalarProperty Name="en_string" ColumnName="en_string" />
+          <ScalarProperty Name="cn_string" ColumnName="cn_string" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sysUserLoginSP" FunctionName="SystemAdminModel.Store.sysUserLoginSP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.LoginUser">
+          <ScalarProperty Name="C_login_flag" ColumnName="_login_flag" />
+          <ScalarProperty Name="C_employeeid" ColumnName="_employeeid" />
+          <ScalarProperty Name="C_local_id" ColumnName="_local_id" />
+          <ScalarProperty Name="C_sso" ColumnName="_sso" />
+          <ScalarProperty Name="C_cname" ColumnName="_cname" />
+          <ScalarProperty Name="C_ename" ColumnName="_ename" />
+          <ScalarProperty Name="C_department_id" ColumnName="_department_id" />
+          <ScalarProperty Name="C_loginpwd" ColumnName="_loginpwd" />
+          <ScalarProperty Name="C_account_stat" ColumnName="_account_stat" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="sys_menu">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_menu">
+        <MappingFragment StoreEntitySet="sys_menu">
+          <ScalarProperty Name="component_alias" ColumnName="component_alias" />
+          <ScalarProperty Name="seq" ColumnName="seq" />
+          <ScalarProperty Name="href_target" ColumnName="href_target" />
+          <ScalarProperty Name="href" ColumnName="href" />
+          <ScalarProperty Name="icon_class" ColumnName="icon_class" />
+          <ScalarProperty Name="leaf" ColumnName="leaf" />
+          <ScalarProperty Name="expanded" ColumnName="expanded" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="text_en" ColumnName="text_en" />
+          <ScalarProperty Name="text_cn" ColumnName="text_cn" />
+          <ScalarProperty Name="node_id" ColumnName="node_id" />
+          <ScalarProperty Name="program_id" ColumnName="program_id" />
+          <ScalarProperty Name="menu_id" ColumnName="menu_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_user">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_user">
+        <MappingFragment StoreEntitySet="sys_user">
+          <ScalarProperty Name="account_status" ColumnName="account_status" />
+          <ScalarProperty Name="login_pwd" ColumnName="login_pwd" />
+          <ScalarProperty Name="name_en" ColumnName="name_en" />
+          <ScalarProperty Name="name_cn" ColumnName="name_cn" />
+          <ScalarProperty Name="sso" ColumnName="sso" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_attachment">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_attachment">
+        <MappingFragment StoreEntitySet="sys_attachment">
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="create_by" ColumnName="create_by" />
+          <ScalarProperty Name="file_path" ColumnName="file_path" />
+          <ScalarProperty Name="attachment_id" ColumnName="attachment_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_attachment_ref">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_attachment_ref">
+        <MappingFragment StoreEntitySet="sys_attachment_ref">
+          <ScalarProperty Name="attachment_id" ColumnName="attachment_id" />
+          <ScalarProperty Name="ref_num" ColumnName="ref_num" />
+          <ScalarProperty Name="ref_type" ColumnName="ref_type" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sysGetUsersInfoSP" FunctionName="SystemAdminModel.Store.sysGetUsersInfoSP" />
+    <EntitySetMapping Name="sys_program">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_program">
+        <MappingFragment StoreEntitySet="sys_program">
+          <ScalarProperty Name="program_name" ColumnName="program_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sysGetUserMenuSp" FunctionName="SystemAdminModel.Store.sysGetUserMenuSp" />
+    <FunctionImportMapping FunctionImportName="sysGetNativeUsersSp" FunctionName="SystemAdminModel.Store.sysGetNativeUsersSp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sysGetNativeUsersSp_Result">
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="local_id" ColumnName="local_id" />
+          <ScalarProperty Name="name_cn" ColumnName="name_cn" />
+          <ScalarProperty Name="name_en" ColumnName="name_en" />
+          <ScalarProperty Name="sso" ColumnName="sso" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="sys_group_menu">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_group_menu">
+        <MappingFragment StoreEntitySet="sys_group_menu">
+          <ScalarProperty Name="menu_id" ColumnName="menu_id" />
+          <ScalarProperty Name="group_id" ColumnName="group_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_user_group">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_user_group">
+        <MappingFragment StoreEntitySet="sys_user_group">
+          <ScalarProperty Name="group_id" ColumnName="group_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_user_menu">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_user_menu">
+        <MappingFragment StoreEntitySet="sys_user_menu">
+          <ScalarProperty Name="menu_id" ColumnName="menu_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

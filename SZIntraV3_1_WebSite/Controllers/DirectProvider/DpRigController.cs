@@ -353,9 +353,11 @@ namespace SZIntraV3_1_WebSite.Controllers.DirectProvider
                 });
 
             }
-            catch
+            catch(Exception ex)
             {
-                return DirectFailure("Call Login CreateRIG failed!");
+                
+                string err = ex.Message;
+                return DirectFailure(err + "; Call Login CreateRIG failed!");
             }
 
         }

@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="SystemAdminEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sys_dept" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_dept" />
+    <EntitySet Name="sys_strings" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_strings" />
+    <FunctionImport Name="sysUserLoginSP" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.LoginUser)">
+      <Parameter Name="loginSSO" Mode="In" Type="String" />
+      <Parameter Name="loginPWD" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="sys_menu" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_menu" />
+    <EntitySet Name="sys_user" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_user" />
+    <EntitySet Name="sys_attachment" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_attachment" />
+    <EntitySet Name="sys_attachment_ref" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_attachment_ref" />
+    <FunctionImport Name="sysGetUsersInfoSP" EntitySet="sys_user" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_user)">
+      <Parameter Name="id" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="sys_program" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_program" />
+    <FunctionImport Name="sysGetUserMenuSp" EntitySet="sys_menu" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_menu)">
+      <Parameter Name="user_id" Mode="In" Type="Int32" />
+      <Parameter Name="program_id" Mode="In" Type="Int32" />
+      <Parameter Name="parent_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sysGetNativeUsersSp" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sysGetNativeUsersSp_Result)" />
+    <EntitySet Name="sys_group_menu" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_group_menu" />
+    <EntitySet Name="sys_user_group" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_user_group" />
+    <EntitySet Name="sys_user_menu" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel.sys_user_menu" />
+  </EntityContainer>
+  <EntityType Name="sys_dept">
+    <Key>
+      <PropertyRef Name="deptid" />
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="deptid" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="shortname" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="remark" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="managerid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sys_strings">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="program_id" Type="Int32" />
+    <Property Name="object_name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="en_string" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="cn_string" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <ComplexType Name="LoginUser">
+    <Property Type="Int32" Name="C_login_flag" Nullable="true" />
+    <Property Type="Int32" Name="C_employeeid" Nullable="true" />
+    <Property Type="String" Name="C_local_id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="C_sso" Nullable="true" MaxLength="9" />
+    <Property Type="String" Name="C_cname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="C_ename" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="C_department_id" Nullable="true" />
+    <Property Type="String" Name="C_loginpwd" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="C_account_stat" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="sys_menu">
+    <Key>
+      <PropertyRef Name="menu_id" />
+    </Key>
+    <Property Type="Int32" Name="menu_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="program_id" Nullable="false" />
+    <Property Type="String" Name="node_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="text_cn" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="text_en" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="parent_id" />
+    <Property Type="Boolean" Name="expanded" Nullable="false" />
+    <Property Type="Boolean" Name="leaf" Nullable="false" />
+    <Property Type="String" Name="icon_class" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="href" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="href_target" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="seq" />
+    <Property Type="String" Name="component_alias" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sys_user">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Type="Int32" Name="user_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="sso" Nullable="false" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="name_cn" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="name_en" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="login_pwd" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="account_status" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sys_attachment">
+    <Key>
+      <PropertyRef Name="attachment_id" />
+    </Key>
+    <Property Type="Int32" Name="attachment_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="file_path" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="create_by" Nullable="false" />
+    <Property Type="DateTime" Name="create_date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sys_attachment_ref">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ref_type" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ref_num" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="attachment_id" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sys_program">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="program_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="sysGetNativeUsersSp_Result">
+    <Property Type="Int32" Name="employee_id" Nullable="false" />
+    <Property Type="String" Name="local_id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="name_cn" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="name_en" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="sso" Nullable="true" MaxLength="9" />
+    <Property Type="String" Name="email" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="user_id" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="sys_group_menu">
+    <Key>
+      <PropertyRef Name="group_id" />
+      <PropertyRef Name="menu_id" />
+    </Key>
+    <Property Type="Int32" Name="group_id" Nullable="false" />
+    <Property Type="Int32" Name="menu_id" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sys_user_group">
+    <Key>
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="group_id" />
+    </Key>
+    <Property Type="Int32" Name="user_id" Nullable="false" />
+    <Property Type="Int32" Name="group_id" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sys_user_menu">
+    <Key>
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="menu_id" />
+    </Key>
+    <Property Type="Int32" Name="user_id" Nullable="false" />
+    <Property Type="Int32" Name="menu_id" Nullable="false" />
+  </EntityType>
+</Schema>

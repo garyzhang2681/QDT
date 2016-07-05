@@ -17,7 +17,7 @@
                 blur: function (cmp) {
                     var job = cmp.getValue(),
                         scanner = me.getScanner();
-                    if (job.length === 10) {
+                    if (job.length === 10 || job.length === 11 || job.length === 12) {
                         DpScan.GetJobOrder(job, 0, function (result) {
                             if (result.success) {
                                 scanner.down('[name=item]').setValue(result.data.item);

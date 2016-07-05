@@ -1,0 +1,1737 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QDTModelsEntityModelStoreContainer" CdmEntityContainer="QDTEntities">
+    <FunctionImportMapping FunctionImportName="sysGetPermissionSP" FunctionName="QDT.Models.EntityModel.Store.sysGetPermissionSP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.sysGetPermissionSP_Result">
+          <ScalarProperty Name="widget" ColumnName="widget" />
+          <ScalarProperty Name="action_name" ColumnName="action_name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="qdtGetJobReleasedQuantitySP" FunctionName="QDT.Models.EntityModel.Store.qdtGetJobReleasedQuantitySP" />
+    <FunctionImportMapping FunctionImportName="qdtCreateDiscrepancySP" FunctionName="QDT.Models.EntityModel.Store.qdtCreateDiscrepancySP" />
+    <EntitySetMapping Name="qdt_disc_disp">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_disc_disp">
+        <MappingFragment StoreEntitySet="qdt_disc_disp">
+          <ScalarProperty Name="disp_id" ColumnName="disp_id" />
+          <ScalarProperty Name="disc_id" ColumnName="disc_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="qdtGetDispositionsSP" FunctionName="QDT.Models.EntityModel.Store.qdtGetDispositionsSP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetDispositionsSP_Result">
+          <ScalarProperty Name="disp_id" ColumnName="disp_id" />
+          <ScalarProperty Name="disp_rank" ColumnName="disp_rank" />
+          <ScalarProperty Name="dr_num" ColumnName="dr_num" />
+          <ScalarProperty Name="reason" ColumnName="reason" />
+          <ScalarProperty Name="disp_type" ColumnName="disp_type" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="create_by" ColumnName="create_by" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="update_by" ColumnName="update_by" />
+          <ScalarProperty Name="update_date" ColumnName="update_date" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="category_1" ColumnName="category#1" />
+          <ScalarProperty Name="category_2" ColumnName="category#2" />
+          <ScalarProperty Name="en_string" ColumnName="en_string" />
+          <ScalarProperty Name="cn_string" ColumnName="cn_string" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="qdt_disc_act">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_disc_act">
+        <MappingFragment StoreEntitySet="qdt_disc_act">
+          <ScalarProperty Name="act_id" ColumnName="act_id" />
+          <ScalarProperty Name="disc_id" ColumnName="disc_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="qdtUpdateDispositionStatusSP" FunctionName="QDT.Models.EntityModel.Store.qdtUpdateDispositionStatusSP" />
+    <EntitySetMapping Name="qdt_action">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_action">
+        <MappingFragment StoreEntitySet="qdt_action">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="update_date" ColumnName="update_date" />
+          <ScalarProperty Name="update_by" ColumnName="update_by" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="create_by" ColumnName="create_by" />
+          <ScalarProperty Name="disp_id" ColumnName="disp_id" />
+          <ScalarProperty Name="dr_num" ColumnName="dr_num" />
+          <ScalarProperty Name="due_date" ColumnName="due_date" />
+          <ScalarProperty Name="ct_action" ColumnName="ct_action" />
+          <ScalarProperty Name="lt_action" ColumnName="lt_action" />
+          <ScalarProperty Name="st_action" ColumnName="st_action" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="act_owner" ColumnName="act_owner" />
+          <ScalarProperty Name="act_type" ColumnName="act_type" />
+          <ScalarProperty Name="act_id" ColumnName="act_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="qdtCreateActionSP" FunctionName="QDT.Models.EntityModel.Store.qdtCreateActionSP" />
+    <FunctionImportMapping FunctionImportName="qdtUpdateActionRemarkSP" FunctionName="QDT.Models.EntityModel.Store.qdtUpdateActionRemarkSP" />
+    <FunctionImportMapping FunctionImportName="qdtGetActionListSP" FunctionName="QDT.Models.EntityModel.Store.qdtGetActionListSP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetActionListSP_Result">
+          <ScalarProperty Name="act_id" ColumnName="act_id" />
+          <ScalarProperty Name="act_type" ColumnName="act_type" />
+          <ScalarProperty Name="act_owner" ColumnName="act_owner" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="st_action" ColumnName="st_action" />
+          <ScalarProperty Name="lt_action" ColumnName="lt_action" />
+          <ScalarProperty Name="ct_action" ColumnName="ct_action" />
+          <ScalarProperty Name="due_date" ColumnName="due_date" />
+          <ScalarProperty Name="dr_num" ColumnName="dr_num" />
+          <ScalarProperty Name="create_by" ColumnName="create_by" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="update_by" ColumnName="update_by" />
+          <ScalarProperty Name="update_date" ColumnName="update_date" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="act_owner_string" ColumnName="act_owner_string" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="qdtCloseDrSP" FunctionName="QDT.Models.EntityModel.Store.qdtCloseDrSP" />
+    <FunctionImportMapping FunctionImportName="qdtGetDRListSP" FunctionName="QDT.Models.EntityModel.Store.qdtGetDRListSP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetDRListSP_Result">
+          <ScalarProperty Name="dr_num" ColumnName="dr_num" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="due_date" ColumnName="due_date" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="qe_sso" ColumnName="qe_sso" />
+          <ScalarProperty Name="me_sso" ColumnName="me_sso" />
+          <ScalarProperty Name="dr_qe_owner" ColumnName="dr_qe_owner" />
+          <ScalarProperty Name="dr_me_owner" ColumnName="dr_me_owner" />
+          <ScalarProperty Name="dr_type_string" ColumnName="dr_type_string" />
+          <ScalarProperty Name="dr_qe_owner_string" ColumnName="dr_qe_owner_string" />
+          <ScalarProperty Name="dr_me_owner_string" ColumnName="dr_me_owner_string" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="qdtCreateDRSP" FunctionName="QDT.Models.EntityModel.Store.qdtCreateDRSP" />
+    <FunctionImportMapping FunctionImportName="qdtCreateDispositionSP" FunctionName="QDT.Models.EntityModel.Store.qdtCreateDispositionSP" />
+    <FunctionImportMapping FunctionImportName="qdtGetDispositionReasonsSP" FunctionName="QDT.Models.EntityModel.Store.qdtGetDispositionReasonsSP" />
+    <FunctionImportMapping FunctionImportName="qdtSearchDRsSP" FunctionName="QDT.Models.EntityModel.Store.qdtSearchDRsSP" />
+    <FunctionImportMapping FunctionImportName="qdtGetItemsSP" FunctionName="QDT.Models.EntityModel.Store.qdtGetItemsSP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetItemsSP_Result">
+          <ScalarProperty Name="item" ColumnName="item" />
+          <ScalarProperty Name="FGorRW" ColumnName="FGorRW" />
+          <ScalarProperty Name="serialOrLot" ColumnName="serialOrLot" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="qdtGenerateNumberSP" FunctionName="QDT.Models.EntityModel.Store.qdtGenerateNumberSP" />
+    <FunctionImportMapping FunctionImportName="qdtGetOpsByJobSP" FunctionName="QDT.Models.EntityModel.Store.qdtGetOpsByJobSP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetOpsByJobSP_Result">
+          <ScalarProperty Name="job" ColumnName="job" />
+          <ScalarProperty Name="suffix" ColumnName="suffix" />
+          <ScalarProperty Name="oper_num" ColumnName="oper_num" />
+          <ScalarProperty Name="wc" ColumnName="wc" />
+          <ScalarProperty Name="setup_hrs_t" ColumnName="setup_hrs_t" />
+          <ScalarProperty Name="setup_cost_t" ColumnName="setup_cost_t" />
+          <ScalarProperty Name="complete" ColumnName="complete" />
+          <ScalarProperty Name="setup_hrs_v" ColumnName="setup_hrs_v" />
+          <ScalarProperty Name="wip_amt" ColumnName="wip_amt" />
+          <ScalarProperty Name="qty_scrapped" ColumnName="qty_scrapped" />
+          <ScalarProperty Name="qty_received" ColumnName="qty_received" />
+          <ScalarProperty Name="qty_moved" ColumnName="qty_moved" />
+          <ScalarProperty Name="qty_complete" ColumnName="qty_complete" />
+          <ScalarProperty Name="effect_date" ColumnName="effect_date" />
+          <ScalarProperty Name="obs_date" ColumnName="obs_date" />
+          <ScalarProperty Name="bflush_type" ColumnName="bflush_type" />
+          <ScalarProperty Name="run_basis_lbr" ColumnName="run_basis_lbr" />
+          <ScalarProperty Name="run_basis_mch" ColumnName="run_basis_mch" />
+          <ScalarProperty Name="fixovhd_t_lbr" ColumnName="fixovhd_t_lbr" />
+          <ScalarProperty Name="fixovhd_t_mch" ColumnName="fixovhd_t_mch" />
+          <ScalarProperty Name="varovhd_t_lbr" ColumnName="varovhd_t_lbr" />
+          <ScalarProperty Name="varovhd_t_mch" ColumnName="varovhd_t_mch" />
+          <ScalarProperty Name="run_hrs_t_lbr" ColumnName="run_hrs_t_lbr" />
+          <ScalarProperty Name="run_hrs_t_mch" ColumnName="run_hrs_t_mch" />
+          <ScalarProperty Name="run_hrs_v_lbr" ColumnName="run_hrs_v_lbr" />
+          <ScalarProperty Name="run_hrs_v_mch" ColumnName="run_hrs_v_mch" />
+          <ScalarProperty Name="run_cost_t_lbr" ColumnName="run_cost_t_lbr" />
+          <ScalarProperty Name="cntrl_point" ColumnName="cntrl_point" />
+          <ScalarProperty Name="setup_rate" ColumnName="setup_rate" />
+          <ScalarProperty Name="efficiency" ColumnName="efficiency" />
+          <ScalarProperty Name="fovhd_rate_mch" ColumnName="fovhd_rate_mch" />
+          <ScalarProperty Name="vovhd_rate_mch" ColumnName="vovhd_rate_mch" />
+          <ScalarProperty Name="run_rate_lbr" ColumnName="run_rate_lbr" />
+          <ScalarProperty Name="varovhd_rate" ColumnName="varovhd_rate" />
+          <ScalarProperty Name="fixovhd_rate" ColumnName="fixovhd_rate" />
+          <ScalarProperty Name="wip_matl_amt" ColumnName="wip_matl_amt" />
+          <ScalarProperty Name="wip_lbr_amt" ColumnName="wip_lbr_amt" />
+          <ScalarProperty Name="wip_fovhd_amt" ColumnName="wip_fovhd_amt" />
+          <ScalarProperty Name="wip_vovhd_amt" ColumnName="wip_vovhd_amt" />
+          <ScalarProperty Name="wip_out_amt" ColumnName="wip_out_amt" />
+          <ScalarProperty Name="NoteExistsFlag" ColumnName="NoteExistsFlag" />
+          <ScalarProperty Name="RecordDate" ColumnName="RecordDate" />
+          <ScalarProperty Name="RowPointer" ColumnName="RowPointer" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="InWorkflow" ColumnName="InWorkflow" />
+          <ScalarProperty Name="Uf_jobroute_chn_des" ColumnName="Uf_jobroute_chn_des" />
+          <ScalarProperty Name="Uf_jobroute_eng_desc" ColumnName="Uf_jobroute_eng_desc" />
+          <ScalarProperty Name="Uf_jobroute_ins_hours" ColumnName="Uf_jobroute_ins_hours" />
+          <ScalarProperty Name="Uf_job_route_inspection_time" ColumnName="Uf_job_route_inspection_time" />
+          <ScalarProperty Name="Uf_job_route_qa_final_time" ColumnName="Uf_job_route_qa_final_time" />
+          <ScalarProperty Name="Uf_job_route_qa_paperwork_time" ColumnName="Uf_job_route_qa_paperwork_time" />
+          <ScalarProperty Name="Uf_job_route_repair_time" ColumnName="Uf_job_route_repair_time" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="qdt_ird_gage">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_ird_gage">
+        <MappingFragment StoreEntitySet="qdt_ird_gage">
+          <ScalarProperty Name="gage_description_cn" ColumnName="gage_description_cn" />
+          <ScalarProperty Name="gage_description_en" ColumnName="gage_description_en" />
+          <ScalarProperty Name="gage_id" ColumnName="gage_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="qdtGetOperationsByPartNumberSP" FunctionName="QDT.Models.EntityModel.Store.qdtGetOperationsByPartNumberSP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetOperationsByPartNumberSP_Result">
+          <ScalarProperty Name="ird_id" ColumnName="ird_id" />
+          <ScalarProperty Name="item" ColumnName="item" />
+          <ScalarProperty Name="oper_num" ColumnName="oper_num" />
+          <ScalarProperty Name="plan_code" ColumnName="plan_code" />
+          <ScalarProperty Name="family_code" ColumnName="family_code" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="Uf_item_aircraft_type" ColumnName="Uf_item_aircraft_type" />
+          <ScalarProperty Name="Uf_item_ge_project" ColumnName="Uf_item_ge_project" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="qdtGetCharacteristicsByPartNumberSP" FunctionName="QDT.Models.EntityModel.Store.qdtGetCharacteristicsByPartNumberSP" />
+    <EntitySetMapping Name="qdt_DRbreakdownV">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_DRbreakdownV">
+        <MappingFragment StoreEntitySet="qdt_DRbreakdownV">
+          <ScalarProperty Name="responsible_department" ColumnName="responsible_department" />
+          <ScalarProperty Name="oper_num" ColumnName="oper_num" />
+          <ScalarProperty Name="ac_status" ColumnName="ac_status" />
+          <ScalarProperty Name="ac_create_date" ColumnName="ac_create_date" />
+          <ScalarProperty Name="ac_create_by" ColumnName="ac_create_by" />
+          <ScalarProperty Name="ac_due_date" ColumnName="ac_due_date" />
+          <ScalarProperty Name="ct_action" ColumnName="ct_action" />
+          <ScalarProperty Name="lt_action" ColumnName="lt_action" />
+          <ScalarProperty Name="st_action" ColumnName="st_action" />
+          <ScalarProperty Name="ac_desc" ColumnName="ac_desc" />
+          <ScalarProperty Name="act_owner" ColumnName="act_owner" />
+          <ScalarProperty Name="act_type" ColumnName="act_type" />
+          <ScalarProperty Name="act_id" ColumnName="act_id" />
+          <ScalarProperty Name="dp_stat" ColumnName="dp_stat" />
+          <ScalarProperty Name="dp_create_date" ColumnName="dp_create_date" />
+          <ScalarProperty Name="dp_create_by" ColumnName="dp_create_by" />
+          <ScalarProperty Name="disp_type" ColumnName="disp_type" />
+          <ScalarProperty Name="reason" ColumnName="reason" />
+          <ScalarProperty Name="disp_rank" ColumnName="disp_rank" />
+          <ScalarProperty Name="disp_id" ColumnName="disp_id" />
+          <ScalarProperty Name="dr_create_date" ColumnName="dr_create_date" />
+          <ScalarProperty Name="dr_create_by" ColumnName="dr_create_by" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="close_by" ColumnName="close_by" />
+          <ScalarProperty Name="close_date" ColumnName="close_date" />
+          <ScalarProperty Name="due_date" ColumnName="due_date" />
+          <ScalarProperty Name="lot" ColumnName="lot" />
+          <ScalarProperty Name="serial" ColumnName="serial" />
+          <ScalarProperty Name="suffix" ColumnName="suffix" />
+          <ScalarProperty Name="job" ColumnName="job" />
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="discrepancy_item" ColumnName="discrepancy_item" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="dr_me_owner" ColumnName="dr_me_owner" />
+          <ScalarProperty Name="dr_qe_owner" ColumnName="dr_qe_owner" />
+          <ScalarProperty Name="dr_type" ColumnName="dr_type" />
+          <ScalarProperty Name="dr_num" ColumnName="dr_num" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="pmbGetWorkCenterSP" FunctionName="QDT.Models.EntityModel.Store.pmbGetWorkCenterSP" />
+    <EntitySetMapping Name="qdt_dr">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_dr">
+        <MappingFragment StoreEntitySet="qdt_dr">
+          <ScalarProperty Name="Uf_item_ge_project" ColumnName="Uf_item_ge_project" />
+          <ScalarProperty Name="wc" ColumnName="wc" />
+          <ScalarProperty Name="oper_num" ColumnName="oper_num" />
+          <ScalarProperty Name="discrepancy_item" ColumnName="discrepancy_item" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="dr_me_owner" ColumnName="dr_me_owner" />
+          <ScalarProperty Name="lot" ColumnName="lot" />
+          <ScalarProperty Name="serial" ColumnName="serial" />
+          <ScalarProperty Name="update_date" ColumnName="update_date" />
+          <ScalarProperty Name="update_by" ColumnName="update_by" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="create_by" ColumnName="create_by" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="close_by" ColumnName="close_by" />
+          <ScalarProperty Name="close_date" ColumnName="close_date" />
+          <ScalarProperty Name="due_date" ColumnName="due_date" />
+          <ScalarProperty Name="suffix" ColumnName="suffix" />
+          <ScalarProperty Name="job" ColumnName="job" />
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="dr_qe_owner" ColumnName="dr_qe_owner" />
+          <ScalarProperty Name="dr_type" ColumnName="dr_type" />
+          <ScalarProperty Name="dr_num" ColumnName="dr_num" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="pmbGetJobCardByJobSuffixSP" FunctionName="QDT.Models.EntityModel.Store.pmbGetJobCardByJobSuffixSP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.pmbGetJobCardByJobSuffixSP_Result">
+          <ScalarProperty Name="serial" ColumnName="serial" />
+          <ScalarProperty Name="lot" ColumnName="lot" />
+          <ScalarProperty Name="item" ColumnName="item" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="qdtGetStandardJobByPartNumberSP" FunctionName="QDT.Models.EntityModel.Store.qdtGetStandardJobByPartNumberSP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetStandardJobByPartNumberSP_Result">
+          <ScalarProperty Name="item" ColumnName="item" />
+          <ScalarProperty Name="plan_code" ColumnName="plan_code" />
+          <ScalarProperty Name="family_code" ColumnName="family_code" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="Uf_item_aircraft_type" ColumnName="Uf_item_aircraft_type" />
+          <ScalarProperty Name="Uf_item_ge_project" ColumnName="Uf_item_ge_project" />
+          <ScalarProperty Name="job" ColumnName="job" />
+          <ScalarProperty Name="suffix" ColumnName="suffix" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="qdt_ird_revision">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_ird_revision">
+        <MappingFragment StoreEntitySet="qdt_ird_revision">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="editor" ColumnName="editor" />
+          <ScalarProperty Name="suffix" ColumnName="suffix" />
+          <ScalarProperty Name="job" ColumnName="job" />
+          <ScalarProperty Name="approve_date" ColumnName="approve_date" />
+          <ScalarProperty Name="approve_by" ColumnName="approve_by" />
+          <ScalarProperty Name="verify_date" ColumnName="verify_date" />
+          <ScalarProperty Name="verify_by" ColumnName="verify_by" />
+          <ScalarProperty Name="prepare_date" ColumnName="prepare_date" />
+          <ScalarProperty Name="prepare_by" ColumnName="prepare_by" />
+          <ScalarProperty Name="marking_arrangement_id" ColumnName="marking_arrangement_id" />
+          <ScalarProperty Name="rev_level" ColumnName="rev_level" />
+          <ScalarProperty Name="revision" ColumnName="revision" />
+          <ScalarProperty Name="item" ColumnName="item" />
+          <ScalarProperty Name="ird_id" ColumnName="ird_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qdt_discrepancy">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_discrepancy">
+        <MappingFragment StoreEntitySet="qdt_discrepancy">
+          <ScalarProperty Name="NormalDescription" ColumnName="NormalDescription" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="dr_num" ColumnName="dr_num" />
+          <ScalarProperty Name="disc_id" ColumnName="disc_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dispTests">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.dispTest">
+        <MappingFragment StoreEntitySet="dispTest">
+          <ScalarProperty Name="reason_type" ColumnName="reason_type" />
+          <ScalarProperty Name="disp_type" ColumnName="disp_type" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="qdtGetCharacteristicsByPartNumberAndOperationNumberSP" FunctionName="QDT.Models.EntityModel.Store.qdtGetCharacteristicsByPartNumberAndOperationNumberSP" />
+    <FunctionImportMapping FunctionImportName="qdtGetIrdHeaderInformationBySerialNumberSP" FunctionName="QDT.Models.EntityModel.Store.qdtGetIrdHeaderInformationBySerialNumberSP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetIrdHeaderInformationBySerialNumberSP_Result">
+          <ScalarProperty Name="serial" ColumnName="serial" />
+          <ScalarProperty Name="job" ColumnName="job" />
+          <ScalarProperty Name="suffix" ColumnName="suffix" />
+          <ScalarProperty Name="part_num" ColumnName="part_num" />
+          <ScalarProperty Name="ri_num" ColumnName="ri_num" />
+          <ScalarProperty Name="heat_code" ColumnName="heat_code" />
+          <ScalarProperty Name="forging_num" ColumnName="forging_num" />
+          <ScalarProperty Name="ird_revision" ColumnName="ird_revision" />
+          <ScalarProperty Name="rev_level" ColumnName="rev_level" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="qdtGetRoutesAndTransactionsBySerialNumberAndOperationNumberSP" FunctionName="QDT.Models.EntityModel.Store.qdtGetRoutesAndTransactionsBySerialNumberAndOperationNumberSP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetRoutesAndTransactionsBySerialNumberAndOperationNumberSP_Result">
+          <ScalarProperty Name="ird_route_id" ColumnName="ird_route_id" />
+          <ScalarProperty Name="serial" ColumnName="serial" />
+          <ScalarProperty Name="job" ColumnName="job" />
+          <ScalarProperty Name="suffix" ColumnName="suffix" />
+          <ScalarProperty Name="item" ColumnName="item" />
+          <ScalarProperty Name="oper_num" ColumnName="oper_num" />
+          <ScalarProperty Name="char_seq" ColumnName="char_seq" />
+          <ScalarProperty Name="char_num" ColumnName="char_num" />
+          <ScalarProperty Name="char_type" ColumnName="char_type" />
+          <ScalarProperty Name="blue_print_zone" ColumnName="blue_print_zone" />
+          <ScalarProperty Name="basic_gage_id" ColumnName="basic_gage_id" />
+          <ScalarProperty Name="fml_gage_id" ColumnName="fml_gage_id" />
+          <ScalarProperty Name="char_description" ColumnName="char_description" />
+          <ScalarProperty Name="characteristic" ColumnName="characteristic" />
+          <ScalarProperty Name="basic_rec_type" ColumnName="basic_rec_type" />
+          <ScalarProperty Name="fml_rec_type" ColumnName="fml_rec_type" />
+          <ScalarProperty Name="char_maximum" ColumnName="char_maximum" />
+          <ScalarProperty Name="char_minimum" ColumnName="char_minimum" />
+          <ScalarProperty Name="gdnt_link" ColumnName="gdnt_link" />
+          <ScalarProperty Name="oai_flag" ColumnName="oai_flag" />
+          <ScalarProperty Name="oap_flag" ColumnName="oap_flag" />
+          <ScalarProperty Name="is_cmm_flag" ColumnName="is_cmm_flag" />
+          <ScalarProperty Name="need_cmm" ColumnName="need_cmm" />
+          <ScalarProperty Name="line_qty" ColumnName="line_qty" />
+          <ScalarProperty Name="fml_mark" ColumnName="fml_mark" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="create_by" ColumnName="create_by" />
+          <ScalarProperty Name="ird_id" ColumnName="ird_id" />
+          <ScalarProperty Name="char_id" ColumnName="char_id" />
+          <ScalarProperty Name="operator_trans_num" ColumnName="operator_trans_num" />
+          <ScalarProperty Name="operator_trans_ird_route_id" ColumnName="operator_trans_ird_route_id" />
+          <ScalarProperty Name="operator_inspect_type" ColumnName="operator_inspect_type" />
+          <ScalarProperty Name="operator_trans_char_id" ColumnName="operator_trans_char_id" />
+          <ScalarProperty Name="operator_user_id" ColumnName="operator_user_id" />
+          <ScalarProperty Name="operator_sso" ColumnName="operator_sso" />
+          <ScalarProperty Name="operator_name_cn" ColumnName="operator_name_cn" />
+          <ScalarProperty Name="operator_name_en" ColumnName="operator_name_en" />
+          <ScalarProperty Name="operator_record_date" ColumnName="operator_record_date" />
+          <ScalarProperty Name="operator_rec_maximum" ColumnName="operator_rec_maximum" />
+          <ScalarProperty Name="operator_rec_minimum" ColumnName="operator_rec_minimum" />
+          <ScalarProperty Name="operator_rec_value" ColumnName="operator_rec_value" />
+          <ScalarProperty Name="operator_rec_passed" ColumnName="operator_rec_passed" />
+          <ScalarProperty Name="basic_gage_en" ColumnName="basic_gage_en" />
+          <ScalarProperty Name="basic_gage_cn" ColumnName="basic_gage_cn" />
+          <ScalarProperty Name="fml_gage_en" ColumnName="fml_gage_en" />
+          <ScalarProperty Name="fml_gage_cn" ColumnName="fml_gage_cn" />
+          <ScalarProperty Name="inspector_trans_num" ColumnName="inspector_trans_num" />
+          <ScalarProperty Name="inspector_trans_ird_route_id" ColumnName="inspector_trans_ird_route_id" />
+          <ScalarProperty Name="inspector_inspect_type" ColumnName="inspector_inspect_type" />
+          <ScalarProperty Name="inspector_trans_char_id" ColumnName="inspector_trans_char_id" />
+          <ScalarProperty Name="inspector_user_id" ColumnName="inspector_user_id" />
+          <ScalarProperty Name="inspector_sso" ColumnName="inspector_sso" />
+          <ScalarProperty Name="inspector_name_cn" ColumnName="inspector_name_cn" />
+          <ScalarProperty Name="inspector_name_en" ColumnName="inspector_name_en" />
+          <ScalarProperty Name="inspector_record_date" ColumnName="inspector_record_date" />
+          <ScalarProperty Name="inspector_rec_maximum" ColumnName="inspector_rec_maximum" />
+          <ScalarProperty Name="inspector_rec_minimum" ColumnName="inspector_rec_minimum" />
+          <ScalarProperty Name="inspector_rec_value" ColumnName="inspector_rec_value" />
+          <ScalarProperty Name="inspector_rec_passed" ColumnName="inspector_rec_passed" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="qdt_inspection_location_string">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_inspection_location_string">
+        <MappingFragment StoreEntitySet="qdt_inspection_location_string">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="locale_id" ColumnName="locale_id" />
+          <ScalarProperty Name="inspection_location_id" ColumnName="inspection_location_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qdt_inspection_location">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_inspection_location">
+        <MappingFragment StoreEntitySet="qdt_inspection_location">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qdt_inspection_type">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_inspection_type">
+        <MappingFragment StoreEntitySet="qdt_inspection_type">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qdt_locale">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_locale">
+        <MappingFragment StoreEntitySet="qdt_locale">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pmb_plan_code">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.pmb_plan_code">
+        <MappingFragment StoreEntitySet="pmb_plan_code">
+          <ScalarProperty Name="plan_code" ColumnName="plan_code" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sl_item">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.sl_item">
+        <MappingFragment StoreEntitySet="sl_item">
+          <ScalarProperty Name="prd_owner" ColumnName="prd_owner" />
+          <ScalarProperty Name="ird_id" ColumnName="ird_id" />
+          <ScalarProperty Name="me_owner" ColumnName="me_owner" />
+          <ScalarProperty Name="qe_owner" ColumnName="qe_owner" />
+          <ScalarProperty Name="Uf_item_ge_project" ColumnName="Uf_item_ge_project" />
+          <ScalarProperty Name="Uf_customer" ColumnName="Uf_customer" />
+          <ScalarProperty Name="Uf_item_customer_issue" ColumnName="Uf_item_customer_issue" />
+          <ScalarProperty Name="Uf_item_coc_comm_type" ColumnName="Uf_item_coc_comm_type" />
+          <ScalarProperty Name="Uf_item_aircraft_type" ColumnName="Uf_item_aircraft_type" />
+          <ScalarProperty Name="Uf_ROPFlag" ColumnName="Uf_ROPFlag" />
+          <ScalarProperty Name="Uf_ReOrderPoint" ColumnName="Uf_ReOrderPoint" />
+          <ScalarProperty Name="Uf_EHSCode" ColumnName="Uf_EHSCode" />
+          <ScalarProperty Name="Uf_ChsDes" ColumnName="Uf_ChsDes" />
+          <ScalarProperty Name="overview" ColumnName="overview" />
+          <ScalarProperty Name="buyer" ColumnName="buyer" />
+          <ScalarProperty Name="RecordDate" ColumnName="RecordDate" />
+          <ScalarProperty Name="lot_tracked" ColumnName="lot_tracked" />
+          <ScalarProperty Name="serial_tracked" ColumnName="serial_tracked" />
+          <ScalarProperty Name="dock_time" ColumnName="dock_time" />
+          <ScalarProperty Name="revision" ColumnName="revision" />
+          <ScalarProperty Name="mps_flag" ColumnName="mps_flag" />
+          <ScalarProperty Name="plan_code" ColumnName="plan_code" />
+          <ScalarProperty Name="family_code" ColumnName="family_code" />
+          <ScalarProperty Name="suffix" ColumnName="suffix" />
+          <ScalarProperty Name="job" ColumnName="job" />
+          <ScalarProperty Name="lead_time" ColumnName="lead_time" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="item" ColumnName="item" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_user">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.sys_user">
+        <MappingFragment StoreEntitySet="sys_user">
+          <ScalarProperty Name="account_status" ColumnName="account_status" />
+          <ScalarProperty Name="login_pwd" ColumnName="login_pwd" />
+          <ScalarProperty Name="name_en" ColumnName="name_en" />
+          <ScalarProperty Name="name_cn" ColumnName="name_cn" />
+          <ScalarProperty Name="sso" ColumnName="sso" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QDT_Job">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.QDT_Job">
+        <MappingFragment StoreEntitySet="QDT_Job">
+          <ScalarProperty Name="Uf_router_issue" ColumnName="Uf_router_issue" />
+          <ScalarProperty Name="Uf_job_router_method" ColumnName="Uf_job_router_method" />
+          <ScalarProperty Name="Uf_Reason" ColumnName="Uf_Reason" />
+          <ScalarProperty Name="Uf_Type" ColumnName="Uf_Type" />
+          <ScalarProperty Name="Uf_Sno" ColumnName="Uf_Sno" />
+          <ScalarProperty Name="Uf_Lot" ColumnName="Uf_Lot" />
+          <ScalarProperty Name="is_external" ColumnName="is_external" />
+          <ScalarProperty Name="prospect_id" ColumnName="prospect_id" />
+          <ScalarProperty Name="unlinked_xref" ColumnName="unlinked_xref" />
+          <ScalarProperty Name="rework" ColumnName="rework" />
+          <ScalarProperty Name="midnight_of_job_sch_compdate" ColumnName="midnight_of_job_sch_compdate" />
+          <ScalarProperty Name="midnight_of_job_sch_end_date" ColumnName="midnight_of_job_sch_end_date" />
+          <ScalarProperty Name="contains_tax_free_matl" ColumnName="contains_tax_free_matl" />
+          <ScalarProperty Name="export_type" ColumnName="export_type" />
+          <ScalarProperty Name="rcpt_rqmt" ColumnName="rcpt_rqmt" />
+          <ScalarProperty Name="scheduled" ColumnName="scheduled" />
+          <ScalarProperty Name="InWorkflow" ColumnName="InWorkflow" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="co_product_mix" ColumnName="co_product_mix" />
+          <ScalarProperty Name="config_id" ColumnName="config_id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="RowPointer" ColumnName="RowPointer" />
+          <ScalarProperty Name="RecordDate" ColumnName="RecordDate" />
+          <ScalarProperty Name="NoteExistsFlag" ColumnName="NoteExistsFlag" />
+          <ScalarProperty Name="prod_mix" ColumnName="prod_mix" />
+          <ScalarProperty Name="wip_out_acct_unit4" ColumnName="wip_out_acct_unit4" />
+          <ScalarProperty Name="wip_out_acct_unit3" ColumnName="wip_out_acct_unit3" />
+          <ScalarProperty Name="wip_out_acct_unit2" ColumnName="wip_out_acct_unit2" />
+          <ScalarProperty Name="wip_out_acct_unit1" ColumnName="wip_out_acct_unit1" />
+          <ScalarProperty Name="wip_vovhd_acct_unit4" ColumnName="wip_vovhd_acct_unit4" />
+          <ScalarProperty Name="wip_vovhd_acct_unit3" ColumnName="wip_vovhd_acct_unit3" />
+          <ScalarProperty Name="wip_vovhd_acct_unit2" ColumnName="wip_vovhd_acct_unit2" />
+          <ScalarProperty Name="wip_vovhd_acct_unit1" ColumnName="wip_vovhd_acct_unit1" />
+          <ScalarProperty Name="wip_fovhd_acct_unit4" ColumnName="wip_fovhd_acct_unit4" />
+          <ScalarProperty Name="wip_fovhd_acct_unit3" ColumnName="wip_fovhd_acct_unit3" />
+          <ScalarProperty Name="wip_fovhd_acct_unit2" ColumnName="wip_fovhd_acct_unit2" />
+          <ScalarProperty Name="wip_fovhd_acct_unit1" ColumnName="wip_fovhd_acct_unit1" />
+          <ScalarProperty Name="wip_lbr_acct_unit4" ColumnName="wip_lbr_acct_unit4" />
+          <ScalarProperty Name="wip_lbr_acct_unit3" ColumnName="wip_lbr_acct_unit3" />
+          <ScalarProperty Name="wip_lbr_acct_unit2" ColumnName="wip_lbr_acct_unit2" />
+          <ScalarProperty Name="wip_lbr_acct_unit1" ColumnName="wip_lbr_acct_unit1" />
+          <ScalarProperty Name="jcb_acct_unit4" ColumnName="jcb_acct_unit4" />
+          <ScalarProperty Name="jcb_acct_unit3" ColumnName="jcb_acct_unit3" />
+          <ScalarProperty Name="jcb_acct_unit2" ColumnName="jcb_acct_unit2" />
+          <ScalarProperty Name="jcb_acct_unit1" ColumnName="jcb_acct_unit1" />
+          <ScalarProperty Name="wip_acct_unit4" ColumnName="wip_acct_unit4" />
+          <ScalarProperty Name="wip_acct_unit3" ColumnName="wip_acct_unit3" />
+          <ScalarProperty Name="wip_acct_unit2" ColumnName="wip_acct_unit2" />
+          <ScalarProperty Name="wip_acct_unit1" ColumnName="wip_acct_unit1" />
+          <ScalarProperty Name="rollup_date" ColumnName="rollup_date" />
+          <ScalarProperty Name="wip_out_comp" ColumnName="wip_out_comp" />
+          <ScalarProperty Name="wip_vovhd_comp" ColumnName="wip_vovhd_comp" />
+          <ScalarProperty Name="wip_fovhd_comp" ColumnName="wip_fovhd_comp" />
+          <ScalarProperty Name="wip_lbr_comp" ColumnName="wip_lbr_comp" />
+          <ScalarProperty Name="wip_matl_comp" ColumnName="wip_matl_comp" />
+          <ScalarProperty Name="wip_out_total" ColumnName="wip_out_total" />
+          <ScalarProperty Name="wip_vovhd_total" ColumnName="wip_vovhd_total" />
+          <ScalarProperty Name="wip_fovhd_total" ColumnName="wip_fovhd_total" />
+          <ScalarProperty Name="wip_lbr_total" ColumnName="wip_lbr_total" />
+          <ScalarProperty Name="wip_matl_total" ColumnName="wip_matl_total" />
+          <ScalarProperty Name="wip_out_acct" ColumnName="wip_out_acct" />
+          <ScalarProperty Name="wip_vovhd_acct" ColumnName="wip_vovhd_acct" />
+          <ScalarProperty Name="wip_fovhd_acct" ColumnName="wip_fovhd_acct" />
+          <ScalarProperty Name="wip_lbr_acct" ColumnName="wip_lbr_acct" />
+          <ScalarProperty Name="ps_num" ColumnName="ps_num" />
+          <ScalarProperty Name="jcb_acct" ColumnName="jcb_acct" />
+          <ScalarProperty Name="whse" ColumnName="whse" />
+          <ScalarProperty Name="picked" ColumnName="picked" />
+          <ScalarProperty Name="revision" ColumnName="revision" />
+          <ScalarProperty Name="wip_special" ColumnName="wip_special" />
+          <ScalarProperty Name="wip_complete" ColumnName="wip_complete" />
+          <ScalarProperty Name="wip_total" ColumnName="wip_total" />
+          <ScalarProperty Name="wip_acct" ColumnName="wip_acct" />
+          <ScalarProperty Name="effect_date" ColumnName="effect_date" />
+          <ScalarProperty Name="low_level" ColumnName="low_level" />
+          <ScalarProperty Name="ref_seq" ColumnName="ref_seq" />
+          <ScalarProperty Name="ref_oper" ColumnName="ref_oper" />
+          <ScalarProperty Name="ref_suf" ColumnName="ref_suf" />
+          <ScalarProperty Name="ref_job" ColumnName="ref_job" />
+          <ScalarProperty Name="root_suf" ColumnName="root_suf" />
+          <ScalarProperty Name="root_job" ColumnName="root_job" />
+          <ScalarProperty Name="lst_trx_date" ColumnName="lst_trx_date" />
+          <ScalarProperty Name="stat" ColumnName="stat" />
+          <ScalarProperty Name="qty_scrapped" ColumnName="qty_scrapped" />
+          <ScalarProperty Name="qty_complete" ColumnName="qty_complete" />
+          <ScalarProperty Name="qty_released" ColumnName="qty_released" />
+          <ScalarProperty Name="item" ColumnName="item" />
+          <ScalarProperty Name="est_suf" ColumnName="est_suf" />
+          <ScalarProperty Name="est_job" ColumnName="est_job" />
+          <ScalarProperty Name="ord_release" ColumnName="ord_release" />
+          <ScalarProperty Name="ord_line" ColumnName="ord_line" />
+          <ScalarProperty Name="ord_num" ColumnName="ord_num" />
+          <ScalarProperty Name="ord_type" ColumnName="ord_type" />
+          <ScalarProperty Name="cust_num" ColumnName="cust_num" />
+          <ScalarProperty Name="job_date" ColumnName="job_date" />
+          <ScalarProperty Name="suffix" ColumnName="suffix" />
+          <ScalarProperty Name="job" ColumnName="job" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QDT_Serial">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.QDT_Serial">
+        <MappingFragment StoreEntitySet="QDT_Serial">
+          <ScalarProperty Name="import_doc_id" ColumnName="import_doc_id" />
+          <ScalarProperty Name="InWorkflow" ColumnName="InWorkflow" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="RowPointer" ColumnName="RowPointer" />
+          <ScalarProperty Name="RecordDate" ColumnName="RecordDate" />
+          <ScalarProperty Name="NoteExistsFlag" ColumnName="NoteExistsFlag" />
+          <ScalarProperty Name="vend_num" ColumnName="vend_num" />
+          <ScalarProperty Name="grn_line" ColumnName="grn_line" />
+          <ScalarProperty Name="grn_num" ColumnName="grn_num" />
+          <ScalarProperty Name="do_seq" ColumnName="do_seq" />
+          <ScalarProperty Name="do_line" ColumnName="do_line" />
+          <ScalarProperty Name="do_num" ColumnName="do_num" />
+          <ScalarProperty Name="date_seq" ColumnName="date_seq" />
+          <ScalarProperty Name="ship_date" ColumnName="ship_date" />
+          <ScalarProperty Name="ref_release" ColumnName="ref_release" />
+          <ScalarProperty Name="ref_line" ColumnName="ref_line" />
+          <ScalarProperty Name="ref_num" ColumnName="ref_num" />
+          <ScalarProperty Name="ref_type" ColumnName="ref_type" />
+          <ScalarProperty Name="whse" ColumnName="whse" />
+          <ScalarProperty Name="cert_num" ColumnName="cert_num" />
+          <ScalarProperty Name="stat" ColumnName="stat" />
+          <ScalarProperty Name="exp_date" ColumnName="exp_date" />
+          <ScalarProperty Name="purge_date" ColumnName="purge_date" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="loc" ColumnName="loc" />
+          <ScalarProperty Name="lot" ColumnName="lot" />
+          <ScalarProperty Name="trn_line" ColumnName="trn_line" />
+          <ScalarProperty Name="trn_num" ColumnName="trn_num" />
+          <ScalarProperty Name="trans_num" ColumnName="trans_num" />
+          <ScalarProperty Name="rsvd_num" ColumnName="rsvd_num" />
+          <ScalarProperty Name="datefld" ColumnName="datefld" />
+          <ScalarProperty Name="logifld" ColumnName="logifld" />
+          <ScalarProperty Name="decifld3" ColumnName="decifld3" />
+          <ScalarProperty Name="decifld2" ColumnName="decifld2" />
+          <ScalarProperty Name="decifld1" ColumnName="decifld1" />
+          <ScalarProperty Name="charfld3" ColumnName="charfld3" />
+          <ScalarProperty Name="charfld2" ColumnName="charfld2" />
+          <ScalarProperty Name="charfld1" ColumnName="charfld1" />
+          <ScalarProperty Name="inv_num" ColumnName="inv_num" />
+          <ScalarProperty Name="item" ColumnName="item" />
+          <ScalarProperty Name="ser_num" ColumnName="ser_num" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="qdtGetIrdRouteListSP" FunctionName="QDT.Models.EntityModel.Store.qdtGetIrdRouteListSP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetIrdRouteListSP_Result">
+          <ScalarProperty Name="serial" ColumnName="serial" />
+          <ScalarProperty Name="item" ColumnName="item" />
+          <ScalarProperty Name="job" ColumnName="job" />
+          <ScalarProperty Name="suffix" ColumnName="suffix" />
+          <ScalarProperty Name="rev_level" ColumnName="rev_level" />
+          <ScalarProperty Name="ird_revision" ColumnName="ird_revision" />
+          <ScalarProperty Name="operator_op" ColumnName="operator_op" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="qdt_ird_transaction">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_ird_transaction">
+        <MappingFragment StoreEntitySet="qdt_ird_transaction">
+          <ScalarProperty Name="rec_passed" ColumnName="rec_passed" />
+          <ScalarProperty Name="rec_value" ColumnName="rec_value" />
+          <ScalarProperty Name="rec_minimum" ColumnName="rec_minimum" />
+          <ScalarProperty Name="rec_maximum" ColumnName="rec_maximum" />
+          <ScalarProperty Name="record_date" ColumnName="record_date" />
+          <ScalarProperty Name="record_by" ColumnName="record_by" />
+          <ScalarProperty Name="char_id" ColumnName="char_id" />
+          <ScalarProperty Name="inspect_type" ColumnName="inspect_type" />
+          <ScalarProperty Name="ird_route_id" ColumnName="ird_route_id" />
+          <ScalarProperty Name="trans_num" ColumnName="trans_num" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_attachment">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.sys_attachment">
+        <MappingFragment StoreEntitySet="sys_attachment">
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="create_by" ColumnName="create_by" />
+          <ScalarProperty Name="file_path" ColumnName="file_path" />
+          <ScalarProperty Name="attachment_id" ColumnName="attachment_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_attachment_ref">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.sys_attachment_ref">
+        <MappingFragment StoreEntitySet="sys_attachment_ref">
+          <ScalarProperty Name="attachment_id" ColumnName="attachment_id" />
+          <ScalarProperty Name="ref_num" ColumnName="ref_num" />
+          <ScalarProperty Name="ref_type" ColumnName="ref_type" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="qdtUpdateInspectionPrioritySP" FunctionName="QDT.Models.EntityModel.Store.qdtUpdateInspectionPrioritySP" />
+    <EntitySetMapping Name="sys_comment">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.sys_comment">
+        <MappingFragment StoreEntitySet="sys_comment">
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="create_by" ColumnName="create_by" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="attach_id" ColumnName="attach_id" />
+          <ScalarProperty Name="attach_to" ColumnName="attach_to" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qdtAuthorizedMeViews">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtAuthorizedMeView">
+        <MappingFragment StoreEntitySet="qdtAuthorizedMeView">
+          <ScalarProperty Name="update_date" ColumnName="update_date" />
+          <ScalarProperty Name="sso" ColumnName="sso" />
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="qdtGetOperationsBySerialNumberSP" FunctionName="QDT.Models.EntityModel.Store.qdtGetOperationsBySerialNumberSP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetOperationsBySerialNumberSP_Result">
+          <ScalarProperty Name="oper_num" ColumnName="oper_num" />
+          <ScalarProperty Name="fml_mark" ColumnName="fml_mark" />
+          <ScalarProperty Name="is_cmm_flag" ColumnName="is_cmm_flag" />
+          <ScalarProperty Name="oper_char_count" ColumnName="oper_char_count" />
+          <ScalarProperty Name="oper_trans_count" ColumnName="oper_trans_count" />
+          <ScalarProperty Name="insp_char_count" ColumnName="insp_char_count" />
+          <ScalarProperty Name="insp_trans_count" ColumnName="insp_trans_count" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="qdtGetCharacteristicsStatisticsBySerialAndOperationNumberSP" FunctionName="QDT.Models.EntityModel.Store.qdtGetCharacteristicsStatisticsBySerialAndOperationNumberSP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetCharacteristicsStatisticsBySerialAndOperationNumberSP_Result">
+          <ScalarProperty Name="oper_num" ColumnName="oper_num" />
+          <ScalarProperty Name="char_count" ColumnName="char_count" />
+          <ScalarProperty Name="trans_count" ColumnName="trans_count" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="qdtGetCMMCharacteristicsStatisticsBySerialAndOperationNumberSP" FunctionName="QDT.Models.EntityModel.Store.qdtGetCMMCharacteristicsStatisticsBySerialAndOperationNumberSP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetCMMCharacteristicsStatisticsBySerialAndOperationNumberSP_Result">
+          <ScalarProperty Name="serial" ColumnName="serial" />
+          <ScalarProperty Name="item" ColumnName="item" />
+          <ScalarProperty Name="cmm_char_count" ColumnName="cmm_char_count" />
+          <ScalarProperty Name="cmm_trans_count" ColumnName="cmm_trans_count" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="qdt_ird_cmm_checkpoint">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_ird_cmm_checkpoint">
+        <MappingFragment StoreEntitySet="qdt_ird_cmm_checkpoint">
+          <ScalarProperty Name="oper_num" ColumnName="oper_num" />
+          <ScalarProperty Name="ird_id" ColumnName="ird_id" />
+          <ScalarProperty Name="CP_id" ColumnName="CP_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qdt_inspection_log">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_inspection_log">
+        <MappingFragment StoreEntitySet="qdt_inspection_log">
+          <ScalarProperty Name="transaction_id" ColumnName="transaction_id" />
+          <ScalarProperty Name="inspection_id" ColumnName="inspection_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="qdtGetSpcSP" FunctionName="QDT.Models.EntityModel.Store.qdtGetSpcSP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetSpcSP_Result">
+          <ScalarProperty Name="serial" ColumnName="serial" />
+          <ScalarProperty Name="job" ColumnName="job" />
+          <ScalarProperty Name="suffix" ColumnName="suffix" />
+          <ScalarProperty Name="item" ColumnName="item" />
+          <ScalarProperty Name="oper_num" ColumnName="oper_num" />
+          <ScalarProperty Name="characteristic" ColumnName="characteristic" />
+          <ScalarProperty Name="basic_rec_type" ColumnName="basic_rec_type" />
+          <ScalarProperty Name="fml_rec_type" ColumnName="fml_rec_type" />
+          <ScalarProperty Name="line1" ColumnName="line1" />
+          <ScalarProperty Name="line2" ColumnName="line2" />
+          <ScalarProperty Name="line3" ColumnName="line3" />
+          <ScalarProperty Name="line4" ColumnName="line4" />
+          <ScalarProperty Name="line5" ColumnName="line5" />
+          <ScalarProperty Name="line6" ColumnName="line6" />
+          <ScalarProperty Name="line7" ColumnName="line7" />
+          <ScalarProperty Name="fml_mark" ColumnName="fml_mark" />
+          <ScalarProperty Name="trans_num" ColumnName="trans_num" />
+          <ScalarProperty Name="ird_route_id" ColumnName="ird_route_id" />
+          <ScalarProperty Name="inspect_type" ColumnName="inspect_type" />
+          <ScalarProperty Name="char_id" ColumnName="char_id" />
+          <ScalarProperty Name="record_by" ColumnName="record_by" />
+          <ScalarProperty Name="record_date" ColumnName="record_date" />
+          <ScalarProperty Name="rec_maximum" ColumnName="rec_maximum" />
+          <ScalarProperty Name="rec_minimum" ColumnName="rec_minimum" />
+          <ScalarProperty Name="rec_value" ColumnName="rec_value" />
+          <ScalarProperty Name="rec_passed" ColumnName="rec_passed" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="sso" ColumnName="sso" />
+          <ScalarProperty Name="name_cn" ColumnName="name_cn" />
+          <ScalarProperty Name="name_en" ColumnName="name_en" />
+          <ScalarProperty Name="login_pwd" ColumnName="login_pwd" />
+          <ScalarProperty Name="account_status" ColumnName="account_status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="qdt_inspection_type_string">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_inspection_type_string">
+        <MappingFragment StoreEntitySet="qdt_inspection_type_string">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="locale_id" ColumnName="locale_id" />
+          <ScalarProperty Name="inspection_type_id" ColumnName="inspection_type_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qdt_ll_category">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_ll_category">
+        <MappingFragment StoreEntitySet="qdt_ll_category">
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qdt_workflow_process">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_workflow_process">
+        <MappingFragment StoreEntitySet="qdt_workflow_process">
+          <ScalarProperty Name="end_time" ColumnName="end_time" />
+          <ScalarProperty Name="start_time" ColumnName="start_time" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="step" ColumnName="step" />
+          <ScalarProperty Name="request_id" ColumnName="request_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qdt_workflow_route">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_workflow_route">
+        <MappingFragment StoreEntitySet="qdt_workflow_route">
+          <ScalarProperty Name="allow_custom_approver" ColumnName="allow_custom_approver" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="step" ColumnName="step" />
+          <ScalarProperty Name="workflow_id" ColumnName="workflow_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qdt_workflow_request">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_workflow_request">
+        <MappingFragment StoreEntitySet="qdt_workflow_request">
+          <ScalarProperty Name="current_step" ColumnName="current_step" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="end_time" ColumnName="end_time" />
+          <ScalarProperty Name="start_time" ColumnName="start_time" />
+          <ScalarProperty Name="due_date" ColumnName="due_date" />
+          <ScalarProperty Name="request_for" ColumnName="request_for" />
+          <ScalarProperty Name="requestor" ColumnName="requestor" />
+          <ScalarProperty Name="workflow_id" ColumnName="workflow_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qdt_workflow_approver">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_workflow_approver">
+        <MappingFragment StoreEntitySet="qdt_workflow_approver">
+          <ScalarProperty Name="approver_id" ColumnName="approver_id" />
+          <ScalarProperty Name="step" ColumnName="step" />
+          <ScalarProperty Name="request_id" ColumnName="request_id" />
+          <ScalarProperty Name="workflow_id" ColumnName="workflow_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="qdtGetModifiedCharacteristicsByIrdIdSP" FunctionName="QDT.Models.EntityModel.Store.qdtGetModifiedCharacteristicsByIrdIdSP" />
+    <EntitySetMapping Name="qdt_disposition">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_disposition">
+        <MappingFragment StoreEntitySet="qdt_disposition">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="update_date" ColumnName="update_date" />
+          <ScalarProperty Name="update_by" ColumnName="update_by" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="create_by" ColumnName="create_by" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="disp_type" ColumnName="disp_type" />
+          <ScalarProperty Name="reason" ColumnName="reason" />
+          <ScalarProperty Name="responsible_department" ColumnName="responsible_department" />
+          <ScalarProperty Name="dr_num" ColumnName="dr_num" />
+          <ScalarProperty Name="disp_rank" ColumnName="disp_rank" />
+          <ScalarProperty Name="disp_id" ColumnName="disp_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qdt_workflow">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_workflow">
+        <MappingFragment StoreEntitySet="qdt_workflow">
+          <ScalarProperty Name="lead_time" ColumnName="lead_time" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="business" ColumnName="business" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="qdtGetInspectionRecordsSP" FunctionName="QDT.Models.EntityModel.Store.qdtGetInspectionRecordsSP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetInspectionRecordsSP_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="item" ColumnName="item" />
+          <ScalarProperty Name="wo" ColumnName="wo" />
+          <ScalarProperty Name="suffix" ColumnName="suffix" />
+          <ScalarProperty Name="oper_num" ColumnName="oper_num" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="urgent_reason" ColumnName="urgent_reason" />
+          <ScalarProperty Name="urgency" ColumnName="urgency" />
+          <ScalarProperty Name="start_time" ColumnName="start_time" />
+          <ScalarProperty Name="end_time" ColumnName="end_time" />
+          <ScalarProperty Name="passed" ColumnName="passed" />
+          <ScalarProperty Name="dr_num" ColumnName="dr_num" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="update_date" ColumnName="update_date" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="priority" ColumnName="priority" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="serial" ColumnName="serial" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="create_by" ColumnName="create_by" />
+          <ScalarProperty Name="inspector" ColumnName="inspector" />
+          <ScalarProperty Name="inspector_sso" ColumnName="inspector_sso" />
+          <ScalarProperty Name="create_by_sso" ColumnName="create_by_sso" />
+          <ScalarProperty Name="project" ColumnName="project" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="qdtTqCheckSkillCodeInUseSp" FunctionName="QDT.Models.EntityModel.Store.qdtTqCheckSkillCodeInUseSp" />
+    <EntitySetMapping Name="qdt_workflow_action">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_workflow_action">
+        <MappingFragment StoreEntitySet="qdt_workflow_action">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="process_time" ColumnName="process_time" />
+          <ScalarProperty Name="handler" ColumnName="handler" />
+          <ScalarProperty Name="process_action" ColumnName="process_action" />
+          <ScalarProperty Name="target_id" ColumnName="target_id" />
+          <ScalarProperty Name="action_target" ColumnName="action_target" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qdt_tq_certification">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_tq_certification">
+        <MappingFragment StoreEntitySet="qdt_tq_certification">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="is_trainer" ColumnName="is_trainer" />
+          <ScalarProperty Name="certify_mode" ColumnName="certify_mode" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="expire_date" ColumnName="expire_date" />
+          <ScalarProperty Name="refresh_date" ColumnName="refresh_date" />
+          <ScalarProperty Name="issue_date" ColumnName="issue_date" />
+          <ScalarProperty Name="request_id" ColumnName="request_id" />
+          <ScalarProperty Name="certification_item_id" ColumnName="certification_item_id" />
+          <ScalarProperty Name="certification_item" ColumnName="certification_item" />
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="qdtTqGetSkillTrainingRoutesSp" FunctionName="QDT.Models.EntityModel.Store.qdtTqGetSkillTrainingRoutesSp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtTqGetSkillTrainingRoutesSp_Result">
+          <ScalarProperty Name="workflow_id" ColumnName="workflow_id" />
+          <ScalarProperty Name="step" ColumnName="step" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="allow_custom_approver" ColumnName="allow_custom_approver" />
+          <ScalarProperty Name="approvers" ColumnName="approvers" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="qdtGetWorkflowProcessesSp" FunctionName="QDT.Models.EntityModel.Store.qdtGetWorkflowProcessesSp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetWorkflowProcessesSp_Result">
+          <ScalarProperty Name="request_id" ColumnName="request_id" />
+          <ScalarProperty Name="step" ColumnName="step" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="allow_custom_approver" ColumnName="allow_custom_approver" />
+          <ScalarProperty Name="approvers" ColumnName="approvers" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="qdt_tq_operational_restriction">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_tq_operational_restriction">
+        <MappingFragment StoreEntitySet="qdt_tq_operational_restriction">
+          <ScalarProperty Name="row_pointer" ColumnName="row_pointer" />
+          <ScalarProperty Name="certification_item_id" ColumnName="certification_item_id" />
+          <ScalarProperty Name="certification_category" ColumnName="certification_category" />
+          <ScalarProperty Name="work_type" ColumnName="work_type" />
+          <ScalarProperty Name="operation_id" ColumnName="operation_id" />
+          <ScalarProperty Name="oper_num" ColumnName="oper_num" />
+          <ScalarProperty Name="item" ColumnName="item" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="qdtTqGetCertificationItemsSp" FunctionName="QDT.Models.EntityModel.Store.qdtTqGetCertificationItemsSp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtTqGetCertificationItemsSp_Result">
+          <ScalarProperty Name="certification_category" ColumnName="certification_category" />
+          <ScalarProperty Name="certification_item_id" ColumnName="certification_item_id" />
+          <ScalarProperty Name="certification_item" ColumnName="certification_item" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="qdt_tq_skill_basic_lesson">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_tq_skill_basic_lesson">
+        <MappingFragment StoreEntitySet="qdt_tq_skill_basic_lesson">
+          <ScalarProperty Name="lesson_id" ColumnName="lesson_id" />
+          <ScalarProperty Name="skill_code_id" ColumnName="skill_code_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="qdtTqGetUserProcessApprovalsSp" FunctionName="QDT.Models.EntityModel.Store.qdtTqGetUserProcessApprovalsSp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtTqGetUserProcessApprovalsSp_Result">
+          <ScalarProperty Name="current_process_id" ColumnName="current_process_id" />
+          <ScalarProperty Name="request_id" ColumnName="request_id" />
+          <ScalarProperty Name="current_process" ColumnName="current_process" />
+          <ScalarProperty Name="start_time" ColumnName="start_time" />
+          <ScalarProperty Name="due_date" ColumnName="due_date" />
+          <ScalarProperty Name="request_for" ColumnName="request_for" />
+          <ScalarProperty Name="requestor" ColumnName="requestor" />
+          <ScalarProperty Name="process_start_time" ColumnName="process_start_time" />
+          <ScalarProperty Name="business" ColumnName="business" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="attachment_quantity" ColumnName="attachment_quantity" />
+          <ScalarProperty Name="certification_item" ColumnName="certification_item" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="qdtTqCanRefreshSP" FunctionName="QDT.Models.EntityModel.Store.qdtTqCanRefreshSP" />
+    <FunctionImportMapping FunctionImportName="qdtTqGetPersonSkillCountSp" FunctionName="QDT.Models.EntityModel.Store.qdtTqGetPersonSkillCountSp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtTqGetPersonSkillCountSp_Result">
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="certified" ColumnName="certified" />
+          <ScalarProperty Name="training_in_process" ColumnName="training_in_process" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="qdtTqGetGroupSkillCountSp" FunctionName="QDT.Models.EntityModel.Store.qdtTqGetGroupSkillCountSp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtTqGetGroupSkillCountSp_Result">
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="certified" ColumnName="certified" />
+          <ScalarProperty Name="training_in_process" ColumnName="training_in_process" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="qdt_ird_characteristic">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_ird_characteristic">
+        <MappingFragment StoreEntitySet="qdt_ird_characteristic">
+          <ScalarProperty Name="spc_result" ColumnName="spc_result" />
+          <ScalarProperty Name="spc_control" ColumnName="spc_control" />
+          <ScalarProperty Name="cpk" ColumnName="cpk" />
+          <ScalarProperty Name="revision_type" ColumnName="revision_type" />
+          <ScalarProperty Name="last_char_id" ColumnName="last_char_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="line_qty" ColumnName="line_qty" />
+          <ScalarProperty Name="need_cmm" ColumnName="need_cmm" />
+          <ScalarProperty Name="is_cmm_flag" ColumnName="is_cmm_flag" />
+          <ScalarProperty Name="oap_flag" ColumnName="oap_flag" />
+          <ScalarProperty Name="oai_flag" ColumnName="oai_flag" />
+          <ScalarProperty Name="gdnt_link" ColumnName="gdnt_link" />
+          <ScalarProperty Name="char_minimum" ColumnName="char_minimum" />
+          <ScalarProperty Name="char_maximum" ColumnName="char_maximum" />
+          <ScalarProperty Name="fml_rec_type" ColumnName="fml_rec_type" />
+          <ScalarProperty Name="basic_rec_type" ColumnName="basic_rec_type" />
+          <ScalarProperty Name="characteristic" ColumnName="characteristic" />
+          <ScalarProperty Name="char_description" ColumnName="char_description" />
+          <ScalarProperty Name="fml_gage_id" ColumnName="fml_gage_id" />
+          <ScalarProperty Name="basic_gage_id" ColumnName="basic_gage_id" />
+          <ScalarProperty Name="blue_print_zone" ColumnName="blue_print_zone" />
+          <ScalarProperty Name="char_type" ColumnName="char_type" />
+          <ScalarProperty Name="char_num" ColumnName="char_num" />
+          <ScalarProperty Name="char_seq" ColumnName="char_seq" />
+          <ScalarProperty Name="oper_num" ColumnName="oper_num" />
+          <ScalarProperty Name="ird_id" ColumnName="ird_id" />
+          <ScalarProperty Name="char_id" ColumnName="char_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qdt_ird_route">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_ird_route">
+        <MappingFragment StoreEntitySet="qdt_ird_route">
+          <ScalarProperty Name="spc_result" ColumnName="spc_result" />
+          <ScalarProperty Name="spc_control" ColumnName="spc_control" />
+          <ScalarProperty Name="cpk" ColumnName="cpk" />
+          <ScalarProperty Name="update_date" ColumnName="update_date" />
+          <ScalarProperty Name="update_by" ColumnName="update_by" />
+          <ScalarProperty Name="comment2" ColumnName="comment2" />
+          <ScalarProperty Name="comment1" ColumnName="comment1" />
+          <ScalarProperty Name="char_id" ColumnName="char_id" />
+          <ScalarProperty Name="ird_id" ColumnName="ird_id" />
+          <ScalarProperty Name="create_by" ColumnName="create_by" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="fml_mark" ColumnName="fml_mark" />
+          <ScalarProperty Name="line_qty" ColumnName="line_qty" />
+          <ScalarProperty Name="need_cmm" ColumnName="need_cmm" />
+          <ScalarProperty Name="is_cmm_flag" ColumnName="is_cmm_flag" />
+          <ScalarProperty Name="oap_flag" ColumnName="oap_flag" />
+          <ScalarProperty Name="oai_flag" ColumnName="oai_flag" />
+          <ScalarProperty Name="gdnt_link" ColumnName="gdnt_link" />
+          <ScalarProperty Name="char_minimum" ColumnName="char_minimum" />
+          <ScalarProperty Name="char_maximum" ColumnName="char_maximum" />
+          <ScalarProperty Name="fml_rec_type" ColumnName="fml_rec_type" />
+          <ScalarProperty Name="basic_rec_type" ColumnName="basic_rec_type" />
+          <ScalarProperty Name="characteristic" ColumnName="characteristic" />
+          <ScalarProperty Name="char_description" ColumnName="char_description" />
+          <ScalarProperty Name="fml_gage_id" ColumnName="fml_gage_id" />
+          <ScalarProperty Name="basic_gage_id" ColumnName="basic_gage_id" />
+          <ScalarProperty Name="blue_print_zone" ColumnName="blue_print_zone" />
+          <ScalarProperty Name="char_type" ColumnName="char_type" />
+          <ScalarProperty Name="char_num" ColumnName="char_num" />
+          <ScalarProperty Name="char_seq" ColumnName="char_seq" />
+          <ScalarProperty Name="oper_num" ColumnName="oper_num" />
+          <ScalarProperty Name="item" ColumnName="item" />
+          <ScalarProperty Name="suffix" ColumnName="suffix" />
+          <ScalarProperty Name="job" ColumnName="job" />
+          <ScalarProperty Name="serial" ColumnName="serial" />
+          <ScalarProperty Name="ird_route_id" ColumnName="ird_route_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qdt_ll_lesson_item">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_ll_lesson_item">
+        <MappingFragment StoreEntitySet="qdt_ll_lesson_item">
+          <ScalarProperty Name="row_pointer" ColumnName="row_pointer" />
+          <ScalarProperty Name="operation" ColumnName="operation" />
+          <ScalarProperty Name="item" ColumnName="item" />
+          <ScalarProperty Name="lesson_id" ColumnName="lesson_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="qdtGetOpsByItemSP" FunctionName="QDT.Models.EntityModel.Store.qdtGetOpsByItemSP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetOpsByItemSP_Result">
+          <ScalarProperty Name="job" ColumnName="job" />
+          <ScalarProperty Name="suffix" ColumnName="suffix" />
+          <ScalarProperty Name="oper_num" ColumnName="oper_num" />
+          <ScalarProperty Name="wc" ColumnName="wc" />
+          <ScalarProperty Name="setup_hrs_t" ColumnName="setup_hrs_t" />
+          <ScalarProperty Name="setup_cost_t" ColumnName="setup_cost_t" />
+          <ScalarProperty Name="complete" ColumnName="complete" />
+          <ScalarProperty Name="setup_hrs_v" ColumnName="setup_hrs_v" />
+          <ScalarProperty Name="wip_amt" ColumnName="wip_amt" />
+          <ScalarProperty Name="qty_scrapped" ColumnName="qty_scrapped" />
+          <ScalarProperty Name="qty_received" ColumnName="qty_received" />
+          <ScalarProperty Name="qty_moved" ColumnName="qty_moved" />
+          <ScalarProperty Name="qty_complete" ColumnName="qty_complete" />
+          <ScalarProperty Name="effect_date" ColumnName="effect_date" />
+          <ScalarProperty Name="obs_date" ColumnName="obs_date" />
+          <ScalarProperty Name="bflush_type" ColumnName="bflush_type" />
+          <ScalarProperty Name="run_basis_lbr" ColumnName="run_basis_lbr" />
+          <ScalarProperty Name="run_basis_mch" ColumnName="run_basis_mch" />
+          <ScalarProperty Name="fixovhd_t_lbr" ColumnName="fixovhd_t_lbr" />
+          <ScalarProperty Name="fixovhd_t_mch" ColumnName="fixovhd_t_mch" />
+          <ScalarProperty Name="varovhd_t_lbr" ColumnName="varovhd_t_lbr" />
+          <ScalarProperty Name="varovhd_t_mch" ColumnName="varovhd_t_mch" />
+          <ScalarProperty Name="run_hrs_t_lbr" ColumnName="run_hrs_t_lbr" />
+          <ScalarProperty Name="run_hrs_t_mch" ColumnName="run_hrs_t_mch" />
+          <ScalarProperty Name="run_hrs_v_lbr" ColumnName="run_hrs_v_lbr" />
+          <ScalarProperty Name="run_hrs_v_mch" ColumnName="run_hrs_v_mch" />
+          <ScalarProperty Name="run_cost_t_lbr" ColumnName="run_cost_t_lbr" />
+          <ScalarProperty Name="cntrl_point" ColumnName="cntrl_point" />
+          <ScalarProperty Name="setup_rate" ColumnName="setup_rate" />
+          <ScalarProperty Name="efficiency" ColumnName="efficiency" />
+          <ScalarProperty Name="fovhd_rate_mch" ColumnName="fovhd_rate_mch" />
+          <ScalarProperty Name="vovhd_rate_mch" ColumnName="vovhd_rate_mch" />
+          <ScalarProperty Name="run_rate_lbr" ColumnName="run_rate_lbr" />
+          <ScalarProperty Name="varovhd_rate" ColumnName="varovhd_rate" />
+          <ScalarProperty Name="fixovhd_rate" ColumnName="fixovhd_rate" />
+          <ScalarProperty Name="wip_matl_amt" ColumnName="wip_matl_amt" />
+          <ScalarProperty Name="wip_lbr_amt" ColumnName="wip_lbr_amt" />
+          <ScalarProperty Name="wip_fovhd_amt" ColumnName="wip_fovhd_amt" />
+          <ScalarProperty Name="wip_vovhd_amt" ColumnName="wip_vovhd_amt" />
+          <ScalarProperty Name="wip_out_amt" ColumnName="wip_out_amt" />
+          <ScalarProperty Name="NoteExistsFlag" ColumnName="NoteExistsFlag" />
+          <ScalarProperty Name="RecordDate" ColumnName="RecordDate" />
+          <ScalarProperty Name="RowPointer" ColumnName="RowPointer" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="InWorkflow" ColumnName="InWorkflow" />
+          <ScalarProperty Name="Uf_jobroute_chn_des" ColumnName="Uf_jobroute_chn_des" />
+          <ScalarProperty Name="Uf_jobroute_eng_desc" ColumnName="Uf_jobroute_eng_desc" />
+          <ScalarProperty Name="Uf_jobroute_ins_hours" ColumnName="Uf_jobroute_ins_hours" />
+          <ScalarProperty Name="Uf_job_route_inspection_time" ColumnName="Uf_job_route_inspection_time" />
+          <ScalarProperty Name="Uf_job_route_qa_final_time" ColumnName="Uf_job_route_qa_final_time" />
+          <ScalarProperty Name="Uf_job_route_qa_paperwork_time" ColumnName="Uf_job_route_qa_paperwork_time" />
+          <ScalarProperty Name="Uf_job_route_repair_time" ColumnName="Uf_job_route_repair_time" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="qdtDeleteDRSP" FunctionName="QDT.Models.EntityModel.Store.qdtDeleteDRSP" />
+    <FunctionImportMapping FunctionImportName="qdtDeleteDispositionSP" FunctionName="QDT.Models.EntityModel.Store.qdtDeleteDispositionSP" />
+    <FunctionImportMapping FunctionImportName="qdtDeleteActionSP" FunctionName="QDT.Models.EntityModel.Store.qdtDeleteActionSP" />
+    <FunctionImportMapping FunctionImportName="qdtgetGRN" FunctionName="QDT.Models.EntityModel.Store.qdtgetGRN">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtgetGRN_Result">
+          <ScalarProperty Name="grn_num" ColumnName="grn_num" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="qdtgetGRNLine" FunctionName="QDT.Models.EntityModel.Store.qdtgetGRNLine">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtgetGRNLine_Result">
+          <ScalarProperty Name="grn_num" ColumnName="grn_num" />
+          <ScalarProperty Name="grn_line" ColumnName="grn_line" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="qdt_liability">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_liability">
+        <MappingFragment StoreEntitySet="qdt_liability">
+          <ScalarProperty Name="liability" ColumnName="liability" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qdt_goods_returned_for">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_goods_returned_for">
+        <MappingFragment StoreEntitySet="qdt_goods_returned_for">
+          <ScalarProperty Name="goods_returned_for" ColumnName="goods_returned_for" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="qdtRigGetSerLotByGRN" FunctionName="QDT.Models.EntityModel.Store.qdtRigGetSerLotByGRN">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtRigGetSerLotByGRN_Result">
+          <ScalarProperty Name="serial_lot" ColumnName="serial_lot" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="qdtGetDiscrepanciesByDispSP" FunctionName="QDT.Models.EntityModel.Store.qdtGetDiscrepanciesByDispSP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetDiscrepanciesByDispSP_Result">
+          <ScalarProperty Name="disc_id" ColumnName="disc_id" />
+          <ScalarProperty Name="dr_num" ColumnName="dr_num" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="NormalDescription" ColumnName="NormalDescription" />
+          <ScalarProperty Name="disc_disp" ColumnName="disc_disp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="qdtGetRigList" FunctionName="QDT.Models.EntityModel.Store.qdtGetRigList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetRigList_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="rig_num" ColumnName="rig_num" />
+          <ScalarProperty Name="vendor_num" ColumnName="vendor_num" />
+          <ScalarProperty Name="part_num" ColumnName="part_num" />
+          <ScalarProperty Name="liability" ColumnName="liability" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="due_date" ColumnName="due_date" />
+          <ScalarProperty Name="defect_desc" ColumnName="defect_desc" />
+          <ScalarProperty Name="po_num" ColumnName="po_num" />
+          <ScalarProperty Name="po_line" ColumnName="po_line" />
+          <ScalarProperty Name="goods_receive_date" ColumnName="goods_receive_date" />
+          <ScalarProperty Name="coc_num" ColumnName="coc_num" />
+          <ScalarProperty Name="grn_num" ColumnName="grn_num" />
+          <ScalarProperty Name="grn_line" ColumnName="grn_line" />
+          <ScalarProperty Name="part_desc" ColumnName="part_desc" />
+          <ScalarProperty Name="drawing_num" ColumnName="drawing_num" />
+          <ScalarProperty Name="qty_received" ColumnName="qty_received" />
+          <ScalarProperty Name="qty_rejected" ColumnName="qty_rejected" />
+          <ScalarProperty Name="goods_returned_for" ColumnName="goods_returned_for" />
+          <ScalarProperty Name="quanlity_escape_en" ColumnName="quanlity_escape_en" />
+          <ScalarProperty Name="quanlity_escape_cn" ColumnName="quanlity_escape_cn" />
+          <ScalarProperty Name="create_by_cn" ColumnName="create_by_cn" />
+          <ScalarProperty Name="create_by_en" ColumnName="create_by_en" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="serial_lot" ColumnName="serial_lot" />
+          <ScalarProperty Name="dr_num" ColumnName="dr_num" />
+          <ScalarProperty Name="rig_line" ColumnName="rig_line" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="qdtGetDiscrepanciesByActSP" FunctionName="QDT.Models.EntityModel.Store.qdtGetDiscrepanciesByActSP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetDiscrepanciesByActSP_Result">
+          <ScalarProperty Name="disc_id" ColumnName="disc_id" />
+          <ScalarProperty Name="dr_num" ColumnName="dr_num" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="NormalDescription" ColumnName="NormalDescription" />
+          <ScalarProperty Name="disc_act" ColumnName="disc_act" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="qdtGetRIGIsClosed" FunctionName="QDT.Models.EntityModel.Store.qdtGetRIGIsClosed" />
+    <EntitySetMapping Name="QDT_RIG_VendorManagement">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.QDT_RIG_VendorManagement">
+        <MappingFragment StoreEntitySet="QDT_RIG_VendorManagement">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="certification_expiry_date" ColumnName="certification_expiry_date" />
+          <ScalarProperty Name="certification_status" ColumnName="certification_status" />
+          <ScalarProperty Name="scope_of_service" ColumnName="scope_of_service" />
+          <ScalarProperty Name="mail_address" ColumnName="mail_address" />
+          <ScalarProperty Name="contact_name" ColumnName="contact_name" />
+          <ScalarProperty Name="vendor_status" ColumnName="vendor_status" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="vendor_type" ColumnName="vendor_type" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="vend_num" ColumnName="vend_num" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qdt_rig_vendorList">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_rig_vendorList">
+        <MappingFragment StoreEntitySet="qdt_rig_vendorList">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="certification_expiry_date" ColumnName="certification_expiry_date" />
+          <ScalarProperty Name="certification_status" ColumnName="certification_status" />
+          <ScalarProperty Name="scope_of_service" ColumnName="scope_of_service" />
+          <ScalarProperty Name="mail_address" ColumnName="mail_address" />
+          <ScalarProperty Name="contact_name" ColumnName="contact_name" />
+          <ScalarProperty Name="vendor_status" ColumnName="vendor_status" />
+          <ScalarProperty Name="vendor_num" ColumnName="vendor_num" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="qdtGetSerialsOrLotsSP" FunctionName="QDT.Models.EntityModel.Store.qdtGetSerialsOrLotsSP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetSerialsOrLotsSP_Result">
+          <ScalarProperty Name="serial_lot" ColumnName="serial_lot" />
+          <ScalarProperty Name="item" ColumnName="item" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="qdtGetCommonStringsByCategory1SP" FunctionName="QDT.Models.EntityModel.Store.qdtGetCommonStringsByCategory1SP" />
+    <EntitySetMapping Name="qdt_num_gen">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_num_gen">
+        <MappingFragment StoreEntitySet="qdt_num_gen">
+          <ScalarProperty Name="total_len" ColumnName="total_len" />
+          <ScalarProperty Name="prefix" ColumnName="prefix" />
+          <ScalarProperty Name="cur_id" ColumnName="cur_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qdt_cc">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_cc">
+        <MappingFragment StoreEntitySet="qdt_cc">
+          <ScalarProperty Name="delete_date" ColumnName="delete_date" />
+          <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
+          <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+          <ScalarProperty Name="update_date" ColumnName="update_date" />
+          <ScalarProperty Name="update_by" ColumnName="update_by" />
+          <ScalarProperty Name="audit_findings" ColumnName="audit_findings" />
+          <ScalarProperty Name="closed_date" ColumnName="closed_date" />
+          <ScalarProperty Name="ca_assigned_to" ColumnName="ca_assigned_to" />
+          <ScalarProperty Name="responsible_manager" ColumnName="responsible_manager" />
+          <ScalarProperty Name="quality_rep" ColumnName="quality_rep" />
+          <ScalarProperty Name="response_date" ColumnName="response_date" />
+          <ScalarProperty Name="indicate_finding" ColumnName="indicate_finding" />
+          <ScalarProperty Name="failure_code" ColumnName="failure_code" />
+          <ScalarProperty Name="comments" ColumnName="comments" />
+          <ScalarProperty Name="rejected_quantity" ColumnName="rejected_quantity" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="criteria" ColumnName="criteria" />
+          <ScalarProperty Name="repeat" ColumnName="repeat" />
+          <ScalarProperty Name="po_num" ColumnName="po_num" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="create_by" ColumnName="create_by" />
+          <ScalarProperty Name="serial_lot" ColumnName="serial_lot" />
+          <ScalarProperty Name="part_num" ColumnName="part_num" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="business" ColumnName="business" />
+          <ScalarProperty Name="cc_num" ColumnName="cc_num" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="qdtgetGRNDetail" FunctionName="QDT.Models.EntityModel.Store.qdtgetGRNDetail">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtgetGRNDetail_Result">
+          <ScalarProperty Name="po_num" ColumnName="po_num" />
+          <ScalarProperty Name="po_line" ColumnName="po_line" />
+          <ScalarProperty Name="item" ColumnName="item" />
+          <ScalarProperty Name="vend_num" ColumnName="vend_num" />
+          <ScalarProperty Name="qty_rec" ColumnName="qty_rec" />
+          <ScalarProperty Name="drawing_nbr" ColumnName="drawing_nbr" />
+          <ScalarProperty Name="track_num" ColumnName="track_num" />
+          <ScalarProperty Name="grn_num" ColumnName="grn_num" />
+          <ScalarProperty Name="grn_line" ColumnName="grn_line" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="qdtGetTrackNum" FunctionName="QDT.Models.EntityModel.Store.qdtGetTrackNum">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetTrackNum_Result">
+          <ScalarProperty Name="track_num" ColumnName="track_num" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="qdtRigGetDetail" FunctionName="QDT.Models.EntityModel.Store.qdtRigGetDetail">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtRigGetDetail_Result">
+          <ScalarProperty Name="track_num" ColumnName="track_num" />
+          <ScalarProperty Name="grn_num" ColumnName="grn_num" />
+          <ScalarProperty Name="grn_line" ColumnName="grn_line" />
+          <ScalarProperty Name="item" ColumnName="item" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="drawing_nbr" ColumnName="drawing_nbr" />
+          <ScalarProperty Name="vend_num" ColumnName="vend_num" />
+          <ScalarProperty Name="po_num" ColumnName="po_num" />
+          <ScalarProperty Name="po_line" ColumnName="po_line" />
+          <ScalarProperty Name="qty_rec" ColumnName="qty_rec" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="tracking_num" ColumnName="tracking_num" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="qdt_ll_lesson">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_ll_lesson">
+        <MappingFragment StoreEntitySet="qdt_ll_lesson">
+          <ScalarProperty Name="failure_mode" ColumnName="failure_mode" />
+          <ScalarProperty Name="learning_cycle" ColumnName="learning_cycle" />
+          <ScalarProperty Name="skill_code_binding_mode" ColumnName="skill_code_binding_mode" />
+          <ScalarProperty Name="update_date" ColumnName="update_date" />
+          <ScalarProperty Name="update_by" ColumnName="update_by" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="fixed_effective_time" ColumnName="fixed_effective_time" />
+          <ScalarProperty Name="effective_time" ColumnName="effective_time" />
+          <ScalarProperty Name="working_group" ColumnName="working_group" />
+          <ScalarProperty Name="create_by" ColumnName="create_by" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="restrict_all" ColumnName="restrict_all" />
+          <ScalarProperty Name="business" ColumnName="business" />
+          <ScalarProperty Name="owner_id" ColumnName="owner_id" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qdt_rig">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_rig">
+        <MappingFragment StoreEntitySet="qdt_rig">
+          <ScalarProperty Name="dr_num" ColumnName="dr_num" />
+          <ScalarProperty Name="serial_lot" ColumnName="serial_lot" />
+          <ScalarProperty Name="quanlity_escape" ColumnName="quanlity_escape" />
+          <ScalarProperty Name="create_by" ColumnName="create_by" />
+          <ScalarProperty Name="goods_returned_for" ColumnName="goods_returned_for" />
+          <ScalarProperty Name="qty_rejected" ColumnName="qty_rejected" />
+          <ScalarProperty Name="qty_received" ColumnName="qty_received" />
+          <ScalarProperty Name="drawing_num" ColumnName="drawing_num" />
+          <ScalarProperty Name="part_desc" ColumnName="part_desc" />
+          <ScalarProperty Name="grn_line" ColumnName="grn_line" />
+          <ScalarProperty Name="grn_num" ColumnName="grn_num" />
+          <ScalarProperty Name="coc_num" ColumnName="coc_num" />
+          <ScalarProperty Name="goods_receive_date" ColumnName="goods_receive_date" />
+          <ScalarProperty Name="po_line" ColumnName="po_line" />
+          <ScalarProperty Name="po_num" ColumnName="po_num" />
+          <ScalarProperty Name="defect_desc" ColumnName="defect_desc" />
+          <ScalarProperty Name="due_date" ColumnName="due_date" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="liability" ColumnName="liability" />
+          <ScalarProperty Name="part_num" ColumnName="part_num" />
+          <ScalarProperty Name="vendor_num" ColumnName="vendor_num" />
+          <ScalarProperty Name="rig_line" ColumnName="rig_line" />
+          <ScalarProperty Name="rig_num" ColumnName="rig_num" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DR_ActionDesc">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.DR_ActionDesc">
+        <MappingFragment StoreEntitySet="DR_ActionDesc">
+          <ScalarProperty Name="totalActionDesc" ColumnName="totalActionDesc" />
+          <ScalarProperty Name="dr_num" ColumnName="dr_num" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="qdtGetInProcessOperationInformationSP" FunctionName="QDT.Models.EntityModel.Store.qdtGetInProcessOperationInformationSP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetInProcessOperationInformationSP_Result">
+          <ScalarProperty Name="certification_id" ColumnName="certification_id" />
+          <ScalarProperty Name="skill_code" ColumnName="skill_code" />
+          <ScalarProperty Name="skill_code_id" ColumnName="skill_code_id" />
+          <ScalarProperty Name="process_name" ColumnName="process_name" />
+          <ScalarProperty Name="process_id" ColumnName="process_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="qdt_ll_failure_mode">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_ll_failure_mode">
+        <MappingFragment StoreEntitySet="qdt_ll_failure_mode">
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="failure_mode_en" ColumnName="failure_mode_en" />
+          <ScalarProperty Name="failure_mode_cn" ColumnName="failure_mode_cn" />
+          <ScalarProperty Name="mode_id" ColumnName="mode_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="qdtTqGetSkillTrainingDirectCertificationRoutesSp" FunctionName="QDT.Models.EntityModel.Store.qdtTqGetSkillTrainingDirectCertificationRoutesSp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtTqGetSkillTrainingDirectCertificationRoutesSp_Result">
+          <ScalarProperty Name="workflow_id" ColumnName="workflow_id" />
+          <ScalarProperty Name="step" ColumnName="step" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="allow_custom_approver" ColumnName="allow_custom_approver" />
+          <ScalarProperty Name="approvers" ColumnName="approvers" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="qdtStamperGetRefNum" FunctionName="QDT.Models.EntityModel.Store.qdtStamperGetRefNum" />
+    <FunctionImportMapping FunctionImportName="qdtStamperDelete" FunctionName="QDT.Models.EntityModel.Store.qdtStamperDelete" />
+    <FunctionImportMapping FunctionImportName="qdtSearchRig" FunctionName="QDT.Models.EntityModel.Store.qdtSearchRig">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtSearchRig_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="rig_num" ColumnName="rig_num" />
+          <ScalarProperty Name="rig_line" ColumnName="rig_line" />
+          <ScalarProperty Name="vendor_num" ColumnName="vendor_num" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="serial_lot" ColumnName="serial_lot" />
+          <ScalarProperty Name="part_num" ColumnName="part_num" />
+          <ScalarProperty Name="liability" ColumnName="liability" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="due_date" ColumnName="due_date" />
+          <ScalarProperty Name="defect_desc" ColumnName="defect_desc" />
+          <ScalarProperty Name="po_num" ColumnName="po_num" />
+          <ScalarProperty Name="po_line" ColumnName="po_line" />
+          <ScalarProperty Name="goods_receive_date" ColumnName="goods_receive_date" />
+          <ScalarProperty Name="coc_num" ColumnName="coc_num" />
+          <ScalarProperty Name="grn_num" ColumnName="grn_num" />
+          <ScalarProperty Name="grn_line" ColumnName="grn_line" />
+          <ScalarProperty Name="part_desc" ColumnName="part_desc" />
+          <ScalarProperty Name="drawing_num" ColumnName="drawing_num" />
+          <ScalarProperty Name="qty_received" ColumnName="qty_received" />
+          <ScalarProperty Name="qty_rejected" ColumnName="qty_rejected" />
+          <ScalarProperty Name="goods_returned_for" ColumnName="goods_returned_for" />
+          <ScalarProperty Name="create_by_cn" ColumnName="create_by_cn" />
+          <ScalarProperty Name="create_by_en" ColumnName="create_by_en" />
+          <ScalarProperty Name="quanlity_escape_en" ColumnName="quanlity_escape_en" />
+          <ScalarProperty Name="quanlity_escape_cn" ColumnName="quanlity_escape_cn" />
+          <ScalarProperty Name="dr_num" ColumnName="dr_num" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="qdtTqGetSkillTrainingNpiDirectCertificationRoutesSp" FunctionName="QDT.Models.EntityModel.Store.qdtTqGetSkillTrainingNpiDirectCertificationRoutesSp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtTqGetSkillTrainingNpiDirectCertificationRoutesSp_Result">
+          <ScalarProperty Name="workflow_id" ColumnName="workflow_id" />
+          <ScalarProperty Name="step" ColumnName="step" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="allow_custom_approver" ColumnName="allow_custom_approver" />
+          <ScalarProperty Name="approvers" ColumnName="approvers" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="qdtTqGetSkillTrainingRefreshRoutesSp" FunctionName="QDT.Models.EntityModel.Store.qdtTqGetSkillTrainingRefreshRoutesSp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtTqGetSkillTrainingRefreshRoutesSp_Result">
+          <ScalarProperty Name="workflow_id" ColumnName="workflow_id" />
+          <ScalarProperty Name="step" ColumnName="step" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="allow_custom_approver" ColumnName="allow_custom_approver" />
+          <ScalarProperty Name="approvers" ColumnName="approvers" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="qdtRigGetGraphic" FunctionName="QDT.Models.EntityModel.Store.qdtRigGetGraphic">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtRigGetGraphic_Result">
+          <ScalarProperty Name="week" ColumnName="week" />
+          <ScalarProperty Name="total_rig" ColumnName="total_rig" />
+          <ScalarProperty Name="total_ytd" ColumnName="total_ytd" />
+          <ScalarProperty Name="total_qem" ColumnName="total_qem" />
+          <ScalarProperty Name="total_qem_ytd" ColumnName="total_qem_ytd" />
+          <ScalarProperty Name="base_line" ColumnName="base_line" />
+          <ScalarProperty Name="rig_open_overdue" ColumnName="rig_open_overdue" />
+          <ScalarProperty Name="rig_open" ColumnName="rig_open" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="qdtUpdateActionStatusSP" FunctionName="QDT.Models.EntityModel.Store.qdtUpdateActionStatusSP" />
+    <FunctionImportMapping FunctionImportName="qdtTqGetOperationalRestrictionsSp" FunctionName="QDT.Models.EntityModel.Store.qdtTqGetOperationalRestrictionsSp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtTqGetOperationalRestrictionsSp_Result">
+          <ScalarProperty Name="item" ColumnName="item" />
+          <ScalarProperty Name="oper_num" ColumnName="oper_num" />
+          <ScalarProperty Name="operation_id" ColumnName="operation_id" />
+          <ScalarProperty Name="work_type" ColumnName="work_type" />
+          <ScalarProperty Name="certification_category" ColumnName="certification_category" />
+          <ScalarProperty Name="certification_item_id" ColumnName="certification_item_id" />
+          <ScalarProperty Name="certification_item" ColumnName="certification_item" />
+          <ScalarProperty Name="row_pointer" ColumnName="row_pointer" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="qdt_inspection">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_inspection">
+        <MappingFragment StoreEntitySet="qdt_inspection">
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="priority" ColumnName="priority" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="update_by" ColumnName="update_by" />
+          <ScalarProperty Name="update_date" ColumnName="update_date" />
+          <ScalarProperty Name="create_by" ColumnName="create_by" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="dr_num" ColumnName="dr_num" />
+          <ScalarProperty Name="passed" ColumnName="passed" />
+          <ScalarProperty Name="end_time" ColumnName="end_time" />
+          <ScalarProperty Name="start_time" ColumnName="start_time" />
+          <ScalarProperty Name="urgency" ColumnName="urgency" />
+          <ScalarProperty Name="urgent_reason" ColumnName="urgent_reason" />
+          <ScalarProperty Name="inspection_type_id" ColumnName="inspection_type_id" />
+          <ScalarProperty Name="inspection_location_id" ColumnName="inspection_location_id" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="oper_num" ColumnName="oper_num" />
+          <ScalarProperty Name="suffix" ColumnName="suffix" />
+          <ScalarProperty Name="wo" ColumnName="wo" />
+          <ScalarProperty Name="item" ColumnName="item" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="qdtTqGetSkillTrainingStatusSp" FunctionName="QDT.Models.EntityModel.Store.qdtTqGetSkillTrainingStatusSp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtTqGetSkillTrainingStatusSp_Result">
+          <ScalarProperty Name="request_id" ColumnName="request_id" />
+          <ScalarProperty Name="workflow_id" ColumnName="workflow_id" />
+          <ScalarProperty Name="certification_id" ColumnName="certification_id" />
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="local_id" ColumnName="local_id" />
+          <ScalarProperty Name="certification_item_id" ColumnName="certification_item_id" />
+          <ScalarProperty Name="skill_code" ColumnName="skill_code" />
+          <ScalarProperty Name="start_time" ColumnName="start_time" />
+          <ScalarProperty Name="end_time" ColumnName="end_time" />
+          <ScalarProperty Name="current_step" ColumnName="current_step" />
+          <ScalarProperty Name="current_step_name" ColumnName="current_step_name" />
+          <ScalarProperty Name="current_step_start_time" ColumnName="current_step_start_time" />
+          <ScalarProperty Name="current_process_id" ColumnName="current_process_id" />
+          <ScalarProperty Name="due_date" ColumnName="due_date" />
+          <ScalarProperty Name="certify_mode" ColumnName="certify_mode" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="qdt_com_string">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_com_string">
+        <MappingFragment StoreEntitySet="qdt_com_string">
+          <ScalarProperty Name="cn_string" ColumnName="cn_string" />
+          <ScalarProperty Name="en_string" ColumnName="en_string" />
+          <ScalarProperty Name="category_2" ColumnName="category_2" />
+          <ScalarProperty Name="category_1" ColumnName="category_1" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qdt_tq_skill_code">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_tq_skill_code">
+        <MappingFragment StoreEntitySet="qdt_tq_skill_code">
+          <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+          <ScalarProperty Name="is_special_skill" ColumnName="is_special_skill" />
+          <ScalarProperty Name="workflow_type" ColumnName="workflow_type" />
+          <ScalarProperty Name="invalid_time" ColumnName="invalid_time" />
+          <ScalarProperty Name="learning_time" ColumnName="learning_time" />
+          <ScalarProperty Name="fixed_effective_time" ColumnName="fixed_effective_time" />
+          <ScalarProperty Name="effective_time" ColumnName="effective_time" />
+          <ScalarProperty Name="business" ColumnName="business" />
+          <ScalarProperty Name="instruction_id" ColumnName="instruction_id" />
+          <ScalarProperty Name="work_type" ColumnName="work_type" />
+          <ScalarProperty Name="critical" ColumnName="critical" />
+          <ScalarProperty Name="training_route_id" ColumnName="training_route_id" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="skill_code" ColumnName="skill_code" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qdt_scrapped_record">
+      <EntityTypeMapping TypeName="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_scrapped_record">
+        <MappingFragment StoreEntitySet="qdt_scrapped_record">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="skill_code_id" ColumnName="skill_code_id" />
+          <ScalarProperty Name="scrapped_date" ColumnName="scrapped_date" />
+          <ScalarProperty Name="scrapped_by" ColumnName="scrapped_by" />
+          <ScalarProperty Name="record_by" ColumnName="record_by" />
+          <ScalarProperty Name="record_id" ColumnName="record_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

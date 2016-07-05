@@ -1,0 +1,1880 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="QDTEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="sysGetPermissionSP" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.sysGetPermissionSP_Result)">
+      <Parameter Name="user_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="qdtGetJobReleasedQuantitySP" ReturnType="Collection(Decimal)">
+      <Parameter Name="job" Mode="In" Type="String" />
+      <Parameter Name="suffix" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="qdtCreateDiscrepancySP">
+      <Parameter Name="dr_num" Mode="In" Type="String" />
+      <Parameter Name="description" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="qdt_disc_disp" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_disc_disp" />
+    <FunctionImport Name="qdtGetDispositionsSP" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetDispositionsSP_Result)">
+      <Parameter Name="dr_num" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="qdt_disc_act" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_disc_act" />
+    <FunctionImport Name="qdtUpdateDispositionStatusSP">
+      <Parameter Name="user_id" Mode="In" Type="Int32" />
+      <Parameter Name="disp_id" Mode="In" Type="Int32" />
+      <Parameter Name="status" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="qdt_action" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_action" />
+    <FunctionImport Name="qdtCreateActionSP" EntitySet="qdt_action" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_action)">
+      <Parameter Name="disp_id" Mode="In" Type="Int32" />
+      <Parameter Name="act_type" Mode="In" Type="Int32" />
+      <Parameter Name="act_owner" Mode="In" Type="Int32" />
+      <Parameter Name="description" Mode="In" Type="String" />
+      <Parameter Name="st_action" Mode="In" Type="String" />
+      <Parameter Name="lt_action" Mode="In" Type="String" />
+      <Parameter Name="ct_action" Mode="In" Type="String" />
+      <Parameter Name="due_date" Mode="In" Type="DateTime" />
+      <Parameter Name="create_by" Mode="In" Type="Int32" />
+      <Parameter Name="update_by" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="qdtUpdateActionRemarkSP" EntitySet="qdt_action" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_action)">
+      <Parameter Name="act_id" Mode="In" Type="Int32" />
+      <Parameter Name="remark" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="qdtGetActionListSP" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetActionListSP_Result)">
+      <Parameter Name="disp_id" Mode="In" Type="Int32" />
+      <Parameter Name="language" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="qdtCloseDrSP">
+      <Parameter Name="user_id" Mode="In" Type="Int32" />
+      <Parameter Name="dr_num" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="qdtGetDRListSP" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetDRListSP_Result)">
+      <Parameter Name="language" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="qdtCreateDRSP">
+      <Parameter Name="dr_type" Mode="In" Type="Int32" />
+      <Parameter Name="dr_qe_owner" Mode="In" Type="Int32" />
+      <Parameter Name="dr_me_owner" Mode="In" Type="Int32" />
+      <Parameter Name="source" Mode="In" Type="Int32" />
+      <Parameter Name="job" Mode="In" Type="String" />
+      <Parameter Name="suffix" Mode="In" Type="Int32" />
+      <Parameter Name="create_by" Mode="In" Type="Int32" />
+      <Parameter Name="due_date" Mode="In" Type="DateTime" />
+      <Parameter Name="description" Mode="In" Type="String" />
+      <Parameter Name="serial" Mode="In" Type="String" />
+      <Parameter Name="lot" Mode="In" Type="String" />
+      <Parameter Name="discrepancy_item" Mode="In" Type="String" />
+      <Parameter Name="quantity" Mode="In" Type="Int32" />
+      <Parameter Name="update_by" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="qdtCreateDispositionSP">
+      <Parameter Name="dr_num" Mode="In" Type="String" />
+      <Parameter Name="reason" Mode="In" Type="Int32" />
+      <Parameter Name="disp_type" Mode="In" Type="Int32" />
+      <Parameter Name="description" Mode="In" Type="String" />
+      <Parameter Name="create_by" Mode="In" Type="Int32" />
+      <Parameter Name="update_by" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="qdtGetDispositionReasonsSP" EntitySet="qdt_com_string" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_com_string)">
+      <Parameter Name="query" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="qdtSearchDRsSP" EntitySet="qdt_dr" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_dr)">
+      <Parameter Name="dr_num" Mode="In" Type="String" />
+      <Parameter Name="due_date_from" Mode="In" Type="DateTime" />
+      <Parameter Name="due_date_to" Mode="In" Type="DateTime" />
+      <Parameter Name="create_date_from" Mode="In" Type="DateTime" />
+      <Parameter Name="create_date_to" Mode="In" Type="DateTime" />
+      <Parameter Name="production_line" Mode="In" Type="String" />
+      <Parameter Name="part_num" Mode="In" Type="String" />
+      <Parameter Name="dr_qe_owner" Mode="In" Type="Int32" />
+      <Parameter Name="dr_me_owner" Mode="In" Type="Int32" />
+      <Parameter Name="act_owner" Mode="In" Type="Int32" />
+      <Parameter Name="dr_status" Mode="In" Type="String" />
+      <Parameter Name="job_card" Mode="In" Type="String" />
+      <Parameter Name="dr_type" Mode="In" Type="Int32" />
+      <Parameter Name="reason_code" Mode="In" Type="Int32" />
+      <Parameter Name="dr_creator" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="qdtGetItemsSP" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetItemsSP_Result)">
+      <Parameter Name="query" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="qdtGenerateNumberSP" ReturnType="Collection(String)">
+      <Parameter Name="name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="qdtGetOpsByJobSP" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetOpsByJobSP_Result)">
+      <Parameter Name="job" Mode="In" Type="String" />
+      <Parameter Name="suffix" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="qdt_ird_gage" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_ird_gage" />
+    <FunctionImport Name="qdtGetOperationsByPartNumber">
+      <Parameter Name="part_num" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="qdtGetOperationsByPartNumberSP" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetOperationsByPartNumberSP_Result)">
+      <Parameter Name="part_num" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="qdtGetCharacteristicsByPartNumberSP" EntitySet="qdt_ird_characteristic" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_ird_characteristic)">
+      <Parameter Name="part_num" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="qdt_DRbreakdownV" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_DRbreakdownV" />
+    <FunctionImport Name="pmbGetWorkCenterSP" ReturnType="Collection(String)">
+      <Parameter Name="job" Mode="In" Type="String" />
+      <Parameter Name="suffix" Mode="In" Type="Int32" />
+      <Parameter Name="oper_num" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="qdt_dr" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_dr" />
+    <FunctionImport Name="pmbGetSerialLotByJobSuffixSP">
+      <Parameter Name="job" Mode="In" Type="String" />
+      <Parameter Name="suffix" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="pmbGetJobCardByJobSuffixSP" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.pmbGetJobCardByJobSuffixSP_Result)">
+      <Parameter Name="job" Mode="In" Type="String" />
+      <Parameter Name="suffix" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="qdtGetStandardJobByPartNumberSP" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetStandardJobByPartNumberSP_Result)">
+      <Parameter Name="part_num" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="qdt_ird_revision" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_ird_revision" />
+    <EntitySet Name="qdt_discrepancy" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_discrepancy" />
+    <EntitySet Name="dispTests" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.dispTest" />
+    <FunctionImport Name="qdtGetCharacteristicsByPartNumberAndOperationNumberSP" EntitySet="qdt_ird_characteristic" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_ird_characteristic)">
+      <Parameter Name="part_num" Mode="In" Type="String" />
+      <Parameter Name="oper_num" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="qdtGetIrdHeaderInformationBySerialNumberSP" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetIrdHeaderInformationBySerialNumberSP_Result)">
+      <Parameter Name="serial" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="qdtGetRoutesAndTransactionsBySerialNumberAndOperationNumberSP" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetRoutesAndTransactionsBySerialNumberAndOperationNumberSP_Result)">
+      <Parameter Name="serial" Mode="In" Type="String" />
+      <Parameter Name="oper_num" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="qdt_inspection_location_string" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_inspection_location_string" />
+    <EntitySet Name="qdt_inspection_location" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_inspection_location" />
+    <EntitySet Name="qdt_inspection_type" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_inspection_type" />
+    <EntitySet Name="qdt_locale" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_locale" />
+    <EntitySet Name="pmb_plan_code" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.pmb_plan_code" />
+    <EntitySet Name="sl_item" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.sl_item" />
+    <EntitySet Name="sys_user" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.sys_user" />
+    <EntitySet Name="QDT_Job" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.QDT_Job" />
+    <EntitySet Name="QDT_Serial" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.QDT_Serial" />
+    <FunctionImport Name="qdtGetIrdRouteListSP" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetIrdRouteListSP_Result)" />
+    <EntitySet Name="qdt_ird_transaction" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_ird_transaction" />
+    <EntitySet Name="sys_attachment" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.sys_attachment" />
+    <EntitySet Name="sys_attachment_ref" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.sys_attachment_ref" />
+    <FunctionImport Name="qdtUpdateInspectionPrioritySP" />
+    <EntitySet Name="sys_comment" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.sys_comment" />
+    <EntitySet Name="qdtAuthorizedMeViews" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtAuthorizedMeView" />
+    <FunctionImport Name="qdtGetOperationsBySerialNumberSP" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetOperationsBySerialNumberSP_Result)">
+      <Parameter Name="serial" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="qdtGetCharacteristicsStatisticsBySerialAndOperationNumberSP" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetCharacteristicsStatisticsBySerialAndOperationNumberSP_Result)">
+      <Parameter Name="serial" Mode="In" Type="String" />
+      <Parameter Name="oper_num" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="qdtGetCMMCharacteristicsStatisticsBySerialAndOperationNumberSP" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetCMMCharacteristicsStatisticsBySerialAndOperationNumberSP_Result)">
+      <Parameter Name="serial" Mode="In" Type="String" />
+      <Parameter Name="oper_num" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="qdt_ird_cmm_checkpoint" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_ird_cmm_checkpoint" />
+    <EntitySet Name="qdt_inspection_log" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_inspection_log" />
+    <FunctionImport Name="qdtGetSpcSP" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetSpcSP_Result)">
+      <Parameter Name="item" Mode="In" Type="String" />
+      <Parameter Name="oper_num" Mode="In" Type="Int32" />
+      <Parameter Name="char_num" Mode="In" Type="String" />
+      <Parameter Name="start_time" Mode="In" Type="DateTime" />
+      <Parameter Name="end_time" Mode="In" Type="DateTime" />
+      <Parameter Name="fml_mark" Mode="In" Type="String" />
+      <Parameter Name="inspection_type" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="qdt_inspection_type_string" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_inspection_type_string" />
+    <EntitySet Name="qdt_ll_category" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_ll_category" />
+    <EntitySet Name="qdt_workflow_process" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_workflow_process" />
+    <EntitySet Name="qdt_workflow_route" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_workflow_route" />
+    <EntitySet Name="qdt_workflow_request" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_workflow_request" />
+    <EntitySet Name="qdt_workflow_approver" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_workflow_approver" />
+    <FunctionImport Name="qdtGetModifiedCharacteristicsByIrdIdSP" EntitySet="qdt_ird_characteristic" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_ird_characteristic)">
+      <Parameter Name="ird_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="qdt_disposition" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_disposition" />
+    <EntitySet Name="qdt_workflow" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_workflow" />
+    <FunctionImport Name="qdtGetInspectionRecordsSP" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetInspectionRecordsSP_Result)">
+      <Parameter Name="location_id" Mode="In" Type="Int32" />
+      <Parameter Name="language" Mode="In" Type="String" />
+      <Parameter Name="query" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="qdtTqCheckSkillCodeInUseSp">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="result" Mode="InOut" Type="Boolean" />
+    </FunctionImport>
+    <EntitySet Name="qdt_workflow_action" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_workflow_action" />
+    <EntitySet Name="qdt_tq_certification" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_tq_certification" />
+    <FunctionImport Name="qdtTqGetSkillTrainingRoutesSp" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtTqGetSkillTrainingRoutesSp_Result)">
+      <Parameter Name="skill_code_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="qdtGetWorkflowProcessesSp" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetWorkflowProcessesSp_Result)">
+      <Parameter Name="request_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="qdt_tq_operational_restriction" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_tq_operational_restriction" />
+    <FunctionImport Name="qdtTqGetCertificationItemsSp" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtTqGetCertificationItemsSp_Result)" />
+    <EntitySet Name="qdt_tq_skill_basic_lesson" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_tq_skill_basic_lesson" />
+    <FunctionImport Name="qdtTqGetUserProcessApprovalsSp" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtTqGetUserProcessApprovalsSp_Result)">
+      <Parameter Name="user_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="qdtTqCanRefreshSP">
+      <Parameter Name="category" Mode="In" Type="String" />
+      <Parameter Name="employee_id" Mode="In" Type="Int32" />
+      <Parameter Name="skill_code_id" Mode="In" Type="Int32" />
+      <Parameter Name="can_refresh" Mode="InOut" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="qdtTqGetPersonSkillCountSp" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtTqGetPersonSkillCountSp_Result)">
+      <Parameter Name="query" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="qdtTqGetGroupSkillCountSp" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtTqGetGroupSkillCountSp_Result)">
+      <Parameter Name="working_group_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="qdt_ird_characteristic" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_ird_characteristic" />
+    <EntitySet Name="qdt_ird_route" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_ird_route" />
+    <EntitySet Name="qdt_ll_lesson_item" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_ll_lesson_item" />
+    <FunctionImport Name="qdtGetOpsByItemSP" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetOpsByItemSP_Result)">
+      <Parameter Name="item" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="qdtDeleteDRSP">
+      <Parameter Name="dr_num" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="qdtDeleteDispositionSP">
+      <Parameter Name="disp_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="qdtDeleteActionSP">
+      <Parameter Name="act_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="qdtgetGRN" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtgetGRN_Result)">
+      <Parameter Name="track_num" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="qdtgetGRNLine" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtgetGRNLine_Result)">
+      <Parameter Name="query" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="qdt_liability" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_liability" />
+    <EntitySet Name="qdt_goods_returned_for" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_goods_returned_for" />
+    <FunctionImport Name="qdtRigGetSerLotByGRN" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtRigGetSerLotByGRN_Result)">
+      <Parameter Name="grn_num" Mode="In" Type="String" />
+      <Parameter Name="grn_line" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="qdtGetDiscrepanciesByDispSP" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetDiscrepanciesByDispSP_Result)">
+      <Parameter Name="disp_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="qdtGetRigList" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetRigList_Result)">
+      <Parameter Name="USERID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="qdtGetDiscrepanciesByActSP" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetDiscrepanciesByActSP_Result)">
+      <Parameter Name="act_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="qdtGetRIGIsClosed" ReturnType="Collection(Int32)">
+      <Parameter Name="rignum" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="QDT_RIG_VendorManagement" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.QDT_RIG_VendorManagement" />
+    <EntitySet Name="qdt_rig_vendorList" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_rig_vendorList" />
+    <FunctionImport Name="qdtGetSerialsOrLotsSP" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetSerialsOrLotsSP_Result)">
+      <Parameter Name="query" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="qdtGetCommonStringsByCategory1SP">
+      <Parameter Name="category1" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="qdt_num_gen" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_num_gen" />
+    <EntitySet Name="qdt_cc" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_cc" />
+    <FunctionImport Name="qdtgetGRNDetail" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtgetGRNDetail_Result)">
+      <Parameter Name="track_num" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="qdtGetTrackNum" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetTrackNum_Result)">
+      <Parameter Name="track_num" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="qdtRigGetDetail" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtRigGetDetail_Result)">
+      <Parameter Name="track_num" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="qdt_ll_lesson" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_ll_lesson" />
+    <EntitySet Name="qdt_rig" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_rig" />
+    <EntitySet Name="DR_ActionDesc" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.DR_ActionDesc" />
+    <FunctionImport Name="qdtGetInProcessOperationInformationSP" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtGetInProcessOperationInformationSP_Result)">
+      <Parameter Name="employee_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="qdt_ll_failure_mode" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_ll_failure_mode" />
+    <FunctionImport Name="qdtTqGetSkillTrainingDirectCertificationRoutesSp" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtTqGetSkillTrainingDirectCertificationRoutesSp_Result)">
+      <Parameter Name="skill_code_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="qdtStamperGetRefNum" ReturnType="Collection(Int32)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="qdtStamperDelete" ReturnType="Collection(String)">
+      <Parameter Name="employee_id" Mode="In" Type="Int32" />
+      <Parameter Name="category" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="qdtSearchRig" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtSearchRig_Result)">
+      <Parameter Name="rig_num" Mode="In" Type="String" />
+      <Parameter Name="due_date_from" Mode="In" Type="DateTime" />
+      <Parameter Name="due_date_to" Mode="In" Type="DateTime" />
+      <Parameter Name="create_date_from" Mode="In" Type="DateTime" />
+      <Parameter Name="create_date_to" Mode="In" Type="DateTime" />
+      <Parameter Name="create_by" Mode="In" Type="Int32" />
+      <Parameter Name="status" Mode="In" Type="String" />
+      <Parameter Name="dr_num" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="qdtTqGetSkillTrainingNpiDirectCertificationRoutesSp" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtTqGetSkillTrainingNpiDirectCertificationRoutesSp_Result)">
+      <Parameter Name="skill_code_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="qdtTqGetSkillTrainingRefreshRoutesSp" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtTqGetSkillTrainingRefreshRoutesSp_Result)">
+      <Parameter Name="skill_code_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="qdtRigGetGraphic" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtRigGetGraphic_Result)" />
+    <FunctionImport Name="qdtUpdateActionStatusSP">
+      <Parameter Name="user_id" Mode="In" Type="Int32" />
+      <Parameter Name="act_id" Mode="In" Type="Int32" />
+      <Parameter Name="status" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="qdtTqGetOperationalRestrictionsSp" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtTqGetOperationalRestrictionsSp_Result)">
+      <Parameter Name="work_type" Mode="In" Type="String" />
+      <Parameter Name="item" Mode="In" Type="String" />
+      <Parameter Name="oper_num" Mode="In" Type="Int32" />
+      <Parameter Name="operation_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="qdt_inspection" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_inspection" />
+    <FunctionImport Name="qdtTqGetSkillTrainingStatusSp" ReturnType="Collection(SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdtTqGetSkillTrainingStatusSp_Result)">
+      <Parameter Name="working_group_id" Mode="In" Type="Int32" />
+      <Parameter Name="query" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="qdt_com_string" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_com_string" />
+    <EntitySet Name="qdt_tq_skill_code" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_tq_skill_code" />
+    <EntitySet Name="qdt_scrapped_record" EntityType="SZIntraV3_1_WebSite.Models.EntityModel.QdtModel.qdt_scrapped_record" />
+  </EntityContainer>
+  <ComplexType Name="sysGetPermissionSP_Result">
+    <Property Type="String" Name="widget" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="action_name" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <EntityType Name="qdt_disc_disp">
+    <Key>
+      <PropertyRef Name="disc_id" />
+      <PropertyRef Name="disp_id" />
+    </Key>
+    <Property Type="Int32" Name="disc_id" Nullable="false" />
+    <Property Type="Int32" Name="disp_id" Nullable="false" />
+  </EntityType>
+  <ComplexType Name="qdtGetActionListSP_Result">
+    <Property Type="Int32" Name="act_id" Nullable="false" />
+    <Property Type="Int32" Name="act_type" Nullable="false" />
+    <Property Type="Int32" Name="act_owner" Nullable="true" />
+    <Property Type="String" Name="description" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="st_action" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="lt_action" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ct_action" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="due_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="dr_num" Nullable="false" MaxLength="10" />
+    <Property Type="Int32" Name="create_by" Nullable="true" />
+    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="update_by" Nullable="true" />
+    <Property Type="DateTime" Name="update_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="status" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="act_owner_string" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="qdtGetDispositionsSP_Result">
+    <Property Type="Int32" Name="disp_id" Nullable="false" />
+    <Property Type="Int32" Name="disp_rank" Nullable="true" />
+    <Property Type="String" Name="dr_num" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="reason" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="disp_type" Nullable="false" />
+    <Property Type="String" Name="description" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="create_by" Nullable="true" />
+    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="update_by" Nullable="true" />
+    <Property Type="DateTime" Name="update_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="status" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="id" Nullable="true" />
+    <Property Type="String" Name="category_1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="category_2" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="en_string" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cn_string" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <EntityType Name="qdt_disc_act">
+    <Key>
+      <PropertyRef Name="disc_id" />
+      <PropertyRef Name="act_id" />
+    </Key>
+    <Property Type="Int32" Name="disc_id" Nullable="false" />
+    <Property Type="Int32" Name="act_id" Nullable="false" />
+  </EntityType>
+  <EntityType Name="qdt_action">
+    <Key>
+      <PropertyRef Name="act_id" />
+    </Key>
+    <Property Type="Int32" Name="act_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="act_type" Nullable="false" />
+    <Property Type="Int32" Name="act_owner" />
+    <Property Type="String" Name="description" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="st_action" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="lt_action" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ct_action" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="due_date" />
+    <Property Type="String" Name="dr_num" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="disp_id" Nullable="false" />
+    <Property Type="Int32" Name="create_by" />
+    <Property Type="DateTime" Name="create_date" />
+    <Property Type="Int32" Name="update_by" />
+    <Property Type="DateTime" Name="update_date" />
+    <Property Type="String" Name="status" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="remark" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="qdtGetDRListSP_Result">
+    <Property Type="String" Name="dr_num" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="status" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="create_date" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="due_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="description" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="qe_sso" Nullable="true" MaxLength="9" />
+    <Property Type="String" Name="me_sso" Nullable="true" MaxLength="9" />
+    <Property Type="Int32" Name="dr_qe_owner" Nullable="true" />
+    <Property Type="Int32" Name="dr_me_owner" Nullable="true" />
+    <Property Type="String" Name="dr_type_string" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="dr_qe_owner_string" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="dr_me_owner_string" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="qdtGetItemsSP_Result">
+    <Property Type="String" Name="item" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="FGorRW" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="serialOrLot" Nullable="true" MaxLength="6" />
+  </ComplexType>
+  <ComplexType Name="qdtGetOpsByJobSP_Result">
+    <Property Type="String" Name="job" Nullable="false" MaxLength="20" />
+    <Property Type="Int16" Name="suffix" Nullable="false" />
+    <Property Type="Int32" Name="oper_num" Nullable="false" />
+    <Property Type="String" Name="wc" Nullable="false" MaxLength="6" />
+    <Property Type="Decimal" Name="setup_hrs_t" Nullable="true" Precision="19" Scale="8" />
+    <Property Type="Decimal" Name="setup_cost_t" Nullable="true" Precision="18" Scale="8" />
+    <Property Type="Byte" Name="complete" Nullable="true" />
+    <Property Type="Decimal" Name="setup_hrs_v" Nullable="true" Precision="19" Scale="8" />
+    <Property Type="Decimal" Name="wip_amt" Nullable="true" Precision="18" Scale="8" />
+    <Property Type="Decimal" Name="qty_scrapped" Nullable="true" Precision="19" Scale="8" />
+    <Property Type="Decimal" Name="qty_received" Nullable="true" Precision="19" Scale="8" />
+    <Property Type="Decimal" Name="qty_moved" Nullable="true" Precision="19" Scale="8" />
+    <Property Type="Decimal" Name="qty_complete" Nullable="true" Precision="19" Scale="8" />
+    <Property Type="DateTime" Name="effect_date" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="obs_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="bflush_type" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="run_basis_lbr" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="run_basis_mch" Nullable="true" MaxLength="1" />
+    <Property Type="Decimal" Name="fixovhd_t_lbr" Nullable="true" Precision="18" Scale="8" />
+    <Property Type="Decimal" Name="fixovhd_t_mch" Nullable="true" Precision="18" Scale="8" />
+    <Property Type="Decimal" Name="varovhd_t_lbr" Nullable="true" Precision="18" Scale="8" />
+    <Property Type="Decimal" Name="varovhd_t_mch" Nullable="true" Precision="18" Scale="8" />
+    <Property Type="Decimal" Name="run_hrs_t_lbr" Nullable="true" Precision="19" Scale="8" />
+    <Property Type="Decimal" Name="run_hrs_t_mch" Nullable="true" Precision="19" Scale="8" />
+    <Property Type="Decimal" Name="run_hrs_v_lbr" Nullable="true" Precision="10" Scale="5" />
+    <Property Type="Decimal" Name="run_hrs_v_mch" Nullable="true" Precision="10" Scale="5" />
+    <Property Type="Decimal" Name="run_cost_t_lbr" Nullable="true" Precision="18" Scale="8" />
+    <Property Type="Byte" Name="cntrl_point" Nullable="true" />
+    <Property Type="Decimal" Name="setup_rate" Nullable="false" Precision="10" Scale="3" />
+    <Property Type="Decimal" Name="efficiency" Nullable="true" Precision="4" Scale="1" />
+    <Property Type="Decimal" Name="fovhd_rate_mch" Nullable="true" Precision="9" Scale="3" />
+    <Property Type="Decimal" Name="vovhd_rate_mch" Nullable="true" Precision="9" Scale="3" />
+    <Property Type="Decimal" Name="run_rate_lbr" Nullable="false" Precision="10" Scale="3" />
+    <Property Type="Decimal" Name="varovhd_rate" Nullable="true" Precision="9" Scale="3" />
+    <Property Type="Decimal" Name="fixovhd_rate" Nullable="true" Precision="9" Scale="3" />
+    <Property Type="Decimal" Name="wip_matl_amt" Nullable="true" Precision="18" Scale="8" />
+    <Property Type="Decimal" Name="wip_lbr_amt" Nullable="true" Precision="18" Scale="8" />
+    <Property Type="Decimal" Name="wip_fovhd_amt" Nullable="true" Precision="18" Scale="8" />
+    <Property Type="Decimal" Name="wip_vovhd_amt" Nullable="true" Precision="18" Scale="8" />
+    <Property Type="Decimal" Name="wip_out_amt" Nullable="true" Precision="18" Scale="8" />
+    <Property Type="Byte" Name="NoteExistsFlag" Nullable="false" />
+    <Property Type="DateTime" Name="RecordDate" Nullable="false" Precision="23" />
+    <Property Type="Guid" Name="RowPointer" Nullable="false" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="UpdatedBy" Nullable="false" MaxLength="30" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="23" />
+    <Property Type="Byte" Name="InWorkflow" Nullable="false" />
+    <Property Type="String" Name="Uf_jobroute_chn_des" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="Uf_jobroute_eng_desc" Nullable="true" MaxLength="1000" />
+    <Property Type="Decimal" Name="Uf_jobroute_ins_hours" Nullable="true" Precision="9" Scale="2" />
+    <Property Type="Int32" Name="Uf_job_route_inspection_time" Nullable="true" />
+    <Property Type="Int32" Name="Uf_job_route_qa_final_time" Nullable="true" />
+    <Property Type="Int32" Name="Uf_job_route_qa_paperwork_time" Nullable="true" />
+    <Property Type="Int32" Name="Uf_job_route_repair_time" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="qdt_ird_gage">
+    <Key>
+      <PropertyRef Name="gage_id" />
+    </Key>
+    <Property Type="Int32" Name="gage_id" Nullable="false" />
+    <Property Type="String" Name="gage_description_en" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="gage_description_cn" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="qdt_DRbreakdownV">
+    <Key>
+      <PropertyRef Name="dr_num" />
+      <PropertyRef Name="quantity" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="dr_create_date" />
+    </Key>
+    <Property Type="String" Name="dr_num" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="dr_type" />
+    <Property Type="Int32" Name="dr_qe_owner" />
+    <Property Type="Int32" Name="dr_me_owner" />
+    <Property Type="Int32" Name="quantity" Nullable="false" />
+    <Property Type="String" Name="discrepancy_item" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="source" />
+    <Property Type="String" Name="job" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="suffix" />
+    <Property Type="String" Name="serial" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="lot" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="due_date" />
+    <Property Type="DateTime" Name="close_date" />
+    <Property Type="Int32" Name="close_by" />
+    <Property Type="String" Name="description" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="status" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="dr_create_by" />
+    <Property Type="DateTime" Name="dr_create_date" Nullable="false" />
+    <Property Type="Int32" Name="disp_id" />
+    <Property Type="Int32" Name="disp_rank" />
+    <Property Type="Int32" Name="reason" />
+    <Property Type="Int32" Name="disp_type" />
+    <Property Type="Int32" Name="dp_create_by" />
+    <Property Type="DateTime" Name="dp_create_date" />
+    <Property Type="String" Name="dp_stat" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="act_id" />
+    <Property Type="Int32" Name="act_type" />
+    <Property Type="Int32" Name="act_owner" />
+    <Property Type="String" Name="ac_desc" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="st_action" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="lt_action" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ct_action" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="ac_due_date" />
+    <Property Type="Int32" Name="ac_create_by" />
+    <Property Type="DateTime" Name="ac_create_date" />
+    <Property Type="String" Name="ac_status" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="oper_num" />
+    <Property Type="Int32" Name="responsible_department" />
+  </EntityType>
+  <EntityType Name="qdt_dr">
+    <Key>
+      <PropertyRef Name="dr_num" />
+    </Key>
+    <Property Type="String" Name="dr_num" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="dr_type" />
+    <Property Type="Int32" Name="dr_qe_owner" />
+    <Property Type="Int32" Name="source" />
+    <Property Type="String" Name="job" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="suffix" />
+    <Property Type="DateTime" Name="due_date" />
+    <Property Type="DateTime" Name="close_date" />
+    <Property Type="Int32" Name="close_by" />
+    <Property Type="String" Name="description" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="status" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="create_by" />
+    <Property Type="DateTime" Name="create_date" Nullable="false" />
+    <Property Type="Int32" Name="update_by" />
+    <Property Type="DateTime" Name="update_date" />
+    <Property Type="String" Name="serial" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="lot" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="dr_me_owner" />
+    <Property Type="Int32" Name="quantity" Nullable="false" />
+    <Property Type="String" Name="discrepancy_item" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="oper_num" />
+    <Property Type="String" Name="wc" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Uf_item_ge_project" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="pmbGetJobCardByJobSuffixSP_Result">
+    <Property Type="String" Name="serial" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="lot" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="item" Nullable="false" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="qdtGetOperationsByPartNumberSP_Result">
+    <Property Type="Int32" Name="ird_id" Nullable="true" />
+    <Property Type="String" Name="item" Nullable="false" MaxLength="30" />
+    <Property Type="Int32" Name="oper_num" Nullable="true" />
+    <Property Type="String" Name="plan_code" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="family_code" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="description" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="Uf_item_aircraft_type" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Uf_item_ge_project" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="qdtGetStandardJobByPartNumberSP_Result">
+    <Property Type="String" Name="item" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="plan_code" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="family_code" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="description" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="Uf_item_aircraft_type" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Uf_item_ge_project" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="job" Nullable="true" MaxLength="20" />
+    <Property Type="Int16" Name="suffix" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="qdt_ird_revision">
+    <Key>
+      <PropertyRef Name="ird_id" />
+    </Key>
+    <Property Type="Int32" Name="ird_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="item" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="revision" Nullable="false" />
+    <Property Type="String" Name="rev_level" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="marking_arrangement_id" />
+    <Property Type="Int32" Name="prepare_by" />
+    <Property Type="DateTime" Name="prepare_date" />
+    <Property Type="Int32" Name="verify_by" />
+    <Property Type="DateTime" Name="verify_date" />
+    <Property Type="Int32" Name="approve_by" />
+    <Property Type="DateTime" Name="approve_date" />
+    <Property Type="String" Name="job" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="suffix" />
+    <Property Type="Int32" Name="editor" />
+    <Property Type="String" Name="status" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="qdt_discrepancy">
+    <Key>
+      <PropertyRef Name="disc_id" />
+    </Key>
+    <Property Type="Int32" Name="disc_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="dr_num" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="description" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NormalDescription" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="dispTest">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="disp_type" />
+    <Property Type="Int32" Name="reason_type" />
+  </EntityType>
+  <ComplexType Name="qdtGetIrdHeaderInformationBySerialNumberSP_Result">
+    <Property Type="String" Name="serial" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="job" Nullable="false" MaxLength="20" />
+    <Property Type="Int16" Name="suffix" Nullable="false" />
+    <Property Type="String" Name="part_num" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="ri_num" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="heat_code" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="forging_num" Nullable="true" MaxLength="350" />
+    <Property Type="Int32" Name="ird_revision" Nullable="true" />
+    <Property Type="String" Name="rev_level" Nullable="true" MaxLength="5" />
+  </ComplexType>
+  <ComplexType Name="qdtGetRoutesAndTransactionsBySerialNumberAndOperationNumberSP_Result">
+    <Property Type="Int32" Name="ird_route_id" Nullable="false" />
+    <Property Type="String" Name="serial" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="job" Nullable="true" MaxLength="20" />
+    <Property Type="Int16" Name="suffix" Nullable="true" />
+    <Property Type="String" Name="item" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="oper_num" Nullable="true" />
+    <Property Type="Int32" Name="char_seq" Nullable="true" />
+    <Property Type="String" Name="char_num" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="char_type" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="blue_print_zone" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="basic_gage_id" Nullable="true" />
+    <Property Type="Int32" Name="fml_gage_id" Nullable="true" />
+    <Property Type="String" Name="char_description" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="characteristic" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="basic_rec_type" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="fml_rec_type" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="char_maximum" Nullable="true" Precision="18" Scale="9" />
+    <Property Type="Decimal" Name="char_minimum" Nullable="true" Precision="18" Scale="9" />
+    <Property Type="String" Name="gdnt_link" Nullable="true" MaxLength="255" />
+    <Property Type="Boolean" Name="oai_flag" Nullable="true" />
+    <Property Type="Boolean" Name="oap_flag" Nullable="true" />
+    <Property Type="Boolean" Name="is_cmm_flag" Nullable="true" />
+    <Property Type="Boolean" Name="need_cmm" Nullable="true" />
+    <Property Type="Int32" Name="line_qty" Nullable="true" />
+    <Property Type="String" Name="fml_mark" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="create_by" Nullable="true" />
+    <Property Type="Int32" Name="ird_id" Nullable="true" />
+    <Property Type="Int32" Name="char_id" Nullable="true" />
+    <Property Type="Int32" Name="operator_trans_num" Nullable="true" />
+    <Property Type="Int32" Name="operator_trans_ird_route_id" Nullable="true" />
+    <Property Type="String" Name="operator_inspect_type" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="operator_trans_char_id" Nullable="true" />
+    <Property Type="Int32" Name="operator_user_id" Nullable="true" />
+    <Property Type="String" Name="operator_sso" Nullable="true" MaxLength="9" />
+    <Property Type="String" Name="operator_name_cn" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="operator_name_en" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="operator_record_date" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="operator_rec_maximum" Nullable="true" Precision="18" Scale="9" />
+    <Property Type="Decimal" Name="operator_rec_minimum" Nullable="true" Precision="18" Scale="9" />
+    <Property Type="Decimal" Name="operator_rec_value" Nullable="true" Precision="18" Scale="9" />
+    <Property Type="Boolean" Name="operator_rec_passed" Nullable="true" />
+    <Property Type="String" Name="basic_gage_en" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="basic_gage_cn" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="fml_gage_en" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="fml_gage_cn" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="inspector_trans_num" Nullable="true" />
+    <Property Type="Int32" Name="inspector_trans_ird_route_id" Nullable="true" />
+    <Property Type="String" Name="inspector_inspect_type" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="inspector_trans_char_id" Nullable="true" />
+    <Property Type="Int32" Name="inspector_user_id" Nullable="true" />
+    <Property Type="String" Name="inspector_sso" Nullable="true" MaxLength="9" />
+    <Property Type="String" Name="inspector_name_cn" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="inspector_name_en" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="inspector_record_date" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="inspector_rec_maximum" Nullable="true" Precision="18" Scale="9" />
+    <Property Type="Decimal" Name="inspector_rec_minimum" Nullable="true" Precision="18" Scale="9" />
+    <Property Type="Decimal" Name="inspector_rec_value" Nullable="true" Precision="18" Scale="9" />
+    <Property Type="Boolean" Name="inspector_rec_passed" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="qdt_inspection_location_string">
+    <Key>
+      <PropertyRef Name="inspection_location_id" />
+      <PropertyRef Name="locale_id" />
+    </Key>
+    <Property Type="Int32" Name="inspection_location_id" Nullable="false" />
+    <Property Type="Int32" Name="locale_id" Nullable="false" />
+    <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="qdt_inspection_location">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="remark" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="qdt_inspection_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="category" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="remark" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="qdt_locale">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="name" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="pmb_plan_code">
+    <Key>
+      <PropertyRef Name="alias" />
+      <PropertyRef Name="plan_code" />
+    </Key>
+    <Property Type="String" Name="alias" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="plan_code" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sl_item">
+    <Key>
+      <PropertyRef Name="item" />
+    </Key>
+    <Property Type="String" Name="item" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="description" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="lead_time" Nullable="false" />
+    <Property Type="String" Name="job" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="suffix" />
+    <Property Type="String" Name="family_code" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="plan_code" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="mps_flag" />
+    <Property Type="String" Name="revision" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="dock_time" Nullable="false" />
+    <Property Type="Byte" Name="serial_tracked" />
+    <Property Type="Byte" Name="lot_tracked" />
+    <Property Type="DateTime" Name="RecordDate" Nullable="false" />
+    <Property Type="String" Name="buyer" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="overview" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Uf_ChsDes" MaxLength="600" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Uf_EHSCode" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="Uf_ReOrderPoint" Precision="19" Scale="8" />
+    <Property Type="Byte" Name="Uf_ROPFlag" />
+    <Property Type="String" Name="Uf_item_aircraft_type" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Uf_item_coc_comm_type" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Uf_item_customer_issue" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Uf_customer" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Uf_item_ge_project" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="qe_owner" />
+    <Property Type="Int32" Name="me_owner" />
+    <Property Type="Int32" Name="ird_id" />
+    <Property Type="Int32" Name="prd_owner" />
+  </EntityType>
+  <EntityType Name="sys_user">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Type="Int32" Name="user_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="sso" Nullable="false" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="name_cn" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="name_en" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="login_pwd" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="account_status" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QDT_Job">
+    <Key>
+      <PropertyRef Name="job" />
+      <PropertyRef Name="suffix" />
+      <PropertyRef Name="item" />
+      <PropertyRef Name="qty_released" />
+      <PropertyRef Name="ref_suf" />
+      <PropertyRef Name="ref_oper" />
+      <PropertyRef Name="NoteExistsFlag" />
+      <PropertyRef Name="RecordDate" />
+      <PropertyRef Name="RowPointer" />
+      <PropertyRef Name="CreatedBy" />
+      <PropertyRef Name="UpdatedBy" />
+      <PropertyRef Name="CreateDate" />
+      <PropertyRef Name="InWorkflow" />
+      <PropertyRef Name="scheduled" />
+      <PropertyRef Name="rcpt_rqmt" />
+      <PropertyRef Name="export_type" />
+      <PropertyRef Name="contains_tax_free_matl" />
+      <PropertyRef Name="rework" />
+      <PropertyRef Name="unlinked_xref" />
+      <PropertyRef Name="is_external" />
+    </Key>
+    <Property Type="String" Name="type" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="job" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="suffix" Nullable="false" />
+    <Property Type="DateTime" Name="job_date" />
+    <Property Type="String" Name="cust_num" MaxLength="7" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ord_type" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="ord_num" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="ord_line" />
+    <Property Type="Int16" Name="ord_release" />
+    <Property Type="String" Name="est_job" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="est_suf" />
+    <Property Type="String" Name="item" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="qty_released" Nullable="false" Precision="19" Scale="8" />
+    <Property Type="Decimal" Name="qty_complete" Precision="19" Scale="8" />
+    <Property Type="Decimal" Name="qty_scrapped" Precision="19" Scale="8" />
+    <Property Type="String" Name="stat" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Type="DateTime" Name="lst_trx_date" />
+    <Property Type="String" Name="root_job" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="root_suf" />
+    <Property Type="String" Name="ref_job" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="ref_suf" Nullable="false" />
+    <Property Type="Int32" Name="ref_oper" Nullable="false" />
+    <Property Type="Int16" Name="ref_seq" />
+    <Property Type="Byte" Name="low_level" />
+    <Property Type="DateTime" Name="effect_date" />
+    <Property Type="String" Name="wip_acct" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="wip_total" Precision="21" Scale="8" />
+    <Property Type="Decimal" Name="wip_complete" Precision="21" Scale="8" />
+    <Property Type="Decimal" Name="wip_special" Precision="21" Scale="8" />
+    <Property Type="String" Name="revision" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="picked" />
+    <Property Type="String" Name="whse" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="jcb_acct" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ps_num" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="wip_lbr_acct" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="wip_fovhd_acct" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="wip_vovhd_acct" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="wip_out_acct" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="wip_matl_total" Precision="21" Scale="8" />
+    <Property Type="Decimal" Name="wip_lbr_total" Precision="21" Scale="8" />
+    <Property Type="Decimal" Name="wip_fovhd_total" Precision="21" Scale="8" />
+    <Property Type="Decimal" Name="wip_vovhd_total" Precision="21" Scale="8" />
+    <Property Type="Decimal" Name="wip_out_total" Precision="21" Scale="8" />
+    <Property Type="Decimal" Name="wip_matl_comp" Precision="21" Scale="8" />
+    <Property Type="Decimal" Name="wip_lbr_comp" Precision="21" Scale="8" />
+    <Property Type="Decimal" Name="wip_fovhd_comp" Precision="21" Scale="8" />
+    <Property Type="Decimal" Name="wip_vovhd_comp" Precision="21" Scale="8" />
+    <Property Type="Decimal" Name="wip_out_comp" Precision="21" Scale="8" />
+    <Property Type="DateTime" Name="rollup_date" />
+    <Property Type="String" Name="wip_acct_unit1" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="wip_acct_unit2" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="wip_acct_unit3" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="wip_acct_unit4" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="jcb_acct_unit1" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="jcb_acct_unit2" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="jcb_acct_unit3" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="jcb_acct_unit4" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="wip_lbr_acct_unit1" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="wip_lbr_acct_unit2" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="wip_lbr_acct_unit3" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="wip_lbr_acct_unit4" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="wip_fovhd_acct_unit1" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="wip_fovhd_acct_unit2" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="wip_fovhd_acct_unit3" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="wip_fovhd_acct_unit4" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="wip_vovhd_acct_unit1" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="wip_vovhd_acct_unit2" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="wip_vovhd_acct_unit3" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="wip_vovhd_acct_unit4" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="wip_out_acct_unit1" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="wip_out_acct_unit2" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="wip_out_acct_unit3" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="wip_out_acct_unit4" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="prod_mix" MaxLength="7" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="NoteExistsFlag" Nullable="false" />
+    <Property Type="DateTime" Name="RecordDate" Nullable="false" />
+    <Property Type="Guid" Name="RowPointer" Nullable="false" />
+    <Property Type="String" Name="description" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="config_id" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="co_product_mix" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+    <Property Type="Byte" Name="InWorkflow" Nullable="false" />
+    <Property Type="Byte" Name="scheduled" Nullable="false" />
+    <Property Type="String" Name="rcpt_rqmt" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="export_type" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Type="Byte" Name="contains_tax_free_matl" Nullable="false" />
+    <Property Type="DateTime" Name="midnight_of_job_sch_end_date" />
+    <Property Type="DateTime" Name="midnight_of_job_sch_compdate" />
+    <Property Type="Byte" Name="rework" Nullable="false" />
+    <Property Type="Byte" Name="unlinked_xref" Nullable="false" />
+    <Property Type="String" Name="prospect_id" MaxLength="7" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="is_external" Nullable="false" />
+    <Property Type="String" Name="Uf_Lot" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Uf_Sno" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Uf_Type" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Uf_Reason" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Uf_job_router_method" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Uf_router_issue" />
+  </EntityType>
+  <EntityType Name="QDT_Serial">
+    <Key>
+      <PropertyRef Name="ser_num" />
+      <PropertyRef Name="item" />
+      <PropertyRef Name="whse" />
+      <PropertyRef Name="NoteExistsFlag" />
+      <PropertyRef Name="RecordDate" />
+      <PropertyRef Name="RowPointer" />
+      <PropertyRef Name="CreatedBy" />
+      <PropertyRef Name="UpdatedBy" />
+      <PropertyRef Name="CreateDate" />
+      <PropertyRef Name="InWorkflow" />
+    </Key>
+    <Property Type="String" Name="ser_num" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="item" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="inv_num" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="charfld1" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="charfld2" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="charfld3" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="decifld1" Precision="10" Scale="2" />
+    <Property Type="Decimal" Name="decifld2" Precision="10" Scale="2" />
+    <Property Type="Decimal" Name="decifld3" Precision="10" Scale="2" />
+    <Property Type="Byte" Name="logifld" />
+    <Property Type="DateTime" Name="datefld" />
+    <Property Type="Decimal" Name="rsvd_num" Precision="10" Scale="0" />
+    <Property Type="Decimal" Name="trans_num" Precision="11" Scale="0" />
+    <Property Type="String" Name="trn_num" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="trn_line" />
+    <Property Type="String" Name="lot" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="loc" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="create_date" />
+    <Property Type="DateTime" Name="purge_date" />
+    <Property Type="DateTime" Name="exp_date" />
+    <Property Type="String" Name="stat" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="cert_num" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="whse" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ref_type" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="ref_num" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="ref_line" />
+    <Property Type="Int16" Name="ref_release" />
+    <Property Type="DateTime" Name="ship_date" />
+    <Property Type="Int16" Name="date_seq" />
+    <Property Type="String" Name="do_num" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="do_line" />
+    <Property Type="Int16" Name="do_seq" />
+    <Property Type="String" Name="grn_num" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="grn_line" />
+    <Property Type="String" Name="vend_num" MaxLength="7" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="NoteExistsFlag" Nullable="false" />
+    <Property Type="DateTime" Name="RecordDate" Nullable="false" />
+    <Property Type="Guid" Name="RowPointer" Nullable="false" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+    <Property Type="Byte" Name="InWorkflow" Nullable="false" />
+    <Property Type="String" Name="import_doc_id" MaxLength="25" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="qdtGetIrdRouteListSP_Result">
+    <Property Type="String" Name="serial" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="item" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="job" Nullable="true" MaxLength="20" />
+    <Property Type="Int16" Name="suffix" Nullable="true" />
+    <Property Type="String" Name="rev_level" Nullable="true" MaxLength="5" />
+    <Property Type="Int32" Name="ird_revision" Nullable="true" />
+    <Property Type="Int32" Name="operator_op" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="qdt_ird_transaction">
+    <Key>
+      <PropertyRef Name="trans_num" />
+    </Key>
+    <Property Type="Int32" Name="trans_num" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ird_route_id" />
+    <Property Type="String" Name="inspect_type" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="char_id" />
+    <Property Type="Int32" Name="record_by" />
+    <Property Type="DateTime" Name="record_date" />
+    <Property Type="Decimal" Name="rec_maximum" Precision="18" Scale="9" />
+    <Property Type="Decimal" Name="rec_minimum" Precision="18" Scale="9" />
+    <Property Type="Decimal" Name="rec_value" Precision="18" Scale="9" />
+    <Property Type="Boolean" Name="rec_passed" />
+  </EntityType>
+  <EntityType Name="sys_attachment">
+    <Key>
+      <PropertyRef Name="attachment_id" />
+    </Key>
+    <Property Type="Int32" Name="attachment_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="file_path" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="create_by" Nullable="false" />
+    <Property Type="DateTime" Name="create_date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sys_attachment_ref">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ref_type" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ref_num" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="attachment_id" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sys_comment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="attach_to" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="attach_id" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="comment" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="create_by" />
+    <Property Type="DateTime" Name="create_date" />
+  </EntityType>
+  <EntityType Name="qdtAuthorizedMeView">
+    <Key>
+      <PropertyRef Name="employee_id" />
+    </Key>
+    <Property Type="Int32" Name="employee_id" Nullable="false" />
+    <Property Type="String" Name="sso" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="update_date" />
+  </EntityType>
+  <ComplexType Name="qdtGetOperationsBySerialNumberSP_Result">
+    <Property Type="Int32" Name="oper_num" Nullable="true" />
+    <Property Type="String" Name="fml_mark" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="is_cmm_flag" Nullable="true" />
+    <Property Type="Int32" Name="oper_char_count" Nullable="true" />
+    <Property Type="Int32" Name="oper_trans_count" Nullable="true" />
+    <Property Type="Int32" Name="insp_char_count" Nullable="true" />
+    <Property Type="Int32" Name="insp_trans_count" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="qdtGetCharacteristicsStatisticsBySerialAndOperationNumberSP_Result">
+    <Property Type="Int32" Name="oper_num" Nullable="true" />
+    <Property Type="Int32" Name="char_count" Nullable="true" />
+    <Property Type="Int32" Name="trans_count" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="qdtGetCMMCharacteristicsStatisticsBySerialAndOperationNumberSP_Result">
+    <Property Type="String" Name="serial" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="item" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="cmm_char_count" Nullable="true" />
+    <Property Type="Int32" Name="cmm_trans_count" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="qdt_ird_cmm_checkpoint">
+    <Key>
+      <PropertyRef Name="CP_id" />
+    </Key>
+    <Property Type="Int32" Name="CP_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ird_id" />
+    <Property Type="Int32" Name="oper_num" />
+  </EntityType>
+  <EntityType Name="qdt_inspection_log">
+    <Key>
+      <PropertyRef Name="inspection_id" />
+      <PropertyRef Name="transaction_id" />
+    </Key>
+    <Property Type="Int32" Name="inspection_id" Nullable="false" />
+    <Property Type="Int32" Name="transaction_id" Nullable="false" />
+  </EntityType>
+  <ComplexType Name="qdtGetSpcSP_Result">
+    <Property Type="String" Name="serial" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="job" Nullable="true" MaxLength="20" />
+    <Property Type="Int16" Name="suffix" Nullable="true" />
+    <Property Type="String" Name="item" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="oper_num" Nullable="true" />
+    <Property Type="String" Name="characteristic" Nullable="true" MaxLength="1000" />
+    <Property Type="String" Name="basic_rec_type" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="fml_rec_type" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="line1" Nullable="false" Precision="1" Scale="1" />
+    <Property Type="Decimal" Name="line2" Nullable="false" Precision="1" Scale="1" />
+    <Property Type="Decimal" Name="line3" Nullable="false" Precision="1" Scale="1" />
+    <Property Type="Decimal" Name="line4" Nullable="false" Precision="1" Scale="1" />
+    <Property Type="Decimal" Name="line5" Nullable="false" Precision="1" Scale="1" />
+    <Property Type="Decimal" Name="line6" Nullable="false" Precision="1" Scale="1" />
+    <Property Type="Decimal" Name="line7" Nullable="false" Precision="1" Scale="1" />
+    <Property Type="String" Name="fml_mark" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="trans_num" Nullable="false" />
+    <Property Type="Int32" Name="ird_route_id" Nullable="true" />
+    <Property Type="String" Name="inspect_type" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="char_id" Nullable="true" />
+    <Property Type="Int32" Name="record_by" Nullable="true" />
+    <Property Type="DateTime" Name="record_date" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="rec_maximum" Nullable="true" Precision="18" Scale="9" />
+    <Property Type="Decimal" Name="rec_minimum" Nullable="true" Precision="18" Scale="9" />
+    <Property Type="Decimal" Name="rec_value" Nullable="true" Precision="18" Scale="9" />
+    <Property Type="Boolean" Name="rec_passed" Nullable="true" />
+    <Property Type="Int32" Name="user_id" Nullable="true" />
+    <Property Type="String" Name="sso" Nullable="true" MaxLength="9" />
+    <Property Type="String" Name="name_cn" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="name_en" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="login_pwd" Nullable="true" MaxLength="32" />
+    <Property Type="Int32" Name="account_status" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="qdt_inspection_type_string">
+    <Key>
+      <PropertyRef Name="inspection_type_id" />
+      <PropertyRef Name="locale_id" />
+    </Key>
+    <Property Type="Int32" Name="inspection_type_id" Nullable="false" />
+    <Property Type="Int32" Name="locale_id" Nullable="false" />
+    <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="qdt_ll_category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="category" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="qdt_workflow_process">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="request_id" Nullable="false" />
+    <Property Type="Int32" Name="step" Nullable="false" />
+    <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="status" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Type="DateTime" Name="start_time" />
+    <Property Type="DateTime" Name="end_time" />
+  </EntityType>
+  <EntityType Name="qdt_workflow_route">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="workflow_id" Nullable="false" />
+    <Property Type="Int32" Name="step" Nullable="false" />
+    <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="allow_custom_approver" Nullable="false" />
+  </EntityType>
+  <EntityType Name="qdt_workflow_request">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="workflow_id" />
+    <Property Type="Int32" Name="requestor" />
+    <Property Type="Int32" Name="request_for" />
+    <Property Type="DateTime" Name="due_date" />
+    <Property Type="DateTime" Name="start_time" />
+    <Property Type="DateTime" Name="end_time" />
+    <Property Type="String" Name="status" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="current_step" />
+  </EntityType>
+  <EntityType Name="qdt_workflow_approver">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="workflow_id" Nullable="false" />
+    <Property Type="Int32" Name="request_id" Nullable="false" />
+    <Property Type="Int32" Name="step" Nullable="false" />
+    <Property Type="Int32" Name="approver_id" Nullable="false" />
+  </EntityType>
+  <EntityType Name="qdt_disposition">
+    <Key>
+      <PropertyRef Name="disp_id" />
+    </Key>
+    <Property Type="Int32" Name="disp_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="disp_rank" />
+    <Property Type="String" Name="dr_num" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="responsible_department" />
+    <Property Type="Int32" Name="reason" />
+    <Property Type="Int32" Name="disp_type" Nullable="false" />
+    <Property Type="String" Name="description" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="create_by" />
+    <Property Type="DateTime" Name="create_date" />
+    <Property Type="Int32" Name="update_by" />
+    <Property Type="DateTime" Name="update_date" />
+    <Property Type="String" Name="status" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="qdt_workflow">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="business" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="category" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="status" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="lead_time" />
+  </EntityType>
+  <EntityType Name="qdt_workflow_action">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="action_target" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="target_id" />
+    <Property Type="String" Name="process_action" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="handler" />
+    <Property Type="DateTime" Name="process_time" />
+    <Property Type="String" Name="remark" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="qdt_tq_certification">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="category" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="employee_id" />
+    <Property Type="String" Name="certification_item" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="certification_item_id" />
+    <Property Type="Int32" Name="request_id" />
+    <Property Type="DateTime" Name="issue_date" />
+    <Property Type="DateTime" Name="refresh_date" />
+    <Property Type="DateTime" Name="expire_date" />
+    <Property Type="String" Name="status" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="certify_mode" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="is_trainer" />
+    <Property Type="String" Name="remark" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="qdtTqGetSkillTrainingRoutesSp_Result">
+    <Property Type="Int32" Name="workflow_id" Nullable="true" />
+    <Property Type="Int32" Name="step" Nullable="true" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="allow_custom_approver" Nullable="true" />
+    <Property Type="String" Name="approvers" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="status" Nullable="false" MaxLength="4" />
+  </ComplexType>
+  <ComplexType Name="qdtGetWorkflowProcessesSp_Result">
+    <Property Type="Int32" Name="request_id" Nullable="false" />
+    <Property Type="Int32" Name="step" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="status" Nullable="false" MaxLength="50" />
+    <Property Type="Boolean" Name="allow_custom_approver" Nullable="false" />
+    <Property Type="String" Name="approvers" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <EntityType Name="qdt_tq_operational_restriction">
+    <Key>
+      <PropertyRef Name="row_pointer" />
+    </Key>
+    <Property Type="String" Name="item" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="oper_num" />
+    <Property Type="Int32" Name="operation_id" />
+    <Property Type="String" Name="work_type" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="certification_category" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="certification_item_id" Nullable="false" />
+    <Property Type="Guid" Name="row_pointer" Nullable="false" />
+  </EntityType>
+  <ComplexType Name="qdtTqGetOperationalRestrictionsSp_Result">
+    <Property Type="String" Name="item" Nullable="false" MaxLength="30" />
+    <Property Type="Int32" Name="oper_num" Nullable="true" />
+    <Property Type="Int32" Name="operation_id" Nullable="true" />
+    <Property Type="String" Name="work_type" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="certification_category" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="certification_item_id" Nullable="false" />
+    <Property Type="String" Name="certification_item" Nullable="true" MaxLength="255" />
+    <Property Type="Guid" Name="row_pointer" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="qdtTqGetCertificationItemsSp_Result">
+    <Property Type="String" Name="certification_category" Nullable="false" MaxLength="3" />
+    <Property Type="Int32" Name="certification_item_id" Nullable="false" />
+    <Property Type="String" Name="certification_item" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <EntityType Name="qdt_tq_skill_basic_lesson">
+    <Key>
+      <PropertyRef Name="skill_code_id" />
+      <PropertyRef Name="lesson_id" />
+    </Key>
+    <Property Type="Int32" Name="skill_code_id" Nullable="false" />
+    <Property Type="Int32" Name="lesson_id" Nullable="false" />
+  </EntityType>
+  <ComplexType Name="qdtTqGetUserProcessApprovalsSp_Result">
+    <Property Type="Int32" Name="current_process_id" Nullable="false" />
+    <Property Type="Int32" Name="request_id" Nullable="false" />
+    <Property Type="String" Name="current_process" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="start_time" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="due_date" Nullable="true" />
+    <Property Type="Int32" Name="request_for" Nullable="true" />
+    <Property Type="Int32" Name="requestor" Nullable="true" />
+    <Property Type="DateTime" Name="process_start_time" Nullable="true" Precision="23" />
+    <Property Type="String" Name="business" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="category" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="attachment_quantity" Nullable="true" />
+    <Property Type="String" Name="certification_item" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="qdtTqGetPersonSkillCountSp_Result">
+    <Property Type="Int32" Name="employee_id" Nullable="true" />
+    <Property Type="Int32" Name="certified" Nullable="true" />
+    <Property Type="Int32" Name="training_in_process" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="qdtTqGetGroupSkillCountSp_Result">
+    <Property Type="Int32" Name="employee_id" Nullable="true" />
+    <Property Type="Int32" Name="certified" Nullable="true" />
+    <Property Type="Int32" Name="training_in_process" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="qdt_ird_characteristic">
+    <Key>
+      <PropertyRef Name="char_id" />
+    </Key>
+    <Property Type="Int32" Name="char_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ird_id" />
+    <Property Type="Int32" Name="oper_num" />
+    <Property Type="Int32" Name="char_seq" />
+    <Property Type="String" Name="char_num" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="char_type" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="blue_print_zone" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="basic_gage_id" />
+    <Property Type="Int32" Name="fml_gage_id" />
+    <Property Type="String" Name="char_description" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="characteristic" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="basic_rec_type" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="fml_rec_type" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="char_maximum" Precision="18" Scale="9" />
+    <Property Type="Decimal" Name="char_minimum" Precision="18" Scale="9" />
+    <Property Type="String" Name="gdnt_link" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="oai_flag" />
+    <Property Type="Boolean" Name="oap_flag" />
+    <Property Type="Boolean" Name="is_cmm_flag" />
+    <Property Type="Boolean" Name="need_cmm" />
+    <Property Type="Int32" Name="line_qty" />
+    <Property Type="String" Name="status" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="last_char_id" />
+    <Property Type="String" Name="revision_type" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="cpk" Precision="18" Scale="9" />
+    <Property Type="Boolean" Name="spc_control" />
+    <Property Type="Boolean" Name="spc_result" />
+  </EntityType>
+  <EntityType Name="qdt_ird_route">
+    <Key>
+      <PropertyRef Name="ird_route_id" />
+    </Key>
+    <Property Type="Int32" Name="ird_route_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="serial" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="job" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="suffix" />
+    <Property Type="String" Name="item" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="oper_num" />
+    <Property Type="Int32" Name="char_seq" />
+    <Property Type="String" Name="char_num" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="char_type" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="blue_print_zone" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="basic_gage_id" />
+    <Property Type="Int32" Name="fml_gage_id" />
+    <Property Type="String" Name="char_description" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="characteristic" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="basic_rec_type" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="fml_rec_type" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="char_maximum" Precision="18" Scale="9" />
+    <Property Type="Decimal" Name="char_minimum" Precision="18" Scale="9" />
+    <Property Type="String" Name="gdnt_link" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="oai_flag" />
+    <Property Type="Boolean" Name="oap_flag" />
+    <Property Type="Boolean" Name="is_cmm_flag" />
+    <Property Type="Boolean" Name="need_cmm" />
+    <Property Type="Int32" Name="line_qty" />
+    <Property Type="String" Name="fml_mark" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="create_date" />
+    <Property Type="Int32" Name="create_by" />
+    <Property Type="Int32" Name="ird_id" />
+    <Property Type="Int32" Name="char_id" />
+    <Property Type="String" Name="comment1" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="comment2" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="update_by" />
+    <Property Type="DateTime" Name="update_date" />
+    <Property Type="Decimal" Name="cpk" Precision="18" Scale="9" />
+    <Property Type="Boolean" Name="spc_control" />
+    <Property Type="Boolean" Name="spc_result" />
+  </EntityType>
+  <EntityType Name="qdt_ll_lesson_item">
+    <Key>
+      <PropertyRef Name="row_pointer" />
+    </Key>
+    <Property Type="Int32" Name="lesson_id" Nullable="false" />
+    <Property Type="String" Name="item" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="operation" />
+    <Property Type="Guid" Name="row_pointer" Nullable="false" />
+  </EntityType>
+  <ComplexType Name="qdtGetOpsByItemSP_Result">
+    <Property Type="String" Name="job" Nullable="false" MaxLength="20" />
+    <Property Type="Int16" Name="suffix" Nullable="false" />
+    <Property Type="Int32" Name="oper_num" Nullable="false" />
+    <Property Type="String" Name="wc" Nullable="false" MaxLength="6" />
+    <Property Type="Decimal" Name="setup_hrs_t" Nullable="true" Precision="19" Scale="8" />
+    <Property Type="Decimal" Name="setup_cost_t" Nullable="true" Precision="18" Scale="8" />
+    <Property Type="Byte" Name="complete" Nullable="true" />
+    <Property Type="Decimal" Name="setup_hrs_v" Nullable="true" Precision="19" Scale="8" />
+    <Property Type="Decimal" Name="wip_amt" Nullable="true" Precision="18" Scale="8" />
+    <Property Type="Decimal" Name="qty_scrapped" Nullable="true" Precision="19" Scale="8" />
+    <Property Type="Decimal" Name="qty_received" Nullable="true" Precision="19" Scale="8" />
+    <Property Type="Decimal" Name="qty_moved" Nullable="true" Precision="19" Scale="8" />
+    <Property Type="Decimal" Name="qty_complete" Nullable="true" Precision="19" Scale="8" />
+    <Property Type="DateTime" Name="effect_date" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="obs_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="bflush_type" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="run_basis_lbr" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="run_basis_mch" Nullable="true" MaxLength="1" />
+    <Property Type="Decimal" Name="fixovhd_t_lbr" Nullable="true" Precision="18" Scale="8" />
+    <Property Type="Decimal" Name="fixovhd_t_mch" Nullable="true" Precision="18" Scale="8" />
+    <Property Type="Decimal" Name="varovhd_t_lbr" Nullable="true" Precision="18" Scale="8" />
+    <Property Type="Decimal" Name="varovhd_t_mch" Nullable="true" Precision="18" Scale="8" />
+    <Property Type="Decimal" Name="run_hrs_t_lbr" Nullable="true" Precision="19" Scale="8" />
+    <Property Type="Decimal" Name="run_hrs_t_mch" Nullable="true" Precision="19" Scale="8" />
+    <Property Type="Decimal" Name="run_hrs_v_lbr" Nullable="true" Precision="10" Scale="5" />
+    <Property Type="Decimal" Name="run_hrs_v_mch" Nullable="true" Precision="10" Scale="5" />
+    <Property Type="Decimal" Name="run_cost_t_lbr" Nullable="true" Precision="18" Scale="8" />
+    <Property Type="Byte" Name="cntrl_point" Nullable="true" />
+    <Property Type="Decimal" Name="setup_rate" Nullable="false" Precision="10" Scale="3" />
+    <Property Type="Decimal" Name="efficiency" Nullable="true" Precision="4" Scale="1" />
+    <Property Type="Decimal" Name="fovhd_rate_mch" Nullable="true" Precision="9" Scale="3" />
+    <Property Type="Decimal" Name="vovhd_rate_mch" Nullable="true" Precision="9" Scale="3" />
+    <Property Type="Decimal" Name="run_rate_lbr" Nullable="false" Precision="10" Scale="3" />
+    <Property Type="Decimal" Name="varovhd_rate" Nullable="true" Precision="9" Scale="3" />
+    <Property Type="Decimal" Name="fixovhd_rate" Nullable="true" Precision="9" Scale="3" />
+    <Property Type="Decimal" Name="wip_matl_amt" Nullable="true" Precision="18" Scale="8" />
+    <Property Type="Decimal" Name="wip_lbr_amt" Nullable="true" Precision="18" Scale="8" />
+    <Property Type="Decimal" Name="wip_fovhd_amt" Nullable="true" Precision="18" Scale="8" />
+    <Property Type="Decimal" Name="wip_vovhd_amt" Nullable="true" Precision="18" Scale="8" />
+    <Property Type="Decimal" Name="wip_out_amt" Nullable="true" Precision="18" Scale="8" />
+    <Property Type="Byte" Name="NoteExistsFlag" Nullable="false" />
+    <Property Type="DateTime" Name="RecordDate" Nullable="false" Precision="23" />
+    <Property Type="Guid" Name="RowPointer" Nullable="false" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="UpdatedBy" Nullable="false" MaxLength="30" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="23" />
+    <Property Type="Byte" Name="InWorkflow" Nullable="false" />
+    <Property Type="String" Name="Uf_jobroute_chn_des" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="Uf_jobroute_eng_desc" Nullable="true" MaxLength="1000" />
+    <Property Type="Decimal" Name="Uf_jobroute_ins_hours" Nullable="true" Precision="9" Scale="2" />
+    <Property Type="Int32" Name="Uf_job_route_inspection_time" Nullable="true" />
+    <Property Type="Int32" Name="Uf_job_route_qa_final_time" Nullable="true" />
+    <Property Type="Int32" Name="Uf_job_route_qa_paperwork_time" Nullable="true" />
+    <Property Type="Int32" Name="Uf_job_route_repair_time" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="qdtgetGRN_Result">
+    <Property Type="String" Name="grn_num" Nullable="false" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="qdtgetGRNDetail_Result">
+    <Property Type="String" Name="po_num" Nullable="false" MaxLength="10" />
+    <Property Type="Int16" Name="po_line" Nullable="false" />
+    <Property Type="String" Name="item" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="vend_num" Nullable="false" MaxLength="7" />
+    <Property Type="Decimal" Name="qty_rec" Nullable="true" Precision="19" Scale="8" />
+    <Property Type="String" Name="drawing_nbr" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="track_num" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="grn_num" Nullable="true" MaxLength="30" />
+    <Property Type="Int16" Name="grn_line" Nullable="true" />
+    <Property Type="String" Name="description" Nullable="true" MaxLength="40" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="qdtgetGRNLine_Result">
+    <Property Type="String" Name="grn_num" Nullable="false" MaxLength="30" />
+    <Property Type="Int16" Name="grn_line" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="qdt_liability">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="liability" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="qdt_goods_returned_for">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="goods_returned_for" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="qdtRigGetSerLotByGRN_Result">
+    <Property Type="String" Name="serial_lot" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="qdtGetDiscrepanciesByDispSP_Result">
+    <Property Type="Int32" Name="disc_id" Nullable="false" />
+    <Property Type="String" Name="dr_num" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="description" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="NormalDescription" Nullable="true" MaxLength="500" />
+    <Property Type="Boolean" Name="disc_disp" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="qdtGetRigList_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="rig_num" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="vendor_num" Nullable="true" MaxLength="7" />
+    <Property Type="String" Name="part_num" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="liability" Nullable="true" MaxLength="15" />
+    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="due_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="defect_desc" Nullable="true" />
+    <Property Type="String" Name="po_num" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="po_line" Nullable="true" />
+    <Property Type="DateTime" Name="goods_receive_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="coc_num" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="grn_num" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="grn_line" Nullable="true" />
+    <Property Type="String" Name="part_desc" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="drawing_num" Nullable="true" MaxLength="25" />
+    <Property Type="Int32" Name="qty_received" Nullable="true" />
+    <Property Type="Int32" Name="qty_rejected" Nullable="true" />
+    <Property Type="String" Name="goods_returned_for" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="quanlity_escape_en" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="quanlity_escape_cn" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="create_by_cn" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="create_by_en" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="serial_lot" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="dr_num" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="rig_line" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="qdtGetDiscrepanciesByActSP_Result">
+    <Property Type="Int32" Name="disc_id" Nullable="false" />
+    <Property Type="String" Name="dr_num" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="description" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="NormalDescription" Nullable="true" MaxLength="500" />
+    <Property Type="Boolean" Name="disc_act" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="QDT_RIG_VendorManagement">
+    <Key>
+      <PropertyRef Name="vend_num" />
+    </Key>
+    <Property Type="String" Name="vend_num" Nullable="false" MaxLength="7" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="name" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="vendor_type" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="address" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="vendor_status" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="contact_name" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="mail_address" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="scope_of_service" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="certification_status" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="certification_expiry_date" />
+    <Property Type="String" Name="remark" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="qdt_rig_vendorList">
+    <Key>
+      <PropertyRef Name="vendor_num" />
+    </Key>
+    <Property Type="String" Name="vendor_num" Nullable="false" MaxLength="7" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="vendor_status" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="contact_name" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="mail_address" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="scope_of_service" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="certification_status" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="certification_expiry_date" />
+    <Property Type="String" Name="remark" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="qdtGetSerialsOrLotsSP_Result">
+    <Property Type="String" Name="serial_lot" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="item" Nullable="false" MaxLength="30" />
+  </ComplexType>
+  <EntityType Name="qdt_num_gen">
+    <Key>
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Type="String" Name="name" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="cur_id" />
+    <Property Type="String" Name="prefix" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="total_len" />
+  </EntityType>
+  <EntityType Name="qdt_cc">
+    <Key>
+      <PropertyRef Name="cc_num" />
+    </Key>
+    <Property Type="String" Name="cc_num" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="business" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="department" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="part_num" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="serial_lot" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="create_by" />
+    <Property Type="DateTime" Name="create_date" />
+    <Property Type="String" Name="po_num" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="repeat" />
+    <Property Type="String" Name="criteria" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="type" />
+    <Property Type="Double" Name="rejected_quantity" />
+    <Property Type="String" Name="comments" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="failure_code" />
+    <Property Type="Int32" Name="indicate_finding" />
+    <Property Type="DateTime" Name="response_date" />
+    <Property Type="Int32" Name="quality_rep" />
+    <Property Type="String" Name="responsible_manager" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ca_assigned_to" />
+    <Property Type="DateTime" Name="closed_date" />
+    <Property Type="String" Name="audit_findings" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="update_by" />
+    <Property Type="DateTime" Name="update_date" />
+    <Property Type="Boolean" Name="is_deleted" />
+    <Property Type="Int32" Name="deleted_by" />
+    <Property Type="DateTime" Name="delete_date" />
+  </EntityType>
+  <ComplexType Name="qdtgetGRNDetail_Result1">
+    <Property Type="String" Name="track_num" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="grn_num" Nullable="true" MaxLength="30" />
+    <Property Type="Int16" Name="grn_line" Nullable="true" />
+    <Property Type="String" Name="item" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="description" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="drawing_nbr" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="vend_num" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="po_num" Nullable="false" MaxLength="10" />
+    <Property Type="Int16" Name="po_line" Nullable="false" />
+    <Property Type="Decimal" Name="qty_rec" Nullable="true" Precision="19" Scale="8" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="qdtGetTrackNum_Result">
+    <Property Type="String" Name="track_num" Nullable="false" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="qdtRigGetDetail_Result">
+    <Property Type="String" Name="track_num" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="grn_num" Nullable="true" MaxLength="30" />
+    <Property Type="Int16" Name="grn_line" Nullable="true" />
+    <Property Type="String" Name="item" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="description" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="drawing_nbr" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="vend_num" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="po_num" Nullable="false" MaxLength="10" />
+    <Property Type="Int16" Name="po_line" Nullable="false" />
+    <Property Type="Decimal" Name="qty_rec" Nullable="true" Precision="19" Scale="8" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="23" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="tracking_num" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <EntityType Name="qdt_ll_lesson">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="category_id" Nullable="false" />
+    <Property Type="String" Name="subject" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="detail" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="owner_id" Nullable="false" />
+    <Property Type="String" Name="business" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="restrict_all" />
+    <Property Type="DateTime" Name="create_date" Nullable="false" />
+    <Property Type="Int32" Name="create_by" Nullable="false" />
+    <Property Type="String" Name="working_group" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="effective_time" />
+    <Property Type="Int32" Name="fixed_effective_time" />
+    <Property Type="String" Name="status" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="update_by" />
+    <Property Type="DateTime" Name="update_date" />
+    <Property Type="String" Name="skill_code_binding_mode" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="learning_cycle" />
+    <Property Type="Int32" Name="failure_mode" />
+  </EntityType>
+  <EntityType Name="qdt_rig">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="rig_num" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="rig_line" />
+    <Property Type="String" Name="vendor_num" MaxLength="7" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="part_num" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="liability" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="status" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="create_date" />
+    <Property Type="DateTime" Name="due_date" />
+    <Property Type="String" Name="defect_desc" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="po_num" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="po_line" />
+    <Property Type="DateTime" Name="goods_receive_date" />
+    <Property Type="String" Name="coc_num" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="grn_num" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="grn_line" />
+    <Property Type="String" Name="part_desc" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="drawing_num" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="qty_received" />
+    <Property Type="Int32" Name="qty_rejected" />
+    <Property Type="String" Name="goods_returned_for" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="create_by" />
+    <Property Type="Int32" Name="quanlity_escape" />
+    <Property Type="String" Name="serial_lot" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="dr_num" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DR_ActionDesc">
+    <Key>
+      <PropertyRef Name="dr_num" />
+    </Key>
+    <Property Type="String" Name="dr_num" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="totalActionDesc" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="qdtGetInProcessOperationInformationSP_Result">
+    <Property Type="Int32" Name="certification_id" Nullable="false" />
+    <Property Type="String" Name="skill_code" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="skill_code_id" Nullable="true" />
+    <Property Type="String" Name="process_name" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="process_id" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="qdt_ll_failure_mode">
+    <Key>
+      <PropertyRef Name="mode_id" />
+    </Key>
+    <Property Type="Int32" Name="mode_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="failure_mode_cn" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="failure_mode_en" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="is_active" />
+  </EntityType>
+  <ComplexType Name="qdtTqGetSkillTrainingDirectCertificationRoutesSp_Result">
+    <Property Type="Int32" Name="workflow_id" Nullable="false" />
+    <Property Type="Int32" Name="step" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="status" Nullable="false" MaxLength="4" />
+    <Property Type="Boolean" Name="allow_custom_approver" Nullable="false" />
+    <Property Type="String" Name="approvers" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="qdtTqGetSkillTrainingNpiDirectCertificationRoutesSp_Result">
+    <Property Type="Int32" Name="workflow_id" Nullable="false" />
+    <Property Type="Int32" Name="step" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="status" Nullable="false" MaxLength="4" />
+    <Property Type="Boolean" Name="allow_custom_approver" Nullable="false" />
+    <Property Type="String" Name="approvers" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="qdtSearchRig_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="rig_num" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="rig_line" Nullable="true" />
+    <Property Type="String" Name="vendor_num" Nullable="true" MaxLength="7" />
+    <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="serial_lot" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="part_num" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="liability" Nullable="true" MaxLength="15" />
+    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="due_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="defect_desc" Nullable="true" />
+    <Property Type="String" Name="po_num" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="po_line" Nullable="true" />
+    <Property Type="DateTime" Name="goods_receive_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="coc_num" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="grn_num" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="grn_line" Nullable="true" />
+    <Property Type="String" Name="part_desc" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="drawing_num" Nullable="true" MaxLength="25" />
+    <Property Type="Int32" Name="qty_received" Nullable="true" />
+    <Property Type="Int32" Name="qty_rejected" Nullable="true" />
+    <Property Type="String" Name="goods_returned_for" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="create_by_cn" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="create_by_en" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="quanlity_escape_en" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="quanlity_escape_cn" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="dr_num" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="qdtTqGetSkillTrainingRefreshRoutesSp_Result">
+    <Property Type="Int32" Name="workflow_id" Nullable="false" />
+    <Property Type="Int32" Name="step" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="status" Nullable="false" MaxLength="4" />
+    <Property Type="Boolean" Name="allow_custom_approver" Nullable="false" />
+    <Property Type="String" Name="approvers" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="qdtRigGetGraphic_Result">
+    <Property Type="Int32" Name="week" Nullable="true" />
+    <Property Type="Int32" Name="total_rig" Nullable="true" />
+    <Property Type="Int32" Name="total_ytd" Nullable="true" />
+    <Property Type="Int32" Name="total_qem" Nullable="true" />
+    <Property Type="Int32" Name="total_qem_ytd" Nullable="true" />
+    <Property Type="Int32" Name="base_line" Nullable="true" />
+    <Property Type="Int32" Name="rig_open_overdue" Nullable="false" />
+    <Property Type="Int32" Name="rig_open" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="qdt_inspection">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="item" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="wo" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="suffix" />
+    <Property Type="Int32" Name="oper_num" />
+    <Property Type="Int32" Name="quantity" />
+    <Property Type="Int32" Name="project_id" />
+    <Property Type="Int32" Name="inspection_location_id" />
+    <Property Type="Int32" Name="inspection_type_id" />
+    <Property Type="String" Name="urgent_reason" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="urgency" />
+    <Property Type="DateTime" Name="start_time" />
+    <Property Type="DateTime" Name="end_time" />
+    <Property Type="Boolean" Name="passed" />
+    <Property Type="String" Name="dr_num" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="create_date" />
+    <Property Type="Int32" Name="create_by" />
+    <Property Type="DateTime" Name="update_date" />
+    <Property Type="Int32" Name="update_by" />
+    <Property Type="String" Name="remark" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="priority" />
+    <Property Type="String" Name="status" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="parent_id" />
+  </EntityType>
+  <ComplexType Name="qdtGetInspectionRecordsSP_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="item" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="wo" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="suffix" Nullable="true" />
+    <Property Type="Int32" Name="oper_num" Nullable="true" />
+    <Property Type="Int32" Name="quantity" Nullable="true" />
+    <Property Type="String" Name="urgent_reason" Nullable="true" MaxLength="1000" />
+    <Property Type="Int32" Name="urgency" Nullable="true" />
+    <Property Type="DateTime" Name="start_time" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="end_time" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="passed" Nullable="true" />
+    <Property Type="String" Name="dr_num" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="update_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="remark" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="priority" Nullable="true" />
+    <Property Type="Int32" Name="parent_id" Nullable="true" />
+    <Property Type="String" Name="location" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="serial" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="type" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="create_by" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="inspector" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="inspector_sso" Nullable="true" MaxLength="9" />
+    <Property Type="String" Name="create_by_sso" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="project" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="qdtTqGetSkillTrainingStatusSp_Result">
+    <Property Type="Int32" Name="request_id" Nullable="false" />
+    <Property Type="Int32" Name="workflow_id" Nullable="true" />
+    <Property Type="Int32" Name="certification_id" Nullable="false" />
+    <Property Type="Int32" Name="employee_id" Nullable="true" />
+    <Property Type="String" Name="local_id" Nullable="true" MaxLength="5" />
+    <Property Type="Int32" Name="certification_item_id" Nullable="true" />
+    <Property Type="String" Name="skill_code" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="start_time" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="end_time" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="current_step" Nullable="true" />
+    <Property Type="String" Name="current_step_name" Nullable="true" MaxLength="500" />
+    <Property Type="DateTime" Name="current_step_start_time" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="current_process_id" Nullable="false" />
+    <Property Type="DateTime" Name="due_date" Nullable="true" />
+    <Property Type="String" Name="certify_mode" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="remark" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <EntityType Name="qdt_com_string">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="category_1" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="category_2" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="en_string" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="cn_string" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="qdt_tq_skill_code">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="skill_code" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="description" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="category" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="training_route_id" />
+    <Property Type="Boolean" Name="critical" />
+    <Property Type="String" Name="work_type" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="instruction_id" />
+    <Property Type="String" Name="business" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="effective_time" />
+    <Property Type="Int32" Name="fixed_effective_time" />
+    <Property Type="Int32" Name="learning_time" />
+    <Property Type="Int32" Name="invalid_time" />
+    <Property Type="String" Name="workflow_type" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="is_special_skill" />
+    <Property Type="Boolean" Name="is_deleted" Nullable="false" />
+  </EntityType>
+  <EntityType Name="qdt_scrapped_record">
+    <Key>
+      <PropertyRef Name="record_id" />
+    </Key>
+    <Property Type="Int32" Name="record_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="record_by" Nullable="false" />
+    <Property Type="Int32" Name="scrapped_by" Nullable="false" />
+    <Property Type="DateTime" Name="scrapped_date" Nullable="false" />
+    <Property Type="Int32" Name="skill_code_id" Nullable="false" />
+    <Property Type="DateTime" Name="create_date" Nullable="false" />
+    <Property Type="String" Name="remark" MaxLength="3000" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>
