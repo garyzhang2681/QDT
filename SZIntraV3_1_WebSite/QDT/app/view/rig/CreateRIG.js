@@ -5,6 +5,7 @@
     modal: true,
     width: 1050,
     height: 730,
+    autoScroll: true,
     layout: {
         type: 'fit'
     },
@@ -18,6 +19,7 @@
         var me = this;
 
         var createForm = Ext.widget('form', {
+            height: 550,
             overflowY: 'auto',
             frame: false,
             border: false,

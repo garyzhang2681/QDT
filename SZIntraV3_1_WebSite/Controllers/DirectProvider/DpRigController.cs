@@ -507,6 +507,9 @@ namespace SZIntraV3_1_WebSite.Controllers.DirectProvider
         {
             var rigHead = ent.qdt_rig.First(n => n.rig_num == rignum);
             var rigDetail = ent.qdt_rig.Where(n => n.rig_num == rignum);
+
+            var rigVendorManagement = ent.QDT_RIG_VendorManagement.ToArray();
+            
             var vendorContact = ent.QDT_RIG_VendorManagement.Single(n => n.vend_num == rigHead.vendor_num);
 
             StringBuilder serLot = new StringBuilder();
