@@ -28,6 +28,7 @@ namespace SZIntraV3_1_WebSite.Controllers.DirectProvider
                             join qit in db.qdt_inspection_type on qits.inspection_type_id equals qit.id
                             join ql in db.qdt_locale on qits.locale_id equals ql.id
                             where ql.name == language && qit.category == category
+                            orderby qits.name
                             select new
                             {
                                 inspection_type = new

@@ -148,6 +148,7 @@ Ext.define('QDT.view.tq.CreateSkillTrainingWindow', {
             || currentUserSso == '307010147'
             || currentUserSso == '307006710'
             || currentUserSso == '307004931'
+            || currentUserSso == '212420977'
 
             ) {
             return false;
