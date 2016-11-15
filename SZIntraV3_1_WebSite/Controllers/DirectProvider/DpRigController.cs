@@ -891,10 +891,12 @@ namespace SZIntraV3_1_WebSite.Controllers.DirectProvider
 
             Dictionary<string,int> SQE = new Dictionary<string, int>();
 
-            SQE.Add("Zhang Zhihang", 10);
+            SQE.Add("Liu Li", 398);
             SQE.Add("Ning Zhenping", 153);
             SQE.Add("Yu Yanxia", 320);
-            SQE.Add("Jin Chao", 173);
+            SQE.Add("Zhang Hua", 543);
+            SQE.Add("Jin Yifan", 50);
+            SQE.Add("Liu Xiangli", 775);
 
             
 
