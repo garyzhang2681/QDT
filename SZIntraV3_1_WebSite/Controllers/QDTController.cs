@@ -2464,7 +2464,7 @@ namespace SZIntraV3_1_WebSite.Controllers
 
 
 
-            Paragraph version = new Paragraph("GE Aviation Suzhou F8300-009  ISSUE:04", font_table_name);
+            Paragraph version = new Paragraph("GE Aviation Suzhou F8700-006  ISSUE:05", font_table_name);
             PdfPCell version_cell = new PdfPCell(version);
             version_cell.HorizontalAlignment = Element.ALIGN_LEFT;
             version_cell.Border = 0;
@@ -2761,6 +2761,7 @@ namespace SZIntraV3_1_WebSite.Controllers
 
             }
             // document.Add(dispositionTable);
+            document.Add(new Phrase("                                     如果零件报废,确认是否有配件", font_Context));
             document.Add(p_blank);
             document.Add(new Phrase("ME sign/Date:" + dr.meOwner.employee.name_cn + " " + dr.meOwner.employee.name_en + "      ", font_Context));
 
