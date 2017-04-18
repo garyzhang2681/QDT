@@ -1,0 +1,166 @@
+﻿@using SZIntraV3_1_WebSite.Models
+@using SZIntraV3_1_WebSite.Models.EntityModel.QdtModel
+@using SuzhouHr.Models.EntityModel;
+@model QdtDiscrepancyReport
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@(ViewBag.ErrorMessage == null ? string.Format("{0} Information", Model.dr.dr_num) : "Error")
+    </title>
+    <style type="text/css">
+        body
+        {
+            font-family: "GE Inspira";
+        }
+        
+        .table
+        {
+            border-collapse: collapse;
+        }
+        .table td, .table th
+        {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    @if (ViewBag.ErrorMessage != null)
+    { 
+        <div>
+            @ViewBag.ErrorMessage
+        </div>
+    }
+    else
+    {
+        using (QDTEntities db = new QDTEntities())
+        {
+            SuzhouHrEntities hr=new  SuzhouHrEntities();
+            if (!db.qdt_disposition.Any(n => n.dr_num == Model.dr.dr_num))
+            { 
+        <div>
+            There is no disposition for this discrepancy report.</div>
+            }
+            else
+            {
+                foreach (var disp in db.qdt_disposition.Where(n => n.dr_num == Model.dr.dr_num))
+                { 
+        <table class="table">
+            <caption>
+                Disposition Rank #@disp.disp_rank</caption>
+            <tr>
+                <th>
+                    Type
+                </th>
+                <th>
+                    Reason
+                </th>
+                <th>
+                    Status
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Created Date
+                </th>
+            </tr>
+            <tr>
+                <td>@db.qdt_com_string.Single(n=>n.id==disp.disp_type).cn_string
+                </td>
+                <td>@disp.reason
+                </td>
+                <td>@disp.status.ToUpper()
+                </td>
+                <td>@disp.description
+                </td>
+                <td>@disp.create_date.Value.ToString("yyyy-MM-dd")
+                </td>
+            </tr>
+        </table>
+        <br />
+                    if (!db.qdt_action.Any(n => n.disp_id == disp.disp_id))
+                    {
+        <div>
+            There is no action for this disposition.</div>
+                    }
+                    else
+                    {
+        <table class="table">
+            <caption>
+                Action List for Disposition Rank #@disp.disp_rank</caption>
+            <tr>
+                <th>
+                    Type
+                </th>
+                <th>
+                    Owner
+                </th>
+                <th>
+                    Status
+                </th>
+                <th>
+                    Short Term Action
+                </th>
+                <th>
+                    Comformity Action
+                </th>
+                <th>
+                    Long Term Action
+                </th>
+                <th>
+                    Created Date
+                </th>
+                <th>
+                    Updated Date
+                </th>
+                <th>
+                    Due Date
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Remark
+                </th>
+            </tr>
+            @foreach (var action in db.qdt_action.Where(n => n.disp_id == disp.disp_id))
+            {
+                <tr>
+                    <td>@db.qdt_com_string.Single(n => n.id == action.act_type).cn_string
+                    </td>
+                    <td>@hr.hr_employee.Single(n=>n.employee_id==action.act_owner).name_cn
+                    </td>
+                    <td>@action.status.ToUpper()
+                    </td>
+                    <td>@action.st_action
+                    </td>
+                    <td>@action.ct_action
+                    </td>
+                    <td>@action.lt_action
+                    </td>
+                    <td>@action.create_date.Value.ToString("yyyy-MM-dd")
+                    </td>
+                    <td>@action.update_date.Value.ToString("yyyy-MM-dd HH:mm")
+                    </td>
+                    <td>@action.due_date.Value.ToString("yyyy-MM-dd")
+                    </td>
+                    <td>@action.description
+                    </td>
+                    <td>@action.remark
+                    </td>
+                </tr>
+            }
+        </table>
+                    }
+        <hr />
+                }
+            }
+            hr.Dispose();
+        }
+
+    }
+</body>
+</html>

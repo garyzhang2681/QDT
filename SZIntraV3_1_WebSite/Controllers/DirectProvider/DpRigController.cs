@@ -277,8 +277,8 @@ namespace SZIntraV3_1_WebSite.Controllers.DirectProvider
                         serial_lot = rigLineList.serial_lot,
 
                         po_line = rigLineList.po_line.ToString() == "" ? null : rigLineList.po_line,
-                        goods_receive_date = rigLineList.received_date.ToString()==""?null:(DateTime?) Convert.ToDateTime(rigLineList.received_date),
-                        grn_line =rigLineList.grn_line.ToString()==""?null: (Int32?) Int32.Parse(rigLineList.grn_line),
+                        goods_receive_date = rigLineList.received_date.ToString() == "" ? null : (DateTime?)Convert.ToDateTime(rigLineList.received_date),
+                        grn_line = rigLineList.grn_line.ToString() == "" ? null : (Int32?)Int32.Parse(rigLineList.grn_line),
 
                         qty_received = rigLineList.qty_received.ToString() == "" ? null : (Int32?)Int32.Parse(rigLineList.qty_received),
                         qty_rejected = rigLineList.qty_rejected.ToString() == "" ? null : (Int32?)Int32.Parse(rigLineList.qty_rejected),
@@ -353,9 +353,9 @@ namespace SZIntraV3_1_WebSite.Controllers.DirectProvider
                 });
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                
+
                 string err = ex.Message;
                 return DirectFailure(err + "; Call Login CreateRIG failed!");
             }
@@ -388,7 +388,7 @@ namespace SZIntraV3_1_WebSite.Controllers.DirectProvider
                     string isEscapeEn = form["quanlity_escape_en"] ?? "";
 
                     int escapeTrans = (isEscapeCn.Equals("是") || isEscapeEn.Equals("True")) ? 1 : 0;
-                    
+
                     rigresultUpdate.due_date = Convert.ToDateTime(form["due_date"]);
 
                     rigresultUpdate.defect_desc = form["defect_desc"];
@@ -401,13 +401,13 @@ namespace SZIntraV3_1_WebSite.Controllers.DirectProvider
 
                     rigresultUpdate.po_num = form["po_num"];
 
-                
+
 
                     rigresultUpdate.coc_num = form["coc_num"];
 
                     rigresultUpdate.grn_num = form["grn_num"];
 
-                   
+
 
                     rigresultUpdate.part_desc = form["part_desc"];
 
@@ -509,7 +509,7 @@ namespace SZIntraV3_1_WebSite.Controllers.DirectProvider
             var rigDetail = ent.qdt_rig.Where(n => n.rig_num == rignum);
 
             var rigVendorManagement = ent.QDT_RIG_VendorManagement.ToArray();
-            
+
             var vendorContact = ent.QDT_RIG_VendorManagement.Single(n => n.vend_num == rigHead.vendor_num);
 
             StringBuilder serLot = new StringBuilder();
@@ -519,7 +519,7 @@ namespace SZIntraV3_1_WebSite.Controllers.DirectProvider
             StringBuilder description = new StringBuilder();
             StringBuilder qtyRec = new StringBuilder();
             StringBuilder qtyRej = new StringBuilder();
-          
+
 
 
 
@@ -537,7 +537,7 @@ namespace SZIntraV3_1_WebSite.Controllers.DirectProvider
 
                 qtyRec.Append(rigLine.qty_received + "/");
                 qtyRej.Append(rigLine.qty_rejected + "/");
-           
+
             }
 
 
@@ -705,7 +705,7 @@ namespace SZIntraV3_1_WebSite.Controllers.DirectProvider
         {
 
             List<qdtRigGetGraphic_Result> result = ent.qdtRigGetGraphic().ToList();
-            
+
             return DirectSuccess(result);
         }
 
@@ -725,7 +725,7 @@ namespace SZIntraV3_1_WebSite.Controllers.DirectProvider
         public ActionResult GetVendorAll()
         {
 
-           List<QDT_RIG_VendorManagement> result = ent.QDT_RIG_VendorManagement.Select(n=>n).ToList();
+            List<QDT_RIG_VendorManagement> result = ent.QDT_RIG_VendorManagement.Select(n => n).ToList();
 
             return this.Direct(new
             {
@@ -758,7 +758,7 @@ namespace SZIntraV3_1_WebSite.Controllers.DirectProvider
         public ActionResult GetVendorName(JObject o)
         {
 
-            var q= o["query"];
+            var q = o["query"];
             string vendorName = q.Value<String>();
 
             List<QDT_RIG_VendorManagement> result = ent.QDT_RIG_VendorManagement.Where(n => n.name.Contains(vendorName)).ToList();
@@ -828,7 +828,7 @@ namespace SZIntraV3_1_WebSite.Controllers.DirectProvider
                     contact_name = form["contact_name"],
                     mail_address = form["mail_address"],
                     certification_status = form["certification_status"],
-                    certification_expiry_date =form["certification_expiry_date"]==""?null:(DateTime?) DateTime.Parse(form["certification_expiry_date"]),
+                    certification_expiry_date = form["certification_expiry_date"] == "" ? null : (DateTime?)DateTime.Parse(form["certification_expiry_date"]),
                     scope_of_service = form["scope_of_service"],
                     remark = form["remark"]
 
@@ -879,7 +879,7 @@ namespace SZIntraV3_1_WebSite.Controllers.DirectProvider
 
             });
         }
-  
+
 
 
         [DirectInclude]
@@ -889,14 +889,16 @@ namespace SZIntraV3_1_WebSite.Controllers.DirectProvider
 
             int userId = GetCurrentUser().user_id;
 
-            Dictionary<string,int> SQE = new Dictionary<string, int>();
+            Dictionary<string, int> SQE = new Dictionary<string, int>();
 
-            SQE.Add("Zhang Zhihang", 10);
+            SQE.Add("Liu Li", 398);
             SQE.Add("Ning Zhenping", 153);
             SQE.Add("Yu Yanxia", 320);
-            SQE.Add("Jin Chao", 173);
+            SQE.Add("Zhang Hua", 543);
+            SQE.Add("Jin Yifan", 50);
+            SQE.Add("Liu Xiangli", 775);
 
-            
+
 
 
             if (SQE.ContainsValue(userId))
@@ -909,7 +911,7 @@ namespace SZIntraV3_1_WebSite.Controllers.DirectProvider
             {
                 return DirectSuccess(0);
             }
-       
+
         }
 
 

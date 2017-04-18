@@ -1,0 +1,44 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Quality Digitalization Tools</title>
+    <link href="@Url.Content("~/Content/icon/ge.ico")" rel="Shortcut Icon" />
+    <link href="@Url.Content("~/extjs/resources/css/ext-all.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/icon.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/ext-button-icon.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/qdt-custom.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/extjs/ext-all.js")" type="text/javascript"></script>
+    @*<script src="@Url.Content("~/extjs/ext-all-debug-w-comments.js")" type="text/javascript"></script>*@
+    @if (ViewBag.lang == "en")
+    { 
+        <script src="@Url.Content("~/extjs/locale/ext-lang-en.js")" type="text/javascript"></script>
+    }
+    else
+    {
+        <script src="@Url.Content("~/extjs/locale/ext-lang-zh_CN.js")" type="text/javascript"></script>
+    }
+    <script src="@Url.Content("~/Direct/Api")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/js/qdt-custom.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/js/renderer.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/js/utility.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/QDT/app/app.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        var validateInputValue = function (value, min, max) {
+            if ((min!=null && value < min) || (max != null &&value > max) ) {
+                var msgbox = My.Msg.warning('您输入的值超出正常范围，请检查是否输入有误');
+                Ext.Function.defer(function () {
+                    msgbox.zIndexManager.bringToFront(msgbox);
+                }, 100);
+            }
+        };
+
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,13 @@
+﻿.xcke * {  
+    box-sizing: content-box !important;  
+    -moz-box-sizing: content-box !important;  
+    -ms-box-sizing: content-box !important;  
+    -webkit-box-sizing: content-box !important;  
+}  
+  
+.cke_dialog_tabs * {  
+    box-sizing: content-box !important;  
+    -moz-box-sizing: content-box !important;  
+    -ms-box-sizing: content-box !important;  
+    -webkit-box-sizing: content-box !important;  
+}  

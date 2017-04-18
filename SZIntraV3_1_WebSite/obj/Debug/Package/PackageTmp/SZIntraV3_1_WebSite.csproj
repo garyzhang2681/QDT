@@ -1,0 +1,939 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{18B9ADEB-CAB1-4BC3-BF42-2166B825FB7A}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SZIntraV3_1_WebSite</RootNamespace>
+    <AssemblyName>SZIntraV3_1_WebSite</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <JSLintSkip>
+    </JSLintSkip>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+    <ExcludeGeneratedDebugSymbol>false</ExcludeGeneratedDebugSymbol>
+    <ExcludeApp_Data>false</ExcludeApp_Data>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Utility">
+      <HintPath>..\..\..\..\..\..\lib\Common.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="Ext.Direct.Mvc">
+      <HintPath>..\..\..\..\..\..\lib\Ext.Direct.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.1.2.5\lib\net40\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.2.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.2.0\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\..\..\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=1.2.5.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.1.2.5\lib\net40\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="ProductionManagement">
+      <HintPath>..\..\..\..\..\..\lib\ProductionManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorEngine, Version=3.0.8.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorEngine.3.0.8\lib\net40\RazorEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="SuzhouHr">
+      <HintPath>..\..\..\..\..\..\lib\SuzhouHr.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\RazorEngine.3.0.8\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\DirectProvider\DpCcController.cs" />
+    <Compile Include="Controllers\DirectProvider\DpDrController.cs" />
+    <Compile Include="Controllers\DirectProvider\DpHrController.cs" />
+    <Compile Include="Controllers\DirectProvider\DpInspectionController.cs" />
+    <Compile Include="Controllers\DirectProvider\DpIrdController.cs" />
+    <Compile Include="Controllers\DirectProvider\DpLlController.cs" />
+    <Compile Include="Controllers\DirectProvider\DpPmbController.cs" />
+    <Compile Include="Controllers\DirectProvider\DpRigController.cs" />
+    <Compile Include="Controllers\DirectProvider\DpScanController%28with shift%29.cs" />
+    <Compile Include="Controllers\DirectProvider\DpScanController.cs" />
+    <Compile Include="Controllers\DirectProvider\DpSkillController.cs" />
+    <Compile Include="Controllers\DirectProvider\DpTqController.cs" />
+    <Compile Include="Controllers\DirectProvider\DpUtilController.cs" />
+    <Compile Include="Controllers\HtmlMailController.cs" />
+    <Compile Include="Controllers\InspectionController.cs" />
+    <Compile Include="Controllers\LessonsLearntController.cs" />
+    <Compile Include="Controllers\QdtBaseController.cs" />
+    <Compile Include="Controllers\QDTController.cs" />
+    <Compile Include="Controllers\QdtViewerController.cs" />
+    <Compile Include="Controllers\ScanController.cs" />
+    <Compile Include="Controllers\SystemAdminController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Attachment.cs" />
+    <Compile Include="Models\AttachmentRefType.cs" />
+    <Compile Include="Models\Base\Reason.cs" />
+    <Compile Include="Models\Dr\ActionStatus.cs" />
+    <Compile Include="Models\Dr\DispositionStatus.cs" />
+    <Compile Include="Models\Dr\DrStatus.cs" />
+    <Compile Include="Models\DummyId.cs" />
+    <Compile Include="Models\DummyIdRepository.cs" />
+    <Compile Include="Models\EntityModel\QDTModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QDTModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Inspection\InspectionRecord.cs" />
+    <Compile Include="Models\Ll\Lesson.cs" />
+    <Compile Include="Models\Ll\LessonStatus.cs" />
+    <Compile Include="Models\Ll\SaveMode.cs" />
+    <Compile Include="Models\Ll\Training.cs" />
+    <Compile Include="Models\Ll\VmQdtLlWorkflowRequest.cs" />
+    <Compile Include="Models\OperationLessonStatus.cs" />
+    <Compile Include="Models\QdtAuthorizeAttribute.cs" />
+    <Compile Include="Models\QdtIrdCharacteristic.cs" />
+    <Compile Include="Models\QdtIrdTransaction.cs" />
+    <Compile Include="Models\LoginResult.cs" />
+    <Compile Include="Models\Disposition.cs" />
+    <Compile Include="Models\QdtAction.cs" />
+    <Compile Include="Models\QdtDiscrepancy.cs" />
+    <Compile Include="Models\QdtDiscrepancyReport.cs" />
+    <Compile Include="Models\EmailDRModel.cs" />
+    <Compile Include="Models\QdtInspectionRecordDetail.cs" />
+    <Compile Include="Models\QdtIrdGage.cs" />
+    <Compile Include="Models\QdtIrdRevision.cs" />
+    <Compile Include="Models\QdtIrdRoute.cs" />
+    <Compile Include="Models\QdtNotificationBase.cs" />
+    <Compile Include="Models\EmailType.cs" />
+    <Compile Include="Models\HrEmployee.cs" />
+    <Compile Include="Models\EntityModel\SystemAdminModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SystemAdminModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QdtCommonString.cs" />
+    <Compile Include="Models\QdtDisposition.cs" />
+    <Compile Include="Models\QueryParametersSet\QdtDrQueryModel.cs" />
+    <Compile Include="Models\Rig\Rig.cs" />
+    <Compile Include="Models\SendEmailModel.cs" />
+    <Compile Include="Models\SlItem.cs" />
+    <Compile Include="Models\SlJobRoute.cs" />
+    <Compile Include="Models\SlOperation.cs" />
+    <Compile Include="Models\SystemString.cs" />
+    <Compile Include="Models\QdtUser.cs" />
+    <Compile Include="Models\System\VmNativeUser.cs" />
+    <Compile Include="Models\Tq\Certification.cs" />
+    <Compile Include="Models\Tq\CertificationCategory.cs" />
+    <Compile Include="Models\Tq\CertificationStatus.cs" />
+    <Compile Include="Models\Tq\CertifyMode.cs" />
+    <Compile Include="Models\Tq\DeactivateReason.cs" />
+    <Compile Include="Models\Tq\OperationWorkType.cs" />
+    <Compile Include="Models\Tq\VmDirectCertification.cs" />
+    <Compile Include="Models\Tq\VmQdtStcWorkflowRequest.cs" />
+    <Compile Include="Models\Tq\VmWorkflowProcess.cs" />
+    <Compile Include="Models\Tq\WorkflowActionTarget.cs" />
+    <Compile Include="Models\Tq\WorkflowActionType.cs" />
+    <Compile Include="Models\Tq\RejectReason.cs" />
+    <Compile Include="Models\Tq\WorkflowProcessStatus.cs" />
+    <Compile Include="Models\Tq\WorkflowRequestStatus.cs" />
+    <Compile Include="Models\Tq\WorkflowType.cs" />
+    <Compile Include="Models\Tq\WorkType.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Tq\Workflow.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Strings.zh.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.zh.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Content Include="QDT\app\controller\tq\ScrappedRecord.js" />
+    <Compile Include="Utility\DirectHelper.cs" />
+    <Compile Include="Models\TreeMenu.cs" />
+    <Compile Include="Utility\Email.cs" />
+    <Compile Include="Utility\Encryption.cs" />
+    <Compile Include="Utility\FileHandler.cs" />
+    <Compile Include="Utility\DRFooter.cs" />
+    <Compile Include="Utility\GlobalConfig.cs" />
+    <Compile Include="Utility\Jobs.cs" />
+    <Compile Include="Utility\ProgramStringKey.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\CKEditor.css" />
+    <Content Include="Content\css\ext-button-icon.css" />
+    <Content Include="Content\css\main.css" />
+    <Content Include="Content\css\ext-custom.css" />
+    <Content Include="Content\css\icon.css" />
+    <Content Include="Content\css\qdt-notification.css" />
+    <Content Include="Content\css\qdt-custom.css" />
+    <Content Include="Content\icon\16\addressbook_16.png" />
+    <Content Include="Content\icon\16\add_16.png" />
+    <Content Include="Content\icon\16\add_circle_16.png" />
+    <Content Include="Content\icon\16\add_file_16.png" />
+    <Content Include="Content\icon\16\alarm_16.png" />
+    <Content Include="Content\icon\16\alert_16.png" />
+    <Content Include="Content\icon\16\application_16.png" />
+    <Content Include="Content\icon\16\arrow_down_16.png" />
+    <Content Include="Content\icon\16\arrow_up_16.png" />
+    <Content Include="Content\icon\16\back_16.png" />
+    <Content Include="Content\icon\16\calculator_16.png" />
+    <Content Include="Content\icon\16\calendar_16.png" />
+    <Content Include="Content\icon\16\cancel_16.png" />
+    <Content Include="Content\icon\16\cart_16.png" />
+    <Content Include="Content\icon\16\chart_16.png" />
+    <Content Include="Content\icon\16\chat_16.png" />
+    <Content Include="Content\icon\16\close_16.png" />
+    <Content Include="Content\icon\16\configure_16.png" />
+    <Content Include="Content\icon\16\contact_16.png" />
+    <Content Include="Content\icon\16\copy_16.png" />
+    <Content Include="Content\icon\16\create_16.png" />
+    <Content Include="Content\icon\16\cut_16.png" />
+    <Content Include="Content\icon\16\delete_16.png" />
+    <Content Include="Content\icon\16\disc_16.png" />
+    <Content Include="Content\icon\16\down_16.png" />
+    <Content Include="Content\icon\16\edit_16.png" />
+    <Content Include="Content\icon\16\event_16.png" />
+    <Content Include="Content\icon\16\exit_16.png" />
+    <Content Include="Content\icon\16\export_16.png" />
+    <Content Include="Content\icon\16\forward_16.png" />
+    <Content Include="Content\icon\16\import_16.png" />
+    <Content Include="Content\icon\16\info_16.png" />
+    <Content Include="Content\icon\16\print_16.png" />
+    <Content Include="Content\icon\16\refresh_16.png" />
+    <Content Include="Content\icon\16\save_16.png" />
+    <Content Include="Content\icon\16\undo_16.png" />
+    <Content Include="Content\icon\16\up_16.png" />
+    <Content Include="Content\icon\24\addressbook_24.png" />
+    <Content Include="Content\icon\24\add_24.png" />
+    <Content Include="Content\icon\24\add_circle_24.png" />
+    <Content Include="Content\icon\24\alarm_24.png" />
+    <Content Include="Content\icon\24\alert_24.png" />
+    <Content Include="Content\icon\24\application_24.png" />
+    <Content Include="Content\icon\24\back_24.png" />
+    <Content Include="Content\icon\24\calculator_24.png" />
+    <Content Include="Content\icon\24\calendar_24.png" />
+    <Content Include="Content\icon\24\cancel_24.png" />
+    <Content Include="Content\icon\24\cart_24.png" />
+    <Content Include="Content\icon\24\chart_24.png" />
+    <Content Include="Content\icon\24\chat_24.png" />
+    <Content Include="Content\icon\24\close_24.png" />
+    <Content Include="Content\icon\24\configure_24.png" />
+    <Content Include="Content\icon\24\contact_24.png" />
+    <Content Include="Content\icon\24\copy_24.png" />
+    <Content Include="Content\icon\24\create_24.png" />
+    <Content Include="Content\icon\24\cut_24.png" />
+    <Content Include="Content\icon\24\delete_24.png" />
+    <Content Include="Content\icon\24\disc_24.png" />
+    <Content Include="Content\icon\24\down_24.png" />
+    <Content Include="Content\icon\24\edit_24.png" />
+    <Content Include="Content\icon\24\event_24.png" />
+    <Content Include="Content\icon\24\export_24.png" />
+    <Content Include="Content\icon\24\forward_24.png" />
+    <Content Include="Content\icon\24\import_24.png" />
+    <Content Include="Content\icon\24\info_24.png" />
+    <Content Include="Content\icon\24\print_24.png" />
+    <Content Include="Content\icon\24\up_24.png" />
+    <Content Include="Content\icon\ge.ico" />
+    <Content Include="Content\img\1_star.png" />
+    <Content Include="Content\img\2_star.png" />
+    <Content Include="Content\img\3_star.png" />
+    <Content Include="Content\img\accept-16.png" />
+    <Content Include="Content\img\accept_gray-16.png" />
+    <Content Include="Content\img\addfile-16.png" />
+    <Content Include="Content\img\add_green-16.png" />
+    <Content Include="Content\img\applications_office-16.png" />
+    <Content Include="Content\img\approve-16.png" />
+    <Content Include="Content\img\approve_gray-16.png" />
+    <Content Include="Content\img\approve_list-16.png" />
+    <Content Include="Content\img\attachment-16.png" />
+    <Content Include="Content\img\backward-16.png" />
+    <Content Include="Content\img\blackboard-16.png" />
+    <Content Include="Content\img\blockdevice-16.png" />
+    <Content Include="Content\img\calculator-24.png" />
+    <Content Include="Content\img\calendar_black-16.png" />
+    <Content Include="Content\img\calendar_blue-16.png" />
+    <Content Include="Content\img\calendar_green-16.png" />
+    <Content Include="Content\img\cancel-16.png" />
+    <Content Include="Content\img\check-16.png" />
+    <Content Include="Content\img\china_flag-16.png" />
+    <Content Include="Content\img\china_flag-32.png" />
+    <Content Include="Content\img\circle_blue-16.png" />
+    <Content Include="Content\img\circle_green-16.png" />
+    <Content Include="Content\img\circle_grey-16.png" />
+    <Content Include="Content\img\circle_no-16.png" />
+    <Content Include="Content\img\circle_orange-16.png" />
+    <Content Include="Content\img\circle_red-16.png" />
+    <Content Include="Content\img\circle_yellow-16.png" />
+    <Content Include="Content\img\circle_yes-16.png" />
+    <Content Include="Content\img\clock-16.png" />
+    <Content Include="Content\img\complete-16.png" />
+    <Content Include="Content\img\complete_gray-16.png" />
+    <Content Include="Content\img\contact_card-16.png" />
+    <Content Include="Content\img\delete-16.png" />
+    <Content Include="Content\img\doctoral_cap-16.png" />
+    <Content Include="Content\img\down-16.png" />
+    <Content Include="Content\img\edit-16.png" />
+    <Content Include="Content\img\excel-16.png" />
+    <Content Include="Content\img\excel-24.png" />
+    <Content Include="Content\img\excel-32.png" />
+    <Content Include="Content\img\exit-32.png" />
+    <Content Include="Content\img\export-16.png" />
+    <Content Include="Content\img\export.png" />
+    <Content Include="Content\img\eye_close-16.png" />
+    <Content Include="Content\img\eye-16.png" />
+    <Content Include="Content\img\finish-16.png" />
+    <Content Include="Content\img\finish_gray-16.png" />
+    <Content Include="Content\img\forward-16.png" />
+    <Content Include="Content\img\going_up-16.png" />
+    <Content Include="Content\img\import-16.png" />
+    <Content Include="Content\img\import-24.png" />
+    <Content Include="Content\img\interact-16.png" />
+    <Content Include="Content\img\internet_link-16.png" />
+    <Content Include="Content\img\keys-16.png" />
+    <Content Include="Content\img\keys-32.png" />
+    <Content Include="Content\img\lens-16.png" />
+    <Content Include="Content\img\list-16.png" />
+    <Content Include="Content\img\list_error-16.png" />
+    <Content Include="Content\img\log-16.png" />
+    <Content Include="Content\img\logout-128.png" />
+    <Content Include="Content\img\logout-16.png" />
+    <Content Include="Content\img\media_control-16.png" />
+    <Content Include="Content\img\monitor-16.png" />
+    <Content Include="Content\img\new_line-16.png" />
+    <Content Include="Content\img\participants_list-16.png" />
+    <Content Include="Content\img\people-16.png" />
+    <Content Include="Content\img\plan-16.png" />
+    <Content Include="Content\img\print-16.png" />
+    <Content Include="Content\img\print-24.png" />
+    <Content Include="Content\img\puzzle_green-16.png" />
+    <Content Include="Content\img\refresh-16.png" />
+    <Content Include="Content\img\reject-16.png" />
+    <Content Include="Content\img\reject_gray-16.png" />
+    <Content Include="Content\img\reload_all_tabs-16.png" />
+    <Content Include="Content\img\s.gif" />
+    <Content Include="Content\img\scan_16.png" />
+    <Content Include="Content\img\search-16.png" />
+    <Content Include="Content\img\search-24.png" />
+    <Content Include="Content\img\search-trigger.gif" />
+    <Content Include="Content\img\settings_black-16.png" />
+    <Content Include="Content\img\ship-16.png" />
+    <Content Include="Content\img\start_here-16.png" />
+    <Content Include="Content\img\statistics-16.png" />
+    <Content Include="Content\img\stop-16.png" />
+    <Content Include="Content\img\submit-16.png" />
+    <Content Include="Content\img\symbol_check-16.png" />
+    <Content Include="Content\img\system_config_boot-16.png" />
+    <Content Include="Content\img\thumb1-16.png" />
+    <Content Include="Content\img\ticket-16.png" />
+    <Content Include="Content\img\time_machine-16.png" />
+    <Content Include="Content\img\tools-16.png" />
+    <Content Include="Content\img\undo_blue-16.png" />
+    <Content Include="Content\img\undo_green-16.png" />
+    <Content Include="Content\img\undo_red-16.png" />
+    <Content Include="Content\img\usa_flag-16.png" />
+    <Content Include="Content\img\usa_flag-32.png" />
+    <Content Include="Content\img\users-16.png" />
+    <Content Include="Content\img\warning-16.png" />
+    <Content Include="Content\img\whatsnext-16.png" />
+    <Content Include="Content\img\window-16.png" />
+    <Content Include="Content\img\wip-16.png" />
+    <Content Include="Content\img\worker_skill-16.jpg" />
+    <Content Include="Content\img\xeyes-16.png" />
+    <Content Include="Content\js\extjs\model\system\NativeUser.js" />
+    <Content Include="Content\js\extjs\model\op\WorkCenter.js" />
+    <Content Include="Content\js\extjs\model\op\WorkType.js" />
+    <Content Include="Content\js\extjs\model\util\Item.js" />
+    <Content Include="Content\js\extjs\model\util\SerialLot.js" />
+    <Content Include="Content\js\extjs\store\op\WorkCenters.js" />
+    <Content Include="Content\js\extjs\store\op\WorkTypes.js" />
+    <Content Include="Content\js\extjs\store\system\NativeUsers.js" />
+    <Content Include="Content\js\extjs\store\util\Items.js" />
+    <Content Include="Content\js\extjs\store\util\SerialsLots.js" />
+    <Content Include="Content\js\extjs\ux\EmployeeCombo.js" />
+    <Content Include="Content\js\extjs\ux\ItemCombo.js" />
+    <Content Include="Content\js\extjs\ux\ItemOpGroup.js" />
+    <Content Include="Content\js\extjs\ux\NativeUserCombo.js" />
+    <Content Include="Content\js\extjs\ux\SerialLotCombo.js" />
+    <Content Include="QDT\app\controller\cc\Cc.js" />
+    <Content Include="QDT\app\controller\ll\WorkingGroup.js" />
+    <Content Include="QDT\app\controller\ll\Training.js" />
+    <Content Include="QDT\app\controller\op\OperationManagement.js" />
+    <Content Include="QDT\app\controller\permission\PermissionManagement.js" />
+    <Content Include="QDT\app\controller\rig\RIG.js" />
+    <Content Include="QDT\app\controller\rig\VendorManagement.js" />
+    <Content Include="QDT\app\controller\scan\Main.js" />
+    <Content Include="QDT\app\controller\tq\ProcessScan.js" />
+    <Content Include="QDT\app\controller\tq\CertificationBase.js" />
+    <Content Include="QDT\app\controller\ux\Attachment.js" />
+    <Content Include="QDT\app\model\cc\Cc.js" />
+    <Content Include="QDT\app\model\dr\Discrepancy.js" />
+    <Content Include="QDT\app\model\ll\FailureMode.js" />
+    <Content Include="QDT\app\model\ll\Training.js" />
+    <Content Include="QDT\app\model\permission\Menu.js" />
+    <Content Include="QDT\app\model\rig\QualityEscapeCN.js" />
+    <Content Include="QDT\app\model\rig\Goods_returned_for.js" />
+    <Content Include="QDT\app\model\rig\RigGraphic.js" />
+    <Content Include="QDT\app\model\rig\TrackNum.js" />
+    <Content Include="QDT\app\model\rig\GetRigByRigNum.js" />
+    <Content Include="QDT\app\model\rig\Liability.js" />
+    <Content Include="QDT\app\model\rig\RIG.js" />
+    <Content Include="QDT\app\model\rig\RigLine.js" />
+    <Content Include="QDT\app\model\rig\RigStatus.js" />
+    <Content Include="QDT\app\model\rig\VendorManagement.js" />
+    <Content Include="QDT\app\model\rig\VendorStatus.js" />
+    <Content Include="QDT\app\model\tq\CertificationItem.js" />
+    <Content Include="QDT\app\model\tq\OperationalRestriction.js" />
+    <Content Include="QDT\app\model\tq\StamperList.js" />
+    <Content Include="QDT\app\store\cc\CcFailureCodes.js" />
+    <Content Include="QDT\app\store\cc\CcIndicateFindings.js" />
+    <Content Include="QDT\app\store\cc\Ccs.js" />
+    <Content Include="QDT\app\store\cc\CcTypes.js" />
+    <Content Include="QDT\app\store\dr\Discrepancies.js" />
+    <Content Include="QDT\app\store\ll\FailureModes.js" />
+    <Content Include="QDT\app\store\ll\Trainings.js" />
+    <Content Include="QDT\app\controller\tq\CreateSkillTraining.js" />
+    <Content Include="QDT\app\controller\tq\RequestStamper.js" />
+    <Content Include="QDT\app\controller\tq\UpdateSkillTrainingApprover.js" />
+    <Content Include="QDT\app\controller\tq\SkillTrainingApprover.js" />
+    <Content Include="QDT\app\store\permission\RemainingMenus.js" />
+    <Content Include="QDT\app\store\permission\UserGroupMenus.js" />
+    <Content Include="QDT\app\store\permission\UserMenus.js" />
+    <Content Include="QDT\app\store\rig\GetRigByRigNums.js" />
+    <Content Include="QDT\app\store\rig\Goods_returned_fors.js" />
+    <Content Include="QDT\app\store\rig\QualityEscapeCNs.js" />
+    <Content Include="QDT\app\store\rig\RigGetVendorName.js" />
+    <Content Include="QDT\app\store\rig\RigGraphics.js" />
+    <Content Include="QDT\app\store\rig\TrackNums.js" />
+    <Content Include="QDT\app\store\rig\Liabilitys.js" />
+    <Content Include="QDT\app\store\rig\RigLines.js" />
+    <Content Include="QDT\app\store\rig\RIGs.js" />
+    <Content Include="QDT\app\store\rig\RigStatuses.js" />
+    <Content Include="QDT\app\store\rig\SearchRIGs.js" />
+    <Content Include="QDT\app\store\rig\SearchVendors.js" />
+    <Content Include="QDT\app\store\rig\VendorMains.js" />
+    <Content Include="QDT\app\store\rig\VendorManagements.js" />
+    <Content Include="QDT\app\store\rig\VendorNum.js" />
+    <Content Include="QDT\app\store\rig\VendorStatuss.js" />
+    <Content Include="QDT\app\store\scan\JobOperations.js" />
+    <Content Include="QDT\app\store\scan\ScanTransactions.js" />
+    <Content Include="QDT\app\store\skill\InUseSkillCodes.js" />
+    <Content Include="QDT\app\store\skill\SkillTrainers.js" />
+    <Content Include="QDT\app\store\tq\CertificationCategories.js" />
+    <Content Include="QDT\app\store\tq\CertificationItems.js" />
+    <Content Include="QDT\app\store\tq\GroupSkillCounts.js" />
+    <Content Include="QDT\app\store\tq\OperationalRestrictions.js" />
+    <Content Include="QDT\app\store\tq\PersonSkillTrainings.js" />
+    <Content Include="QDT\app\store\tq\SkillCodeTrainings.js" />
+    <Content Include="QDT\app\store\tq\StamperLists.js" />
+    <Content Include="QDT\app\ux\attachment\ShowButton.js" />
+    <Content Include="QDT\app\ux\Skirtle\Component.js" />
+    <Content Include="QDT\app\ux\Skirtle\CTemplate.js" />
+    <Content Include="QDT\app\view\cc\CcDetail.js" />
+    <Content Include="QDT\app\view\cc\CcEdit.js" />
+    <Content Include="QDT\app\view\cc\CcList.js" />
+    <Content Include="QDT\app\view\cc\CcPanel.js" />
+    <Content Include="QDT\app\view\dr\DiscrepancyGrid.js" />
+    <Content Include="QDT\app\view\exampleviews\gridexample.js" />
+    <Content Include="QDT\app\view\inspection\Andon.js" />
+    <Content Include="QDT\app\view\ll\GroupManagement.js" />
+    <Content Include="QDT\app\view\ll\TrainingList.js" />
+    <Content Include="QDT\app\view\ll\Viewport.js" />
+    <Content Include="QDT\app\view\ll\Training.js" />
+    <Content Include="QDT\app\view\ll\MyTrainingList.js" />
+    <Content Include="QDT\app\store\tq\SkillTrainingRoutes.js" />
+    <Content Include="QDT\app\view\ll\WorkingGroupCombo.js" />
+    <Content Include="QDT\app\view\op\AddOperationalRestriction.js" />
+    <Content Include="QDT\app\view\op\ManagementPanel.js" />
+    <Content Include="QDT\app\view\permission\GroupPermissionGrid.js" />
+    <Content Include="QDT\app\view\permission\MenuGrid.js" />
+    <Content Include="QDT\app\view\permission\RemainingPermissionGrid.js" />
+    <Content Include="QDT\app\view\permission\UserPermissionGrid.js" />
+    <Content Include="QDT\app\view\permission\UserPermissionPanel.js" />
+    <Content Include="QDT\app\view\rig\CreateRIG.js" />
+    <Content Include="QDT\app\view\rig\RIG.js" />
+    <Content Include="QDT\app\view\rig\RIGDetail.js" />
+    <Content Include="QDT\app\view\rig\RigGraphic.js" />
+    <Content Include="QDT\app\view\rig\RigGraphicShow.js" />
+    <Content Include="QDT\app\view\rig\SearchRIG.js" />
+    <Content Include="QDT\app\view\rig\SearchVendor.js" />
+    <Content Include="QDT\app\view\rig\VendorManagement.js" />
+    <Content Include="QDT\app\view\rig\VendorManagementDetail.js" />
+    <Content Include="QDT\app\view\scan\MainPanel.js" />
+    <Content Include="QDT\app\view\scan\TransactionInformationPanel.js" />
+    <Content Include="QDT\app\view\skill\ScanTransactionGrid.js" />
+    <Content Include="QDT\app\view\tq\CertificationItemCascade.js" />
+    <Content Include="QDT\app\view\tq\CertificationItemCombo.js" />
+    <Content Include="QDT\app\view\tq\CreateScrappedRecord.js" />
+    <Content Include="QDT\app\view\tq\DeleteStamper.js" />
+    <Content Include="QDT\app\view\tq\OperationalRestrictionGrid.js" />
+    <Content Include="QDT\app\view\tq\ProcessApproverPicker.js" />
+    <Content Include="Content\js\extjs\ux\WorkTypeCombo.js" />
+    <Content Include="QDT\app\controller\repository\StaticData.js" />
+    <Content Include="QDT\app\controller\skill\SkillCode.js" />
+    <Content Include="QDT\app\controller\tq\_LearningScan.js" />
+    <Content Include="QDT\app\controller\tq\Main.js" />
+    <Content Include="QDT\app\controller\tq\MyCertification.js" />
+    <Content Include="QDT\app\controller\tq\MyTraining.js" />
+    <Content Include="QDT\app\controller\tq\_OperationSkill.js" />
+    <Content Include="QDT\app\controller\tq\PersonSkill.js" />
+    <Content Include="QDT\app\controller\tq\ProcessApproval.js" />
+    <Content Include="QDT\app\controller\tq\_SkillApply.js" />
+    <Content Include="QDT\app\controller\tq\SkillApprove.js" />
+    <Content Include="QDT\app\controller\tq\SkillOperation.js" />
+    <Content Include="QDT\app\controller\tq\SkillTraining.js" />
+    <Content Include="QDT\app\controller\tq\TrainContent.js" />
+    <Content Include="QDT\app\controller\tq\TrainerApply.js" />
+    <Content Include="QDT\app\model\Attachment.js" />
+    <Content Include="Content\js\extjs\model\hr\Employee.js" />
+    <Content Include="Content\js\extjs\model\system\User.js" />
+    <Content Include="QDT\app\model\ll\WorkingGroup.js" />
+    <Content Include="QDT\app\model\op\Operation.js" />
+    <Content Include="QDT\app\model\tq\ProcessApproval.js" />
+    <Content Include="QDT\app\model\tq\SkillTrainingRoute.js" />
+    <Content Include="QDT\app\model\tq\WorkflowAction.js" />
+    <Content Include="QDT\app\model\tq\WorkflowProcess.js" />
+    <Content Include="QDT\app\store\Attachments.js" />
+    <Content Include="Content\js\extjs\store\hr\Employees.js" />
+    <Content Include="Content\js\extjs\store\system\Users.js" />
+    <Content Include="QDT\app\store\dr\ResponsibleDepartments.js" />
+    <Content Include="QDT\app\store\ll\WorkingGroups.js" />
+    <Content Include="QDT\app\store\op\Operations.js" />
+    <Content Include="QDT\app\store\tq\CertificationStatus.js" />
+    <Content Include="QDT\app\store\tq\MyProcessApprovals.js" />
+    <Content Include="QDT\app\store\tq\StandardSkillTrainingRoutes.js" />
+    <Content Include="QDT\app\store\tq\WorkflowActions.js" />
+    <Content Include="QDT\app\store\tq\WorkflowActionTypes.js" />
+    <Content Include="QDT\app\store\tq\WorkflowCategories.js" />
+    <Content Include="QDT\app\store\tq\WorkflowProcesses.js" />
+    <Content Include="QDT\app\store\tq\WorkflowProcessStatus.js" />
+    <Content Include="QDT\app\view\ll\LessonCreator.js" />
+    <Content Include="QDT\app\view\op\OperationGrid.js" />
+    <Content Include="QDT\app\store\tq\ProcessScanRecords.js" />
+    <Content Include="QDT\app\view\tq\MyProcessApprovalGrid.js" />
+    <Content Include="QDT\app\view\tq\ProcessApprovalPanel.js" />
+    <Content Include="QDT\app\view\tq\ProcessScanRecordGrid.js" />
+    <Content Include="QDT\app\view\tq\ProcessScanWindow.js" />
+    <Content Include="QDT\app\view\tq\RequestStamperMain.js" />
+    <Content Include="QDT\app\view\tq\RequestStamperPanel.js" />
+    <Content Include="QDT\app\view\tq\ScrappedRecordPanel.js" />
+    <Content Include="QDT\app\view\tq\SkillTrainingApproverEditor.js" />
+    <Content Include="QDT\app\view\tq\SkillTrainingApproverGrid.js" />
+    <Content Include="QDT\app\view\skill\RelatedOperationGrid.js" />
+    <Content Include="QDT\app\view\skill\RelatedOperationPanel.js" />
+    <Content Include="QDT\app\view\skill\SkillCodeCombo.js" />
+    <Content Include="QDT\app\view\skill\SkillCodeEditor.js" />
+    <Content Include="QDT\app\view\skill\SkillCodePanel.js" />
+    <Content Include="QDT\app\store\skill\RelatedOperations.js" />
+    <Content Include="QDT\app\store\skill\SkillCodes.js" />
+    <Content Include="QDT\app\util\Converter.js" />
+    <Content Include="QDT\app\util\Util.js" />
+    <Content Include="QDT\app\ux\attachment\Browser.js" />
+    <Content Include="QDT\app\ux\attachment\List.js" />
+    <Content Include="Content\js\extjs\ux\BusinessCombo.js" />
+    <Content Include="Content\js\extjs\ux\ComposePad.js" />
+    <Content Include="Content\js\extjs\ux\ExceptionBoard.js" />
+    <Content Include="Content\js\extjs\ux\PagingToolbarResizer.js" />
+    <Content Include="Content\js\extjs\ux\WorkingGroupCombo.js" />
+    <Content Include="Content\js\utility.js" />
+    <Content Include="Content\js\extjs\ux\ClearButton.js" />
+    <Content Include="Content\js\extjs\ux\UserValidation.js" />
+    <Content Include="Content\js\extjs\ux\MessageBox.js" />
+    <Content Include="Content\js\extjs\ux\RadioGroupColumn.js" />
+    <Content Include="Content\js\extjs\ux\CTemplate.js" />
+    <Content Include="Content\js\extjs\ux\CellComponent.js" />
+    <Content Include="Content\js\extjs\ux\LiveSearchGridPanel.js" />
+    <Content Include="Content\js\extjs\ux\ChangePasswordWindow.js" />
+    <Content Include="Content\js\extjs\ux\MultipleAttachments.js" />
+    <Content Include="Content\js\extjs\ux\MultipleTextFields.js" />
+    <Content Include="Content\js\extjs\ux\SearchCombo.js" />
+    <Content Include="Content\js\extjs\ux\RemoteCombo.js" />
+    <Content Include="Content\js\extjs\ux\LocalCombo.js" />
+    <Content Include="Content\js\qdt-custom.js" />
+    <Content Include="Content\js\extjs\util\ModuleSwitcher.js" />
+    <Content Include="Content\js\extjs\util\UserProfile.js" />
+    <Content Include="Content\js\extjs\ux\Button.js" />
+    <Content Include="Content\js\extjs\ux\LoginWindow.js" />
+    <Content Include="Content\js\renderer.js" />
+    <Content Include="Global.asax" />
+    <Content Include="QDT\app\controller\ll\Category.js" />
+    <Content Include="QDT\app\controller\ll\Lesson.js" />
+    <Content Include="QDT\app\controller\ll\Main.js" />
+    <Content Include="QDT\app\lessonslearnt.js" />
+    <Content Include="QDT\app\model\dr\Action.js" />
+    <Content Include="QDT\app\model\dr\Disposition.js" />
+    <Content Include="QDT\app\model\ird\OperationInformation.js" />
+    <Content Include="QDT\app\controller\Inspection.js" />
+    <Content Include="QDT\app\controller\Scan.js" />
+    <Content Include="QDT\app\inspection.js" />
+    <Content Include="QDT\app\app.js" />
+    <Content Include="QDT\app\controller\IRD.js" />
+    <Content Include="QDT\app\controller\DR.js" />
+    <Content Include="QDT\app\model\inspection\InspectionRecord.js" />
+    <Content Include="QDT\app\model\inspection\InspectionLocation.js" />
+    <Content Include="QDT\app\model\inspection\CustomProject.js" />
+    <Content Include="QDT\app\model\inspection\InspectionType.js" />
+    <Content Include="QDT\app\model\ird\SpcRecord.js" />
+    <Content Include="QDT\app\model\ll\Category.js" />
+    <Content Include="QDT\app\model\ll\Lesson.js" />
+    <Content Include="QDT\app\model\scan\IndirectCode.js" />
+    <Content Include="QDT\app\model\scan\CurrentWork.js" />
+    <Content Include="QDT\app\model\scan\OpScanHistory.js" />
+    <Content Include="QDT\app\model\scan\Transaction.js" />
+    <Content Include="QDT\app\model\scan\ScanType.js" />
+    <Content Include="QDT\app\model\tq\OperationSkill.js" />
+    <Content Include="QDT\app\model\tq\Certification.js" />
+    <Content Include="QDT\app\model\tq\PersonProcessSkill.js" />
+    <Content Include="QDT\app\model\tq\PersonSkillCount.js" />
+    <Content Include="QDT\app\model\skill\SkillCode.js" />
+    <Content Include="QDT\app\model\tq\SkillPersonCount.js" />
+    <Content Include="QDT\app\model\tq\SkillTraining.js" />
+    <Content Include="QDT\app\model\User.js" />
+    <Content Include="QDT\app\model\IrdRouteItem.js" />
+    <Content Include="QDT\app\model\IrdRecord.js" />
+    <Content Include="QDT\app\model\Bool.js" />
+    <Content Include="QDT\app\model\IrdRecordType.js" />
+    <Content Include="QDT\app\model\IrdGage.js" />
+    <Content Include="QDT\app\model\IrdBluePrintZone.js" />
+    <Content Include="QDT\app\model\IrdCharacteristicType.js" />
+    <Content Include="QDT\app\model\IrdTransaction.js" />
+    <Content Include="QDT\app\model\IrdRoute.js" />
+    <Content Include="QDT\app\model\IrdCharacteristic.js" />
+    <Content Include="QDT\app\model\IrdOperation.js" />
+    <Content Include="QDT\app\model\CommonString.js" />
+    <Content Include="QDT\app\model\DRStatus.js" />
+    <Content Include="QDT\app\model\ProductionLine.js" />
+    <Content Include="QDT\app\model\DR.js" />
+    <Content Include="QDT\app\model\Employee.js" />
+    <Content Include="QDT\app\model\Item.js" />
+    <Content Include="QDT\app\model\Job.js" />
+    <Content Include="QDT\app\scan.js" />
+    <Content Include="QDT\app\store\AuthorizedMes.js" />
+    <Content Include="QDT\app\store\dr\Actions.js" />
+    <Content Include="QDT\app\store\dr\Dispositions.js" />
+    <Content Include="QDT\app\store\inspection\InspectionRecords.js" />
+    <Content Include="QDT\app\store\inspection\InspectionLocations.js" />
+    <Content Include="QDT\app\store\inspection\CustomProjects.js" />
+    <Content Include="QDT\app\store\inspection\CustomInspectionTypes.js" />
+    <Content Include="QDT\app\store\inspection\DefaultInspectionTypes.js" />
+    <Content Include="QDT\app\store\ird\OperationInformation.js" />
+    <Content Include="QDT\app\store\ird\SpcRecords.js" />
+    <Content Include="QDT\app\store\ll\Categories.js" />
+    <Content Include="QDT\app\store\ll\Lessons.js" />
+    <Content Include="QDT\app\store\scan\IndirectCodes.js" />
+    <Content Include="QDT\app\store\scan\CurrentWork.js" />
+    <Content Include="QDT\app\store\scan\MyCurrentWork[not use].js" />
+    <Content Include="QDT\app\store\scan\OpScanHistory.js" />
+    <Content Include="QDT\app\store\scan\ScanHistory.js" />
+    <Content Include="QDT\app\store\scan\ScanTypes.js" />
+    <Content Include="QDT\app\store\tq\SkillTrainings.js" />
+    <Content Include="QDT\app\store\tq\OperationSkills.js" />
+    <Content Include="QDT\app\store\tq\Certifications.js" />
+    <Content Include="QDT\app\store\tq\PersonProcessSkills.js" />
+    <Content Include="QDT\app\store\tq\PersonSkillCounts.js" />
+    <Content Include="QDT\app\store\tq\SkillCertifiedPersons.js" />
+    <Content Include="QDT\app\store\tq\SkillPersonCounts.js" />
+    <Content Include="QDT\app\store\tq\SkillContents.js" />
+    <Content Include="QDT\app\store\tq\SkillOperations.js" />
+    <Content Include="QDT\app\store\tq\SkillProcessPersons.js" />
+    <Content Include="QDT\app\store\tq\_SkillScanTrans.js" />
+    <Content Include="QDT\app\store\Users.js" />
+    <Content Include="QDT\app\store\IrdRouteList.js" />
+    <Content Include="QDT\app\store\IrdRecords.js" />
+    <Content Include="QDT\app\store\IrdOpeartionCharacteristics.js" />
+    <Content Include="QDT\app\store\Bools.js" />
+    <Content Include="QDT\app\store\IrdRecordTypes.js" />
+    <Content Include="QDT\app\store\IrdGages.js" />
+    <Content Include="QDT\app\store\IrdBluePrintZones.js" />
+    <Content Include="QDT\app\store\IrdCharacteristicTypes.js" />
+    <Content Include="QDT\app\store\IrdOperations.js" />
+    <Content Include="QDT\app\store\IrdCharacteristics.js" />
+    <Content Include="QDT\app\store\IrdTransactions.js" />
+    <Content Include="QDT\app\store\IrdRoutes.js" />
+    <Content Include="QDT\app\store\IRDs.js" />
+    <Content Include="QDT\app\store\SearchDRs.js" />
+    <Content Include="QDT\app\store\DispositionReasons.js" />
+    <Content Include="QDT\app\store\DrSources.js" />
+    <Content Include="QDT\app\store\ActionTypes.js" />
+    <Content Include="QDT\app\store\DispositionTypes.js" />
+    <Content Include="QDT\app\store\DrTypes.js" />
+    <Content Include="QDT\app\store\ComboDRs.js" />
+    <Content Include="QDT\app\store\DRStatuses.js" />
+    <Content Include="QDT\app\store\ProductionLines.js" />
+    <Content Include="QDT\app\store\DRs.js" />
+    <Content Include="QDT\app\store\Dispositions.js" />
+    <Content Include="QDT\app\store\RelatedDRs.js" />
+    <Content Include="QDT\app\store\Actions.js" />
+    <Content Include="QDT\app\store\Employees.js" />
+    <Content Include="QDT\app\store\Items.js" />
+    <Content Include="QDT\app\store\Jobs.js" />
+    <Content Include="Content\js\extjs\util\Config.js" />
+    <Content Include="QDT\app\util\Renderer.js" />
+    <Content Include="QDT\app\ux\attachment\Uploader.js" />
+    <Content Include="QDT\app\view\inspection\InspectionEditor.js" />
+    <Content Include="QDT\app\view\ird\IrdDifference.js" />
+    <Content Include="QDT\app\view\ll\CategoryCombo.js" />
+    <Content Include="QDT\app\view\ll\CategoryManagement.js" />
+    <Content Include="QDT\app\view\ll\LessonEditor.js" />
+    <Content Include="QDT\app\view\ll\LessonDetail.js" />
+    <Content Include="QDT\app\view\ll\LessonList.js" />
+    <Content Include="QDT\app\view\ll\LessonPanel.js" />
+    <Content Include="QDT\app\view\ll\Viewport[not used].js" />
+    <Content Include="QDT\app\view\scan\InspectorScan.js" />
+    <Content Include="QDT\app\view\inspection\Scan.js" />
+    <Content Include="QDT\app\view\inspection\Prioritize.js" />
+    <Content Include="QDT\app\view\inspection\Comment.js" />
+    <Content Include="QDT\app\view\inspection\ChangeLocation.js" />
+    <Content Include="QDT\app\view\inspection\CustomInspection.js" />
+    <Content Include="QDT\app\view\inspection\DefaultInspection.js" />
+    <Content Include="QDT\app\view\inspection\SendInspection.js" />
+    <Content Include="QDT\app\view\inspection\MainGrid.js" />
+    <Content Include="QDT\app\view\IRDTempUser.js" />
+    <Content Include="QDT\app\view\IRDHeaderInformationForm.js" />
+    <Content Include="QDT\app\view\GenerateIRD.js" />
+    <Content Include="QDT\app\view\IRDGrid.js" />
+    <Content Include="QDT\app\view\CKeditor.js" />
+    <Content Include="QDT\app\view\IRDCharacteristic.js" />
+    <Content Include="QDT\app\view\IRDModifyOperation.js" />
+    <Content Include="QDT\app\view\IRDCreateOperation.js" />
+    <Content Include="QDT\app\view\IRDBOM.js" />
+    <Content Include="QDT\app\view\IRDDetail.js" />
+    <Content Include="QDT\app\view\IRD.js" />
+    <Content Include="QDT\app\view\CreateDisposition.js" />
+    <Content Include="QDT\app\view\CreateDR.js" />
+    <Content Include="QDT\app\view\ird\SPC.js" />
+    <Content Include="QDT\app\view\scan\Item.js" />
+    <Content Include="QDT\app\view\scan\Learn.js" />
+    <Content Include="QDT\app\view\scan\_Main.js" />
+    <Content Include="QDT\app\view\scan\MyCurrentWork.js" />
+    <Content Include="QDT\app\view\SearchDR.js" />
+    <Content Include="QDT\app\view\DR.js" />
+    <Content Include="QDT\app\view\DRDetail.js" />
+    <Content Include="QDT\app\view\CreateAction.js" />
+    <Content Include="QDT\app\view\skill\shared\Operation.js" />
+    <Content Include="QDT\app\view\tq\StamperList.js" />
+    <Content Include="QDT\app\view\tq\TrainerAttachmentList.js" />
+    <Content Include="QDT\app\view\tq\_ApproverEditorWindow.js" />
+    <Content Include="QDT\app\view\tq\CertificationGrid.js" />
+    <Content Include="QDT\app\view\tq\CertificationStatusCombo.js" />
+    <Content Include="QDT\app\view\tq\CreateSkillTrainingWindow.js" />
+    <Content Include="QDT\app\view\tq\TrainerCertificationForm.js" />
+    <Content Include="QDT\app\view\tq\MyCertificationGrid.js" />
+    <Content Include="QDT\app\view\tq\MyTrainingPanel.js" />
+    <Content Include="QDT\app\view\tq\PersonSkillPanel.js" />
+    <Content Include="QDT\app\view\tq\SkillTrainingPanel.js" />
+    <Content Include="QDT\app\view\tq\_TrainingPanel.js" />
+    <Content Include="QDT\app\view\tq\CertificationBaseGrid.js" />
+    <Content Include="QDT\app\view\tq\_LearningScanWin.js" />
+    <Content Include="QDT\app\view\tq\_OpeartionSkillGrid.js" />
+    <Content Include="QDT\app\view\tq\PersonSkillCountGrid.js" />
+    <Content Include="QDT\app\view\tq\SkillTrainingGrid.js" />
+    <Content Include="QDT\app\view\tq\WorkflowActionGrid.js" />
+    <Content Include="QDT\app\view\tq\_SkillApproveGrid.js" />
+    <Content Include="QDT\app\view\tq\SkillCertifiedPersonGrid.js" />
+    <Content Include="QDT\app\view\skill\SkillCodeGrid.js" />
+    <Content Include="QDT\app\view\tq\_SkillPersonCountGrid.js" />
+    <Content Include="QDT\app\view\tq\_SkillContentGrid.js" />
+    <Content Include="QDT\app\view\tq\WorkflowProcessGrid.js" />
+    <Content Include="QDT\app\view\tq\_SkillProcessDataGrid.js" />
+    <Content Include="QDT\app\view\tq\_SkillScanTransGrid.js" />
+    <Content Include="Scripts\ge\protostype\callModules.js" />
+    <Content Include="Scripts\ge\protostype\drWidget.js" />
+    <Content Include="Scripts\jquery-1.5.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.5.1.js" />
+    <Content Include="Scripts\jquery-1.5.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\modernizr-1.7.js" />
+    <Content Include="Scripts\modernizr-1.7.min.js" />
+    <Content Include="SZIntraV3_1_WebSite.Publish.xml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\QDT\Index.cshtml" />
+    <EntityDeploy Include="Models\EntityModel\SystemAdminModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SystemAdminModel.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>SZIntraV3_1_WebSite.Models.EntityModel.SystemAdminModel</CustomToolNamespace>
+    </EntityDeploy>
+    <None Include="Arc.cd" />
+    <Content Include="Views\HtmlMail\QdtNewDiscrepancyReport.cshtml" />
+    <Content Include="Views\HtmlMail\QdtActionReleased.cshtml" />
+    <Content Include="Views\HtmlMail\QdtActionCreated.cshtml" />
+    <Content Include="Views\HtmlMail\QdtActionUpdated.cshtml" />
+    <Content Include="Views\HtmlMail\QdtActionAllCompleted.cshtml" />
+    <Content Include="Views\HtmlMail\QdtDispositionReviewed.cshtml" />
+    <Content Include="Views\HtmlMail\QdtDiscrepancyReportClosed.cshtml" />
+    <Content Include="Views\HtmlMail\QdtEmailNotificationTemplateBase%28not for use%29.cshtml" />
+    <Content Include="Views\HtmlMail\QdtDispositionRejected.cshtml" />
+    <None Include="Files\msyh.ttf" />
+    <None Include="Files\SIMHEI.TTF" />
+    <EntityDeploy Include="Models\EntityModel\QDTModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QDTModel.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>SZIntraV3_1_WebSite.Models.EntityModel.QdtModel</CustomToolNamespace>
+    </EntityDeploy>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Views\HtmlMail\QdtDispositionCreated.cshtml" />
+    <Content Include="Views\Inspection\Index.cshtml" />
+    <Content Include="Views\Scan\Index.cshtml" />
+    <Content Include="Views\QdtViewer\DrInfomation.cshtml" />
+    <Content Include="Views\QdtViewer\Index.cshtml" />
+    <Content Include="Views\LessonsLearnt\Index.cshtml" />
+    <Content Include="Views\HtmlMail\QdtLlCertificationGranted.cshtml" />
+    <Content Include="Views\HtmlMail\QdtLlCertificationInProcess.cshtml" />
+    <Content Include="Views\HtmlMail\QdtStcSkillCreated.cshtml" />
+    <Content Include="Views\HtmlMail\QdtStcSkillCanceled.cshtml" />
+    <Content Include="Views\HtmlMail\QdtStcCertificationGranted.cshtml" />
+    <Content Include="Views\HtmlMail\QdtStcCertificationInProcess.cshtml" />
+    <Content Include="Views\HtmlMail\QdtLlCertificationCreated.cshtml" />
+    <Content Include="Views\HtmlMail\QdtTqDirectCertificationCreated.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Strings.zh.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.zh.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Files\TempFile\" />
+    <Folder Include="qdtDrAttachments\" />
+    <Folder Include="qdtRigAttachments\RigDownload\" />
+    <Folder Include="qdtRigAttachments\RigFormat\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>8088</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

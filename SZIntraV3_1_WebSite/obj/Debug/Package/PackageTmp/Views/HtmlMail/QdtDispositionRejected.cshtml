@@ -1,0 +1,181 @@
+﻿@model SZIntraV3_1_WebSite.Models.QdtDisposition
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QdtDispositionRejected</title>
+    <style type="text/css">
+        body
+        {
+            font-family: 'GE Inspira';
+            font-size: 16px;
+            background-color: #EEE;
+            width: 800px;
+        } 
+        
+        .content
+        {
+            width: 800px;
+        }
+        
+        div
+        {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: auto;
+        }
+        
+        table
+        {
+            width: 100%;
+            background-color: #FFF;
+            white-space: normal;
+            border-collapse: collapse;
+        }
+        
+        td
+        {
+            border-width: 1px;
+            border-color: Gray;
+            border-style: solid;
+            padding: 5px 15px 5px 5px;
+            display: block;
+        }
+        
+        a
+        {
+            padding: 0 5px 0 5px;
+        }
+        
+        .content
+        {
+            margin: 0 auto;
+            width: 700px;
+        }
+        
+        .preview
+        {
+            font-size: 1.2em;
+        }
+        
+        .set-header
+        {
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bolder;
+        }
+        
+        .label
+        {
+            font-weight: bold;
+            width: 150px;
+        }
+        
+        .warning
+        {
+            color: #BE504F;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="">
+            <p>
+                Your <strong>Disposition</strong> has been rejected. Please review the information
+                below regarding this report.</p>
+        </div>
+        <div>
+            <table>
+                <tbody>
+                    <tr>
+                        <td colspan="2" class="set-header">
+                            DR Information
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">
+                            DR Number
+                        </td>
+                        <td>@Model.dr.dr.dr_num
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">
+                            QE Owner
+                        </td>
+                        <td>@Model.dr.qeOwner.employee.name_en
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">
+                            Created Date
+                        </td>
+                        <td>@Model.dr.dr.create_date.ToString("yyyy-MM-dd HH:mm")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">
+                            Created By
+                        </td>
+                        <td>@Model.dr.createBy.user.name_en
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">
+                            Description
+                        </td>
+                        <td>@Model.dr.dr.description
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="set-header">
+                            Disposition Information
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">
+                            Disposition Rank
+                        </td>
+                        <td>@Model.disposition.disp_rank
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">
+                            Description
+                        </td>
+                        <td>@Model.disposition.description
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">
+                            Status
+                        </td>
+                        <td>@string.Format("{0}{1}", Model.disposition.status.Substring(0, 1).ToUpper(), Model.disposition.status.Substring(1).ToLower())
+                        </td>
+                    </tr>
+                    @if (Model.discrepancies.Count > 0)
+                    {
+                        <tr>
+                            <td colspan="2" class="set-header warning">
+                                Discrepancies
+                            </td>
+                        </tr>
+                        foreach (var discrepancy in Model.discrepancies)
+                        { 
+                        <tr>
+                            <td class="label">@string.Format("Discrepancy {0}", Model.discrepancies.IndexOf(discrepancy) + 1)
+                            </td>
+                            <td>@discrepancy.discrepancy.description
+                            </td>
+                        </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+       <div>
+            Please go to<a href='http://3.41.199.73:9000'> Quality Digitalization Tools </a>for
+            details.
+        </div>
+    </div>
+</body>
+</html>

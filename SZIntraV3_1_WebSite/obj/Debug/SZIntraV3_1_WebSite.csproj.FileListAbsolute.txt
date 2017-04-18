@@ -19,3 +19,21 @@ C:\Users\307006712\Box Sync\Personal Files\06. Develop\Suzhou Intranet V3.1 - Co
 C:\Users\307006712\Box Sync\Personal Files\06. Develop\Suzhou Intranet V3.1 - Copy (2)\szintrav3.1\SZIntraV3_1_WebSite\obj\Debug\SZIntraV3_1_WebSite.dll
 C:\Users\307006712\Box Sync\Personal Files\06. Develop\Suzhou Intranet V3.1 - Copy (2)\szintrav3.1\SZIntraV3_1_WebSite\obj\Debug\SZIntraV3_1_WebSite.pdb
 C:\Users\307006712\Box Sync\Personal Files\06. Develop\Suzhou Intranet V3.1 - Copy (2)\szintrav3.1\SZIntraV3_1_WebSite\bin\System.Web.Mvc.dll
+C:\Users\307006712\Personal Files\06. Develop\Suzhou Intranet V3.1 - Copy (2)\szintrav3.1\SZIntraV3_1_WebSite\bin\SZIntraV3_1_WebSite.dll
+C:\Users\307006712\Personal Files\06. Develop\Suzhou Intranet V3.1 - Copy (2)\szintrav3.1\SZIntraV3_1_WebSite\bin\SZIntraV3_1_WebSite.pdb
+C:\Users\307006712\Personal Files\06. Develop\Suzhou Intranet V3.1 - Copy (2)\szintrav3.1\SZIntraV3_1_WebSite\bin\zh\SZIntraV3_1_WebSite.resources.dll
+C:\Users\307006712\Personal Files\06. Develop\Suzhou Intranet V3.1 - Copy (2)\szintrav3.1\SZIntraV3_1_WebSite\bin\Ionic.Zip.dll
+C:\Users\307006712\Personal Files\06. Develop\Suzhou Intranet V3.1 - Copy (2)\szintrav3.1\SZIntraV3_1_WebSite\bin\itextsharp.dll
+C:\Users\307006712\Personal Files\06. Develop\Suzhou Intranet V3.1 - Copy (2)\szintrav3.1\SZIntraV3_1_WebSite\bin\NPOI.dll
+C:\Users\307006712\Personal Files\06. Develop\Suzhou Intranet V3.1 - Copy (2)\szintrav3.1\SZIntraV3_1_WebSite\bin\RazorEngine.dll
+C:\Users\307006712\Personal Files\06. Develop\Suzhou Intranet V3.1 - Copy (2)\szintrav3.1\SZIntraV3_1_WebSite\bin\System.Web.Razor.dll
+C:\Users\307006712\Personal Files\06. Develop\Suzhou Intranet V3.1 - Copy (2)\szintrav3.1\SZIntraV3_1_WebSite\bin\NPOI.xml
+C:\Users\307006712\Personal Files\06. Develop\Suzhou Intranet V3.1 - Copy (2)\szintrav3.1\SZIntraV3_1_WebSite\obj\Debug\SZIntraV3_1_WebSite.Properties.Strings.resources
+C:\Users\307006712\Personal Files\06. Develop\Suzhou Intranet V3.1 - Copy (2)\szintrav3.1\SZIntraV3_1_WebSite\obj\Debug\SZIntraV3_1_WebSite.Properties.Strings.zh.resources
+C:\Users\307006712\Personal Files\06. Develop\Suzhou Intranet V3.1 - Copy (2)\szintrav3.1\SZIntraV3_1_WebSite\obj\Debug\SZIntraV3_1_WebSite.csproj.GenerateResource.Cache
+C:\Users\307006712\Personal Files\06. Develop\Suzhou Intranet V3.1 - Copy (2)\szintrav3.1\SZIntraV3_1_WebSite\obj\Debug\zh\SZIntraV3_1_WebSite.resources.dll
+C:\Users\307006712\Personal Files\06. Develop\Suzhou Intranet V3.1 - Copy (2)\szintrav3.1\SZIntraV3_1_WebSite\obj\Debug\SZIntraV3_1_WebSite.dll
+C:\Users\307006712\Personal Files\06. Develop\Suzhou Intranet V3.1 - Copy (2)\szintrav3.1\SZIntraV3_1_WebSite\obj\Debug\SZIntraV3_1_WebSite.pdb
+C:\Users\307006712\Personal Files\06. Develop\Suzhou Intranet V3.1 - Copy (2)\szintrav3.1\SZIntraV3_1_WebSite\obj\Debug\SZIntraV3_1_WebSite.csprojResolveAssemblyReference.cache
+C:\Users\307006712\Personal Files\06. Develop\Suzhou Intranet V3.1 - Copy (2)\szintrav3.1\SZIntraV3_1_WebSite\bin\System.Web.Mvc.dll
+C:\Users\307006712\Personal Files\06. Develop\Suzhou Intranet V3.1 - Copy (2)\szintrav3.1\SZIntraV3_1_WebSite\bin\System.Web.Mvc.xml

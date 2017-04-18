@@ -1,0 +1,149 @@
+﻿@model SZIntraV3_1_WebSite.Models.Ll.VmQdtLlWorkflowRequest
+@using SZIntraV3_1_WebSite.Models.Ll
+@using SZIntraV3_1_WebSite.Models.System
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        body
+        {
+            font-family: 'GE Inspira';
+            font-size: 16px;
+            background-color: #EEE;
+            width: 800px;
+        }
+        
+        .content
+        {
+            width: 800px;
+        }
+        
+        div
+        {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: auto;
+        }
+        
+        table
+        {
+            width: 100%;
+            background-color: #FFF;
+            white-space: normal;
+            border-collapse: collapse;
+        }
+        
+        td
+        {
+            border-width: 1px;
+            border-color: Gray;
+            border-style: solid;
+            padding: 5px 15px 5px 5px;
+            display: block;
+            width:300px;
+        }
+        
+        a
+        {
+            padding: 0 5px 0 5px;
+        }
+        
+        .content
+        {
+            margin: 0 auto;
+            width: 700px;
+        }
+        
+        .preview
+        {
+            font-size: 1.2em;
+        }
+        
+        .set-header
+        {
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bolder;
+        }
+        
+        .label
+        {
+            font-weight: bold;
+            width: 150px;
+        }
+        
+        .warning
+        {
+            color: #BE504F;
+        }
+        
+        .detail
+        {
+            width:550px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div>
+            <p>
+                A new <strong>Certification</strong> has been granted to you. Please
+                review the information below regarding this certification.</p>
+        </div>
+        <div>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="label">
+                            Subject
+                        </td>
+                        <td class="detail">@Model.llLesson.subject
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">
+                            Detail
+                        </td>
+                        <td class="detail">@Model.llLesson.detail
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">
+                            Issue Date
+                        </td>
+                        <td class="detail">@Model.certification.issue_date.Value.ToString("yyyy-MM-dd HH:mm")
+                        </td>
+                    </tr>
+                     <tr>
+                        <td class="label">
+                            Expire Date
+                        </td>
+                        <td class="detail">@Model.certification.expire_date.Value.ToString("yyyy-MM-dd")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">
+                           Approved By
+                        </td>
+                        <td class="detail">@VmNativeUser.GetNativeUserByUserId(@Model.currentAction.handler.Value).name_cn
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">
+                            Attachments Quantity
+                        </td>
+                        <td class="detail">@Model.attachments.Count()
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+       <div>
+            Please go to<a href='http://3.41.199.73:9000'> Quality Digitalization Tools </a>for
+            details.
+        </div>
+    </div>
+</body>
+</html>
