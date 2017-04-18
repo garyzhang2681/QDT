@@ -34,6 +34,5 @@ C:\Users\307006712\Personal Files\06. Develop\Suzhou Intranet V3.1 - Copy (2)\sz
 C:\Users\307006712\Personal Files\06. Develop\Suzhou Intranet V3.1 - Copy (2)\szintrav3.1\SZIntraV3_1_WebSite\obj\Debug\zh\SZIntraV3_1_WebSite.resources.dll
 C:\Users\307006712\Personal Files\06. Develop\Suzhou Intranet V3.1 - Copy (2)\szintrav3.1\SZIntraV3_1_WebSite\obj\Debug\SZIntraV3_1_WebSite.dll
 C:\Users\307006712\Personal Files\06. Develop\Suzhou Intranet V3.1 - Copy (2)\szintrav3.1\SZIntraV3_1_WebSite\obj\Debug\SZIntraV3_1_WebSite.pdb
-C:\Users\307006712\Personal Files\06. Develop\Suzhou Intranet V3.1 - Copy (2)\szintrav3.1\SZIntraV3_1_WebSite\obj\Debug\SZIntraV3_1_WebSite.csprojResolveAssemblyReference.cache
 C:\Users\307006712\Personal Files\06. Develop\Suzhou Intranet V3.1 - Copy (2)\szintrav3.1\SZIntraV3_1_WebSite\bin\System.Web.Mvc.dll
 C:\Users\307006712\Personal Files\06. Develop\Suzhou Intranet V3.1 - Copy (2)\szintrav3.1\SZIntraV3_1_WebSite\bin\System.Web.Mvc.xml
